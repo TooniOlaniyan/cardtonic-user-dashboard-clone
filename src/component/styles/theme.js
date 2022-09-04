@@ -4,8 +4,9 @@ export const theme = {
     black: '#000',
     lightblue: '#CAF8FC',
     textcolor: '#1b507e',
-    midblue: '#002444',
+    darkblue: '#002444',
     red: '#ff2e2e',
+    inputColor: '#37658E',
   },
 }
 

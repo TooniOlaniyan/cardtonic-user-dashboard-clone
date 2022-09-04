@@ -19,30 +19,32 @@ function RegisterNav() {
 }
 
 const Main = styled.div`
-    width: 100vw;
-    max-height: 1rem ;
-    display: flex;
-    justify-content: center;
-    gap: 73rem;
-    align-items: center;
-    padding: 7rem 0;
-    .Logo{
-      .image{
-        width: 13rem;
-
-      }
+  width: 100vw;
+  max-height: 1rem;
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  gap: 65rem;
+  align-items: center;
+  padding: 6rem 0;
+  z-index: 3;
+  background-color: #f9f9f9;
+  .Logo {
+    .image {
+      width: 12rem;
     }
-
+  }
 `
 
 const BackButton = styled.div`
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid ${({ theme }) => theme.colors.textcolor};
-  border-radius: 1.5rem;
+  border-radius: 1.2rem;
   cursor: pointer;
   .icon {
     font-size: 40px;
