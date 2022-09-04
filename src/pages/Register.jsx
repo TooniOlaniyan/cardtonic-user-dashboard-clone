@@ -3,8 +3,11 @@ import styled from 'styled-components'
 import RegisterNav from '../component/RegisterNav'
 import {BsArrowRightShort} from 'react-icons/bs'
 import {Link} from 'react-router-dom'
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
 function Register() {
+  const [isRevealed , setIsRevealed] = useState(false)
+  const [isRevealed1 , setIsRevealed1] = useState(false)
   const [formData , setFormData] = useState({
     name:'',
     email:'',
@@ -40,22 +43,84 @@ function Register() {
           <Form>
             <form onSubmit={handleSubmit}>
               <div className='formInputs'>
-                <input onChange={handleChange} value={name} id='name' type='text' placeholder="What's your Full Name?" />
+                <input
+                  onChange={handleChange}
+                  value={name}
+                  id='name'
+                  type='text'
+                  placeholder="What's your Full Name?"
+                />
               </div>
               <div className='formInputs'>
-                <input onChange={handleChange} value={email} id='email' type='email' placeholder='Drop your Email' />
+                <input
+                  onChange={handleChange}
+                  value={email}
+                  id='email'
+                  type='email'
+                  placeholder='Drop your Email'
+                />
               </div>
               <div className='formInputs'>
-                <input onChange={handleChange} value={userName} id='userName' type='text' placeholder='Create Username' />
+                <input
+                  onChange={handleChange}
+                  value={userName}
+                  id='userName'
+                  type='text'
+                  placeholder='Create Username'
+                />
               </div>
               <div className='formInputs'>
-                <input onChange={handleChange} value={number} id='number' type='text' placeholder='Phone Number' />
+                <input
+                  onChange={handleChange}
+                  value={number}
+                  id='number'
+                  type='text'
+                  placeholder='Phone Number'
+                />
               </div>
               <div className='formInputs'>
-                <input onChange={handleChange} value={password} id='password' type='password' placeholder='Create a Password' />
+                <div>
+                  {!isRevealed ? (
+                    <AiOutlineEye
+                      onClick={() => setIsRevealed(!isRevealed)}
+                      className='passwordEye'
+                    />
+                  ) : (
+                    <AiOutlineEyeInvisible
+                      onClick={() => setIsRevealed(!isRevealed)}
+                      className='passwordEye'
+                    />
+                  )}
+                </div>
+                <input
+                  onChange={handleChange}
+                  value={password}
+                  id='password'
+                  type={isRevealed ? 'text' : 'password'}
+                  placeholder='Create a Password'
+                />
               </div>
               <div className='formInputs'>
-                <input onChange={handleChange} value={confirmPassword} id='confirmPassword' type='password' placeholder='Pls Confirm Password' />
+                <div>
+                  {!isRevealed1 ? (
+                    <AiOutlineEye
+                      onClick={() => setIsRevealed1(!isRevealed1)}
+                      className='passwordEye'
+                    />
+                  ) : (
+                    <AiOutlineEyeInvisible
+                      onClick={() => setIsRevealed1(!isRevealed1)}
+                      className='passwordEye'
+                    />
+                  )}
+                </div>
+                <input
+                  onChange={handleChange}
+                  value={confirmPassword}
+                  id='confirmPassword'
+                  type={isRevealed1 ? 'text' : 'password'}
+                  placeholder='Pls Confirm Password'
+                />
               </div>
               <div className='submit'>
                 <button>
@@ -64,7 +129,7 @@ function Register() {
 
                 <p>
                   Got an account?{' '}
-                  <Link to='/sign-in' style={{textDecoration: 'none'}}>
+                  <Link to='/sign-in' style={{ textDecoration: 'none' }}>
                     <span>Sign In</span>
                   </Link>
                 </p>
@@ -129,6 +194,15 @@ const Form = styled.div`
 
     .formInputs {
       width: 100%;
+      position: relative;
+      .passwordEye {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 23px;
+        cursor: pointer;
+        color: ${({ theme }) => theme.colors.textcolor};
+      }
 
       input {
         border: 1px solid ${({ theme }) => theme.colors.lightblue};
@@ -150,6 +224,7 @@ const Form = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: 1rem;
 
       width: 100%;
       button {

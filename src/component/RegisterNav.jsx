@@ -38,12 +38,12 @@ const Main = styled.div`
 `
 
 const BackButton = styled.div`
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid ${({ theme }) => theme.colors.textcolor};
+  border: 1.2px solid ${({ theme }) => theme.colors.textcolor};
   border-radius: 1.2rem;
   cursor: pointer;
   .icon {
