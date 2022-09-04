@@ -10,8 +10,8 @@ function Register() {
       <MainContent>
         <div className='middleContent'>
           <div className='text'>
-            <p>Relax and Trade</p>
-            <p>Nothing has to be stressful</p>
+            <p>Relax and Trade.</p>
+            <p className='nothing'>Nothing has to be stressful</p>
           </div>
           <Form>
             <form>
@@ -54,18 +54,32 @@ function Register() {
 }
 
 const MainContent = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-.middleContent{
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-}
-  
+  align-items: center;
+  flex-direction: column;
+
+  .middleContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+    .text {
+      p {
+        font-size: 40px;
+        font-weight: 900;
+        color: ${({ theme }) => theme.colors.midblue};
+      }
+      .nothing {
+        font-size: 20px;
+        font-weight: 700;
+        color: ${({ theme }) => theme.colors.gray};
+      }
+    }
+  }
 `
 const Form = styled.div`
+background-color: red;
   
 `
 
