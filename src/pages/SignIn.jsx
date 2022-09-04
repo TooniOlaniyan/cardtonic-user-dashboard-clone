@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import RegisterNav from '../component/RegisterNav'
 import { BsArrowRightShort } from 'react-icons/bs'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+import appstore from '../asset/images/appstore.svg'
+import googleplay from '../asset/images/googleplay.svg'
 
 function SignIn() {
   const [isRevealed, setIsRevealed] = useState(false)
@@ -29,54 +31,55 @@ function SignIn() {
           <div className='text'>
             <p>Hop Right Back In.</p>
             <p className='nothing'>Sign into continue</p>
+            <div className='socials'>
+              <img src={googleplay} alt="" />
+              <img src={appstore} alt="" />
+            </div>
           </div>
-        </div>
-        <Form>
-          <form onSubmit={handleSubmit}>
-            <div className='formInputs'>
-              <input
-                onChange={handleChange}
-                value={email}
-                id='email'
-                type='email'
-                placeholder='Drop your Email'
-              />
-            </div>
-            <div className='formInputs'>
-              <div>
-                {!isRevealed ? (
-                  <AiOutlineEye
-                    onClick={() => setIsRevealed(!isRevealed)}
-                    className='passwordEye'
-                  />
-                ) : (
-                  <AiOutlineEyeInvisible
-                    onClick={() => setIsRevealed(!isRevealed)}
-                    className='passwordEye'
-                  />
-                )}
-              </div>
-              <input
-                onChange={handleChange}
-                value={password}
-                id='password'
-                type={isRevealed ? 'text' : 'password'}
-                placeholder='Password'
-              />
-            </div>
-            <div className='submit'>
-              <button>
-                Get me in <BsArrowRightShort className='icon' />
-              </button>
 
-              <p>
-                
-                Forgot your password?
-              
-              </p>
-            </div>
-          </form>
-        </Form>
+          <Form>
+            <form onSubmit={handleSubmit}>
+              <div className='formInputs'>
+                <input
+                  onChange={handleChange}
+                  value={email}
+                  id='email'
+                  type='email'
+                  placeholder='Drop your Email'
+                />
+              </div>
+              <div className='formInputs'>
+                <div>
+                  {!isRevealed ? (
+                    <AiOutlineEye
+                      onClick={() => setIsRevealed(!isRevealed)}
+                      className='passwordEye'
+                    />
+                  ) : (
+                    <AiOutlineEyeInvisible
+                      onClick={() => setIsRevealed(!isRevealed)}
+                      className='passwordEye'
+                    />
+                  )}
+                </div>
+                <input
+                  onChange={handleChange}
+                  value={password}
+                  id='password'
+                  type={isRevealed ? 'text' : 'password'}
+                  placeholder='Password'
+                />
+              </div>
+              <div className='submit'>
+                <button>
+                  Get me in <BsArrowRightShort className='icon' />
+                </button>
+
+                <p>Forgot your password?</p>
+              </div>
+            </form>
+          </Form>
+        </div>
       </MainContent>
     </div>
   )
@@ -96,6 +99,7 @@ const MainContent = styled.div`
 
     .text {
       width: fit-content;
+      background-color: red;
 
       p {
         font-size: 55px;
