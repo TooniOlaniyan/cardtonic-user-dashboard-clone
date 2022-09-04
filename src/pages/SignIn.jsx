@@ -32,8 +32,8 @@ function SignIn() {
             <p>Hop Right Back In.</p>
             <p className='nothing'>Sign into continue</p>
             <div className='socials'>
-              <img src={googleplay} alt="" />
-              <img src={appstore} alt="" />
+              <img src={googleplay} alt='' />
+              <img src={appstore} alt='' />
             </div>
           </div>
 
@@ -81,6 +81,15 @@ function SignIn() {
           </Form>
         </div>
       </MainContent>
+      <Redirect>
+        <p>
+          New User? 
+          &nbsp;
+          <Link to='/' style={{ textDecoration: 'none' }}>
+            <span>Register</span>
+          </Link>
+        </p>
+      </Redirect>
     </div>
   )
 }
@@ -99,7 +108,11 @@ const MainContent = styled.div`
 
     .text {
       width: fit-content;
-      background-color: red;
+      .socials{
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+      }
 
       p {
         font-size: 55px;
@@ -107,8 +120,8 @@ const MainContent = styled.div`
         color: ${({ theme }) => theme.colors.darkblue};
       }
       .nothing {
-        font-size: 20px;
-        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
         color: ${({ theme }) => theme.colors.gray};
       }
     }
@@ -183,6 +196,19 @@ const Form = styled.div`
         color: ${({ theme }) => theme.colors.black};
       }
     }
+  }
+`
+
+const Redirect = styled.div`
+  margin-top: 1.5rem;
+  margin-left: 70rem;
+  p {
+    color: ${({ theme }) => theme.colors.darkblue};
+    font-size: 18px;
+    font-weight: 700;
+  }
+  span {
+    color: ${({ theme }) => theme.colors.lightblue1};
   }
 `
 
