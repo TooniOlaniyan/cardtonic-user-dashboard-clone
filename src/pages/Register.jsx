@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import RegisterNav from '../component/RegisterNav'
 import {BsArrowRightShort} from 'react-icons/bs'
+import { theme } from '../component/styles/theme'
 
 function Register() {
   return (
@@ -25,7 +26,7 @@ function Register() {
                 <input type='text' placeholder='Create Username' />
               </div>
               <div className='formInputs'>
-                <input type='number' placeholder='Phone Number' />
+                <input type='text' placeholder='Phone Number' />
               </div>
               <div className='formInputs'>
                 <input type='password' placeholder='Create a Password' />
@@ -58,20 +59,27 @@ const MainContent = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 100vw;
+  
 
   .middleContent {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 3rem;
+    gap: 30rem;
+    width: 80%;
+    
+    
     .text {
+      
+      
       p {
-        font-size: 40px;
+        font-size: 65px;
         font-weight: 900;
         color: ${({ theme }) => theme.colors.midblue};
       }
       .nothing {
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 700;
         color: ${({ theme }) => theme.colors.gray};
       }
@@ -79,7 +87,30 @@ const MainContent = styled.div`
   }
 `
 const Form = styled.div`
-background-color: red;
+display: flex;
+background-color: #fff;
+padding: 6rem;
+border-radius: 2rem;
+form{
+  width: 100%;
+  
+  .formInputs{
+    input{
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      border: 1px solid ${({theme}) => theme.colors.lightblue};
+      margin-bottom: 2rem;
+      width: 100%;
+      &:focus{
+        outline: none;
+      }
+      &::placeholder{
+        color: ${({theme}) => theme.colors.textcolor};
+      }
+    }
+
+  }
+}
   
 `
 

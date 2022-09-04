@@ -7,7 +7,7 @@ function RegisterNav() {
   return (
     <Main>
         <div className='Logo'>
-            <img src={logo} alt="" />
+            <img className='image' src={logo} alt="" />
         </div>
         <BackButton>
             <BsArrowLeftShort className='icon'/>
@@ -20,12 +20,18 @@ function RegisterNav() {
 
 const Main = styled.div`
     width: 100vw;
-    max-height: 4rem ;
+    max-height: 1rem ;
     display: flex;
     justify-content: center;
-    gap: 60rem;
+    gap: 73rem;
     align-items: center;
-    padding: 6rem 0;
+    padding: 7rem 0;
+    .Logo{
+      .image{
+        width: 13rem;
+
+      }
+    }
 
 `
 
