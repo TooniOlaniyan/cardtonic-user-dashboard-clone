@@ -19,17 +19,17 @@ function RegisterNav() {
 }
 
 const Main = styled.div`
-  width: 100vw;
   max-height: 1rem;
   display: flex;
   position: sticky;
   top: 0;
   justify-content: center;
-  gap: 65rem;
+  gap: 60rem;
   align-items: center;
   padding: 6rem 0;
   z-index: 3;
   background-color: #f9f9f9;
+  margin-bottom: 3rem;
   .Logo {
     .image {
       width: 12rem;
