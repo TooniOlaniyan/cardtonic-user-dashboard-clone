@@ -7,6 +7,9 @@ const Globalstyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Lato', sans-serif;
+}
 
 `
 
