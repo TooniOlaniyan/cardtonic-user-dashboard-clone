@@ -116,6 +116,7 @@ const MainContent = styled.div`
         margin-top: 2rem;
         display: flex;
         gap: 1rem;
+        cursor: pointer;
         @media screen and (max-width: 640px) {
           display: none;
         }
