@@ -28,7 +28,7 @@ function Register() {
   }
 
   const handleSubmit = (e) => {
-    e.prevetDefault()
+    e.preventDefault()
 
   }
   return (

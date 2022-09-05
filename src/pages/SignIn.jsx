@@ -22,7 +22,7 @@ function SignIn() {
         }))
       }
        const handleSubmit = (e) => {
-         e.prevetDefault()
+         e.preventDefault()
          navigate('/dashboard')
        }
   return (
