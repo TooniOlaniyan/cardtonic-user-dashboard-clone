@@ -30,9 +30,15 @@ const Main = styled.div`
   z-index: 3;
   background-color: #f9f9f9;
   margin-bottom: 3rem;
+  @media screen and (max-width: 640px) {
+    gap: 10rem;
+  }
   .Logo {
     .image {
       width: 12rem;
+      @media screen and (max-width: 640px) {
+        width: 10rem;
+      }
     }
   }
 `
@@ -45,6 +51,12 @@ const BackButton = styled.div`
   align-items: center;
   border: 1.2px solid ${({ theme }) => theme.colors.textcolor};
   border-radius: 1.2rem;
+  @media screen and (max-width:640px){
+    width: 3.5rem;
+    height: 3.5rem;
+
+    
+  }
   cursor: pointer;
   .icon {
     font-size: 40px;
