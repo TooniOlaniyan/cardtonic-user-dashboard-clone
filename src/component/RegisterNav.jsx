@@ -2,18 +2,20 @@ import React from 'react'
 import logo  from '../asset/images/logo.svg'
 import {BsArrowLeftShort} from 'react-icons/bs'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 function RegisterNav() {
+ 
   return (
     <Main>
-        <div className='Logo'>
-            <img className='image' src={logo} alt="" />
-        </div>
-        <BackButton>
-            <BsArrowLeftShort className='icon'/>
-
+      <div className='Logo'>
+        <img className='image' src={logo} alt='' />
+      </div>
+      <Link to='/' style={{textDecoration:'none'}}>
+        <BackButton >
+          <BsArrowLeftShort className='icon' />
         </BackButton>
-
+      </Link>
     </Main>
   )
 }
@@ -31,7 +33,7 @@ const Main = styled.div`
   background-color: #f9f9f9;
   margin-bottom: 3rem;
   @media screen and (max-width: 640px) {
-    gap: 10rem;
+    gap: 8rem;
   }
   .Logo {
     .image {

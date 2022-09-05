@@ -15,8 +15,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <Routes>
-            <Route path='/' element={<Register/>}/>
-            <Route path='/sign-in' element={<SignIn/>}/>
+            <Route path='/register' element={<Register/>}/>
+            <Route path='/' element={<SignIn/>}/>
           </Routes>
         </Router>
       </ThemeProvider>

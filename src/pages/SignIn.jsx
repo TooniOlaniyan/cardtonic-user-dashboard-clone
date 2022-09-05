@@ -85,7 +85,7 @@ function SignIn() {
         <p>
           New User? 
           &nbsp;
-          <Link to='/' style={{ textDecoration: 'none' }}>
+          <Link to='/register' style={{ textDecoration: 'none' }}>
             <span>Register</span>
           </Link>
         </p>
@@ -99,30 +99,44 @@ const MainContent = styled.div`
   align-items: center;
   .middleContent {
     padding: 1rem 5rem;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     gap: 4rem;
     align-items: flex-start;
     width: 100vw;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
 
     .text {
       width: fit-content;
-      .socials{
+      .socials {
         margin-top: 2rem;
         display: flex;
         gap: 1rem;
+        @media screen and (max-width: 640px) {
+          display: none;
+        }
       }
 
       p {
         font-size: 55px;
         font-weight: 900;
         color: ${({ theme }) => theme.colors.darkblue};
+        @media screen and (max-width: 640px) {
+          width: max-content;
+          font-size: 30px;
+        }
       }
       .nothing {
         font-size: 25px;
         font-weight: 700;
         color: ${({ theme }) => theme.colors.gray};
+        @media screen and (max-width: 640px) {
+         font-size: 20px;
+        }
       }
     }
   }
@@ -133,14 +147,19 @@ const Form = styled.div`
   width: 45rem;
   background-color: white;
   border-radius: 2rem;
+  @media screen and (max-width: 640px) {
+    width: 95vw;
+  }
   form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    margin: 0 auto;
     padding: 4rem;
+    @media screen and (max-width: 640px) {
+      padding: 2rem;
+    }
     .formInputs {
       width: 100%;
       position: relative;
@@ -160,6 +179,9 @@ const Form = styled.div`
         padding: 1.3rem 2rem;
         font-size: 18px;
         width: 100%;
+        @media screen and (max-width: 640px) {
+          padding: 1.3rem;
+        }
         &:focus {
           outline: none;
           background-color: transparent;
@@ -176,17 +198,26 @@ const Form = styled.div`
       margin-top: 1rem;
 
       width: 100%;
+      @media screen and (max-width: 640px) {
+        flex-direction: column-reverse;
+        gap: 5rem;
+      }
       button {
         display: flex;
         justify-content: center;
-        gap: 1rem;
+        gap: 2rem;
         align-items: center;
-        padding: 1rem;
+        padding: 0.8rem 2rem;
         border-radius: 1.3rem;
-        font-size: 20px;
+        font-size: 18px;
         color: ${({ theme }) => theme.colors.lightblue1};
         background-color: ${({ theme }) => theme.colors.black};
         cursor: pointer;
+        @media screen and (max-width: 640px) {
+          align-self: flex-start;
+          padding: 0.7rem 2rem;
+          font-size: 17px;
+        }
         .icon {
           font-size: 30px;
         }
@@ -194,6 +225,9 @@ const Form = styled.div`
       p {
         font-size: 16px;
         color: ${({ theme }) => theme.colors.black};
+        @media screen and (max-width: 640px) {
+          align-self: flex-end;
+        }
       }
     }
   }
@@ -201,7 +235,12 @@ const Form = styled.div`
 
 const Redirect = styled.div`
   margin-top: 1.5rem;
-  margin-left: 70rem;
+  margin-right: 15rem;
+  text-align: right;
+  @media screen and (max-width: 640px) {
+    text-align: center;
+    margin-right: 0;
+  }
   p {
     color: ${({ theme }) => theme.colors.darkblue};
     font-size: 18px;
