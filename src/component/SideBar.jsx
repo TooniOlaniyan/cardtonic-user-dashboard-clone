@@ -25,32 +25,32 @@ function SideBar() {
             <p>0. <span>00</span>  </p>
         </div>
 
-        <div>
-            <div>
-                <img src={dashboard} alt="" />
+        <Links>
+            <div className='LinksContainer'>
+                <img style={{fill:'red'}} src={dashboard} alt="" />
                 <p>Dashboard</p>
             </div>
-            <div>
+            <div className='LinksContainer'>
                 <img src={start} alt="" />
                 <p>Start Trade</p>
             </div>
-            <div>
+            <div className='LinksContainer'>
                 <img src={transaction} alt="" />
                 <p>Transactions</p>
             </div>
-            <div>
+            <div className='LinksContainer'>
                 <img src={wallet} alt="" />
                 <p>Wallet</p>
             </div>
-            <div>
+            <div className='LinksContainer'>
                 <img src={calculator} alt="" />
                 <p>Calculator</p>
             </div>
-            <div>
+            <div className='LinksContainer'>
                 <img src={settings} alt="" />
                 <p>Settings</p>
             </div>
-        </div>
+        </Links>
 
     </Main>
   )
@@ -58,11 +58,23 @@ function SideBar() {
 
 const Main = styled.div`
 background-color: ${({theme}) => theme.colors.white};
-min-height: 100vh;
-/* width: 18rem; */
+height: 100vh;
+gap: 2rem;
+padding: 2.5rem 0;
 display: flex;
 flex-direction: column;
-flex: 1;
+align-items: center;
+flex: 1.15;
+    
+`
+const Links = styled.div`
+.LinksContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+}
     
 `
 

@@ -5,20 +5,23 @@ import NavBar from '../component/NavBar'
 
 function DashboardHome() {
   return (
-    <div>
+    <Main>
       <SideBar/>
       <MainContainer>
         <NavBar/>
         Content
 
       </MainContainer>
-    </div>
+    </Main>
   )
 }
 
 const MainContainer = styled.div`
   display: flex;
-  flex: 3;
+flex: 4.5;
+`
+const Main = styled.div`
+  display: flex;
 `
 
 export default DashboardHome
