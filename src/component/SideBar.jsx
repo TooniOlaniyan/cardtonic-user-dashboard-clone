@@ -59,7 +59,10 @@ function SideBar() {
 const Main = styled.div`
 background-color: ${({theme}) => theme.colors.white};
 min-height: 100vh;
-width: 18rem;
+/* width: 18rem; */
+display: flex;
+flex-direction: column;
+flex: 1;
     
 `
 
