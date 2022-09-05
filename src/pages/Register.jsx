@@ -41,7 +41,7 @@ function Register() {
             <p className='nothing'>Nothing has to be stressful</p>
           </div>
           <Form>
-            <form onSubmit={handleSubmit}>
+            <form  onSubmit={handleSubmit}>
               <div className='formInputs'>
                 <input
                   onChange={handleChange}

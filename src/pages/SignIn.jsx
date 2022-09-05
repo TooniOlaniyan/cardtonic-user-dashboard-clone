@@ -1,6 +1,6 @@
 import React , {useState} from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 import RegisterNav from '../component/RegisterNav'
 import { BsArrowRightShort } from 'react-icons/bs'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
@@ -8,6 +8,7 @@ import appstore from '../asset/images/appstore.svg'
 import googleplay from '../asset/images/googleplay.svg'
 
 function SignIn() {
+  const navigate = useNavigate()
   const [isRevealed, setIsRevealed] = useState(false)
     const [formData, setFormData] = useState({
       email: '',
@@ -22,6 +23,7 @@ function SignIn() {
       }
        const handleSubmit = (e) => {
          e.prevetDefault()
+         navigate('/dashboard')
        }
   return (
     <div>
@@ -71,7 +73,7 @@ function SignIn() {
                 />
               </div>
               <div className='submit'>
-                <button>
+                <button >
                   Get me in <BsArrowRightShort className='icon' />
                 </button>
 
