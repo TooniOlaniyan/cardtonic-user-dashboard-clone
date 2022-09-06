@@ -19,6 +19,8 @@ function DashboardHome() {
 const MainContainer = styled.div`
   display: flex;
 flex: 4.5;
+flex-direction: column;
+gap: 1rem;
 `
 const Main = styled.div`
   display: flex;
