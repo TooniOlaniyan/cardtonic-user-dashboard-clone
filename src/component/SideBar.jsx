@@ -1,4 +1,4 @@
-import React from 'react'
+import React  , {useState}from 'react'
 import styled from 'styled-components'
 import desktopLogo from '../asset/images/desktopLogo.svg'
 import reward from '../asset/images/reward.svg'
@@ -9,6 +9,7 @@ import transaction from '../asset/images/transaction.svg'
 import wallet from '../asset/images/wallet.svg'
 import calculator from '../asset/images/calculator.svg'
 import settings from '../asset/images/settings.svg'
+import {NavLink} from 'react-router-dom'
 
 function SideBar() {
   return (
@@ -33,35 +34,44 @@ function SideBar() {
       </Middle>
 
       <Links>
-      <div className='links'>
-        <img style={{fill: '#888'}} src={dashboard} alt="" />
-        <p>Dashboard</p>
-      </div>
-      <div className='links'>
-        <img src={start} alt="" />
-        <p>Start Trade</p>
-      </div>
-      <div className='links'>
-        <img src={transaction} alt="" />
-        <p>Transactions</p>
-      </div>
-      <div className='links'>
-        <img src={wallet} alt="" />
-        <p>Wallet</p>
-      </div>
-      <div className='links'>
-        <img src={calculator} alt="" />
-        <p>Calculator</p>
-      </div>
-      <div className='links'>
-        <img src={settings} alt="" />
-        <p>Settings</p>
-      </div>
-      
-
-      
-      
-      
+        <NavLink to='/dashboard'>
+          <div className={'links'}>
+            <div className='imageContainer'>
+              <img  src={dashboard} alt='' />
+            </div>
+            <p>Dashboard</p>
+          </div>
+        </NavLink>
+        <NavLink to='/start-trade'>
+          <div className='links'>
+            <img src={start} alt='' />
+            <p>Start Trade</p>
+          </div>
+        </NavLink>
+        <NavLink to='/transactions'>
+          <div className='links'>
+            <img src={transaction} alt='' />
+            <p>Transactions</p>
+          </div>
+        </NavLink>
+        <NavLink to='/wallet'>
+          <div className='links'>
+            <img src={wallet} alt='' />
+            <p>Wallet</p>
+          </div>
+        </NavLink>
+        <NavLink to='/calculator'>
+          <div className='links'>
+            <img src={calculator} alt='' />
+            <p>Calculator</p>
+          </div>
+        </NavLink>
+        <NavLink to='/settings'>
+          <div className='links'>
+            <img src={settings} alt='' />
+            <p>Settings</p>
+          </div>
+        </NavLink>
       </Links>
     </Main>
   )
@@ -70,31 +80,34 @@ function SideBar() {
 const Main = styled.div`
 background-color: ${({theme}) => theme.colors.white};
 height: 100vh;
-gap: 3rem;
+gap: 2.7rem;
 padding: 3rem 0;
 display: flex;
 flex-direction: column;
 align-items: center;
-flex: 1.15;
+flex: 1.13;
     
 `
 const Links = styled.div`
-.links{
+  .links {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
     cursor: pointer;
-    img{
-        margin-bottom: 2.8rem;
+    img {
+      margin-bottom: 2.8rem;
     }
-    p{
-        margin-bottom: 2.8rem;
-        font-size: 19px;
-        color: ${({theme}) => theme.colors.gray};
-        font-weight: 700;
+    p {
+      margin-bottom: 2.8rem;
+      font-size: 18px;
+      color: ${({ theme }) => theme.colors.gray};
+      font-weight: 700;
     }
-}
-  
+  }
+
+  a {
+    text-decoration: none;
+  }
 `
 
 const Middle = styled.div`
