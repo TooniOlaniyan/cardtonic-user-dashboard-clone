@@ -27,7 +27,7 @@ function SideBar() {
 
         <Links>
             <div className='LinksContainer'>
-                <img style={{fill:'red'}} src={dashboard} alt="" />
+                <img className='image' src={dashboard} alt="" />
                 <p>Dashboard</p>
             </div>
             <div className='LinksContainer'>
@@ -68,14 +68,25 @@ flex: 1.15;
     
 `
 const Links = styled.div`
-.LinksContainer{
+  width: 100%;
+  .LinksContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 4rem;
-    margin-bottom: 2rem;
-}
     
+  }
+  p {
+    font-size: 20px;
+    
+    color: ${({ theme }) => theme.colors.gray};
+    text-align: left;
+    width: fit-content;
+  }
+
+  img {
+   
+
+  }
 `
 
 export default SideBar
