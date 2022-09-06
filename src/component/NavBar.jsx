@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import logOut from '../asset/images/logOut.svg'
+import Yes from '../asset/images/Yes.svg'
+import No from '../asset/images/No.svg'
 import notification from '../asset/images/notification.svg'
 import {useNavigate, UseNavigate} from 'react-router-dom'
  
@@ -26,12 +28,20 @@ function NavBar() {
       </div>
       {isOpen && (
         <div className='logOutModal'>
-          <div>
-            <p>Are you sure you want to log out?</p>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <img src="" alt="" />
+          <div className='modalContainer'>
+            <div className='question'>
+              <p>Are you sure you want to log out?</p>
+            </div>
+            <div className='logoutOptionContainer'>
+              <div onClick={() => navigate('/')} className='yes'>
+                <p>Yes</p>
+                <img src={Yes} alt='' />
+              </div>
+              <div onClick={() => setIsOpen(false)} className='no'>
+                <p>No</p>
+                <img src={No} alt='' />
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -55,7 +65,55 @@ const Navigation = styled.div`
     backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    .modalContainer {
+      background-color: ${({ theme }) => theme.colors.white};
+      width: 45rem;
+      height: 18rem;
+      margin-top: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 1.6rem;
+      gap: 1.5rem;
+      .question {
+        p {
+          font-size: 21px;
+          color: ${({ theme }) => theme.colors.textcolor};
+          font-weight: 900;
+        }
+      }
+    }
+    .logoutOptionContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      .yes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        border-radius: 0.8rem;
+        padding: 0.4rem 0.6rem;
+        font-size: 12px;
+        cursor: pointer;
+        color: ${({ theme }) => theme.colors.lightblue1};
+        background-color: ${({ theme }) => theme.colors.black};
+      }
+      .no {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        border-radius: 0.8rem;
+        padding: 0.4rem 0.6rem;
+        cursor: pointer;
+        color: ${({ theme }) => theme.colors.textcolor};
+        background-color: ${({ theme }) => theme.colors.gray};
+        font-size: 12px;
+      }
+    }
   }
   .greetings {
     align-self: flex-end;
