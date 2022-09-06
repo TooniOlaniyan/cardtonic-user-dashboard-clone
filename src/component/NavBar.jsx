@@ -2,8 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import logOut from '../asset/images/logOut.svg'
 import notification from '../asset/images/notification.svg'
+import {useNavigate, UseNavigate} from 'react-router-dom'
  
 function NavBar() {
+  const navigate = useNavigate()
+  const handleClick = () => {
+    navigate('/')
+
+  }
   return (
     <Navigation>
       <div className='greetings'>
@@ -13,7 +19,7 @@ function NavBar() {
       </div>
       <div>
         <div className='logOut'>
-          <img src={logOut} alt='' />
+          <img onClick={handleClick} src={logOut} alt='' />
           <img src={notification} alt='' />
         </div>
       </div>
@@ -45,6 +51,7 @@ const Navigation = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
   }
 `
 

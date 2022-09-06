@@ -195,6 +195,7 @@ const Links = styled.div`
   a.active {
     p {
       color: ${({ theme }) => theme.colors.textcolor};
+      
     }
 
     .imageContainer {
@@ -208,14 +209,14 @@ const Links = styled.div`
         height: 80%;
         border-radius: 50%;
         background-color: ${({ theme }) => theme.colors.lightblue1};
-        
+
         display: flex;
         justify-content: center;
         align-items: center;
         box-shadow: 0 17px 20px 0 rgb(27 50 60 / 16%);
-       svg{
-        color: #fff;
-       }
+        svg {
+          color: #fff;
+        }
       }
     }
   }
@@ -232,8 +233,8 @@ const Links = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      svg{
-        color: ${({theme}) => theme.colors.gray};
+      svg {
+        color: ${({ theme }) => theme.colors.gray};
       }
     }
     p {
