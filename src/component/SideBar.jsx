@@ -37,38 +37,60 @@ function SideBar() {
         <NavLink to='/dashboard'>
           <div className={'links'}>
             <div className='imageContainer'>
-              <img  src={dashboard} alt='' />
+              <div className='image'>
+                <img  src={dashboard} alt='' />
+              </div>
             </div>
             <p>Dashboard</p>
           </div>
         </NavLink>
         <NavLink to='/start-trade'>
           <div className='links'>
-            <img src={start} alt='' />
+            <div className='imageContainer'>
+              <div className='image'>
+                <img src={start} alt='' />
+              </div>
+            </div>
             <p>Start Trade</p>
           </div>
         </NavLink>
         <NavLink to='/transactions'>
           <div className='links'>
-            <img src={transaction} alt='' />
+            <div className='imageContainer'>
+              <div className='image'>
+                <img src={transaction} alt='' />
+              </div>
+            </div>
             <p>Transactions</p>
           </div>
         </NavLink>
         <NavLink to='/wallet'>
           <div className='links'>
-            <img src={wallet} alt='' />
+            <div className='imageContainer'>
+              <div className='image'>
+                <img src={wallet} alt='' />
+              </div>
+            </div>
             <p>Wallet</p>
           </div>
         </NavLink>
         <NavLink to='/calculator'>
           <div className='links'>
-            <img src={calculator} alt='' />
+            <div className='imageContainer'>
+              <div className='image'>
+                <img src={calculator} alt='' />
+              </div>
+            </div>
             <p>Calculator</p>
           </div>
         </NavLink>
         <NavLink to='/settings'>
           <div className='links'>
-            <img src={settings} alt='' />
+            <div className='imageContainer'>
+              <div className='image'>
+                <img src={settings} alt='' />
+              </div>
+            </div>
             <p>Settings</p>
           </div>
         </NavLink>
@@ -89,24 +111,66 @@ flex: 1.13;
     
 `
 const Links = styled.div`
+  width: 100%;
+
+  a.active {
+    p {
+      color: ${({ theme }) => theme.colors.textcolor};
+    }
+
+    .imageContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 4rem;
+
+      .image {
+        width: 35%;
+        height: 80%;
+        border-radius: 50%;
+        background-color: ${({ theme }) => theme.colors.lightblue1};
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 17px 20px 0 rgb(27 50 60 / 16%);
+       img{
+        color: white;
+        fill: none;
+       }
+      }
+    }
+  }
   .links {
     display: flex;
     align-items: center;
-    gap: 4rem;
     cursor: pointer;
-    img {
-      margin-bottom: 2.8rem;
+    height: 4rem;
+    width: 100%;
+
+    .imageContainer {
+      flex: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        fill: '#cecece !important';
+      }
     }
     p {
-      margin-bottom: 2.8rem;
       font-size: 18px;
       color: ${({ theme }) => theme.colors.gray};
       font-weight: 700;
+      text-align: start;
+      flex: 1;
+      width: max-content;
     }
   }
 
   a {
     text-decoration: none;
+    transition: all 1s;
   }
 `
 
