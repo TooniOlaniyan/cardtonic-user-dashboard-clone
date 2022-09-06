@@ -32,7 +32,37 @@ function SideBar() {
         </RewardText>
       </Middle>
 
-      <Links></Links>
+      <Links>
+      <div className='links'>
+        <img style={{fill: '#888'}} src={dashboard} alt="" />
+        <p>Dashboard</p>
+      </div>
+      <div className='links'>
+        <img src={start} alt="" />
+        <p>Start Trade</p>
+      </div>
+      <div className='links'>
+        <img src={transaction} alt="" />
+        <p>Transactions</p>
+      </div>
+      <div className='links'>
+        <img src={wallet} alt="" />
+        <p>Wallet</p>
+      </div>
+      <div className='links'>
+        <img src={calculator} alt="" />
+        <p>Calculator</p>
+      </div>
+      <div className='links'>
+        <img src={settings} alt="" />
+        <p>Settings</p>
+      </div>
+      
+
+      
+      
+      
+      </Links>
     </Main>
   )
 }
@@ -49,7 +79,21 @@ flex: 1.15;
     
 `
 const Links = styled.div`
-  width: 100%;
+.links{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    cursor: pointer;
+    img{
+        margin-bottom: 2.8rem;
+    }
+    p{
+        margin-bottom: 2.8rem;
+        font-size: 19px;
+        color: ${({theme}) => theme.colors.gray};
+        font-weight: 700;
+    }
+}
   
 `
 
