@@ -4,7 +4,7 @@ import logOut from '../asset/images/logOut.svg'
 import Yes from '../asset/images/Yes.svg'
 import No from '../asset/images/No.svg'
 import notification from '../asset/images/notification.svg'
-import {useNavigate, UseNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
  
 function NavBar() {
   const [isOpen , setIsOpen] = useState(false)
@@ -17,7 +17,7 @@ function NavBar() {
     <Navigation>
       <div className='greetings'>
         <p>
-          Good Afternoon, <span>The_ot</span>{' '}
+          Good Afternoon, <span>The_ot</span>
         </p>
       </div>
       <div>

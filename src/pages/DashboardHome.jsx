@@ -9,7 +9,9 @@ function DashboardHome() {
       <SideBar/>
       <MainContainer>
         <NavBar/>
-        Content
+        <div>
+          content
+        </div>
 
       </MainContainer>
     </Main>
