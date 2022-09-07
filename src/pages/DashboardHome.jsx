@@ -15,9 +15,9 @@ function DashboardHome() {
         <Content>
           <div className='top'>
             <div className='cardOne'>
-              <div className='desposit'>
+              <div className='deposit'>
                 <img src={eye} alt='' />
-                <p>*******</p>
+                <p className='money'>**********</p>
                 <p>Your Wallet Funds</p>
               </div>
               <div>
@@ -64,40 +64,53 @@ const Content = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 
     .cardOne {
       display: flex;
       background-color: ${({ theme }) => theme.colors.white};
       justify-content: center;
       align-items: center;
-      gap: 3rem;
-      padding: 1.5rem 1rem;
+      gap: 6rem;
+      padding: 1.3rem 0rem;
       border-radius: 1.5rem;
-      flex: 1;
+      flex: 1.8;
       .deposit {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        .money{
+          font-size: 30px;
+          font-weight: 900;
+          color: ${({ theme }) => theme.colors.textcolor};
+    };
+        }
+        
       }
     }
     .cardTwo {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
-      padding: 1.5rem 2rem;
+      gap: 6rem;
+      padding: 1.3rem 0rem;
       border-radius: 1.5rem;
-      flex: 1;
+      flex: 1.56;
 
-      background-color: ${({ theme }) => theme.colors.white};
+      background-color: ${({ theme }) => theme.colors.darkblue};
+      p{
+        color: ${({ theme }) => theme.colors.white};
+        font-weight: 700;
+        font-size: 21px;
+      }
     }
     .dashboard {
+      display: flex;
+      align-items: flex-end;
       flex: 1;
-      background-color: red;
-      padding: 1.5rem 2rem;
-      border-radius: 1.5rem;
+      flex-direction: row-reverse;
+      padding: 1.3rem 0rem;
+
+      font-size: 30px;
+      font-weight: 900;
+      color: ${({ theme }) => theme.colors.darkblue};
     }
   }
 `
