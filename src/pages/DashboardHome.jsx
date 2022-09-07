@@ -10,6 +10,36 @@ function DashboardHome() {
       <MainContainer>
         <NavBar/>
         <Content>
+          <div className='cardOne'>
+            <div>
+              <img src="" alt="" />
+              <p>*******</p>
+              <p>Your Wallet Funds</p>
+            </div>
+            <div>
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div className='cardTwo'>
+            <div>
+              <p>Start Trade</p>
+            </div>
+            <div>
+              <img src="" alt="" />
+            </div>
+
+          </div>
+          <div>
+            <p>
+              Dashboard
+            </p>
+          </div>
+          <div className='top'>
+
+          </div>
+          <div className='bottomTabel'>
+
+          </div>
           
         </Content>
 
