@@ -10,6 +10,10 @@ const Globalstyles = createGlobalStyle`
 body{
     font-family: 'Lato', sans-serif;
     background-color: #F9F9F9;
+    
+}
+html{
+    height: 100vh;
 }
 
 `

@@ -9,9 +9,9 @@ function DashboardHome() {
       <SideBar/>
       <MainContainer>
         <NavBar/>
-        <div>
-          content
-        </div>
+        <Content>
+          
+        </Content>
 
       </MainContainer>
     </Main>
@@ -26,6 +26,12 @@ gap: 1rem;
 `
 const Main = styled.div`
   display: flex;
+`
+const Content = styled.div`
+  
+  padding: 1rem;
+  height: 83vh;
+  overflow-y: scroll;
 `
 
 export default DashboardHome
