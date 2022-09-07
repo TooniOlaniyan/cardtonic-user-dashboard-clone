@@ -57,14 +57,14 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 0.5rem 7rem;
+  padding: 0.1rem 6rem;
   height: 83vh;
   overflow-y: scroll;
   .top {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 0.5rem;
+    gap: 0.7rem;
 
     .cardOne {
       display: flex;
@@ -74,7 +74,7 @@ const Content = styled.div`
       gap: 6rem;
       padding: 1.3rem 0rem;
       border-radius: 1.5rem;
-      flex: 1.8;
+      flex: 1.6;
       .deposit {
         .money{
           font-size: 30px;
@@ -92,7 +92,7 @@ const Content = styled.div`
       gap: 6rem;
       padding: 1.3rem 0rem;
       border-radius: 1.5rem;
-      flex: 1.56;
+      flex: 1.4;
 
       background-color: ${({ theme }) => theme.colors.darkblue};
       p{
