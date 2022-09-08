@@ -11,6 +11,7 @@ import { GrFormClose } from 'react-icons/gr'
 
 function SideBar() {
   const [openReward , setOpenReward] = useState(false)
+  const [openStar , setOpenStar] = useState(false)
   const handleClick = () => {
     setOpenReward(true)
 
@@ -27,7 +28,7 @@ function SideBar() {
             <div className='RewardContainer'>
               <div className='rewardContent'>
                 <Button onClick={() => setOpenReward(false)}>
-                  <GrFormClose/>
+                  <GrFormClose />
                 </Button>
                 <p className='loyalText'>
                   Our customer loyalty system gives you points as you carry out
@@ -87,7 +88,7 @@ function SideBar() {
                 <div className='redeem'>
                   <div className='redeemPoint'>
                     <p>
-                      Redeem Available Points <FaArrowRight />{' '}
+                      Redeem Available Points <FaArrowRight />
                     </p>
                   </div>
                   <div className='pointFraction'>
@@ -98,9 +99,46 @@ function SideBar() {
               </div>
             </div>
           )}
+          {openStar && (
+            <div className='RewardContainer'>
+              <div className='rewardContent'>
+                <Button onClick={() => setOpenStar(false)}>
+                  <GrFormClose />
+                </Button>
+                <p style={{ color: '#cecece' }}>You are a</p>
+                <p
+                  style={{
+                    color: '#1b507e',
+                    fontSize: '22px',
+                    fontWeight: '700',
+                  }}
+                >
+                  Level 0 User
+                </p>
+                <p style={{ color: '#cecece' }}>
+                  Trade up to 200k to become a{' '}
+                </p>
+                <p
+                  style={{
+                    color: '#00cede',
+                    fontSize: '38px',
+                    fontWeight: '700',
+                  }}
+                >
+                  Level 1 User{' '}
+                </p>
+                <p style={{ color: '#cecece' }}>and start earning rewards </p>
+                <div className='redeemPoint'>
+                  <p>
+                    Learn More <FaArrowRight />
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
           <div className='images'>
             <img onClick={handleClick} src={reward} alt='' />
-            <img src={star} alt='' />
+            <img onClick={() => setOpenStar(true)} src={star} alt='' />
           </div>
         </Reward>
         <RewardText>
@@ -366,7 +404,7 @@ const RewardText = styled.div`
 const Button = styled.div`
   position: absolute;
   top: 1rem;
-  right: 3rem;
+  right: 1rem;
   border: 3px solid ${({ theme }) => theme.colors.textcolor};
   padding: 0.25rem;
   border-radius: 0.8rem;
@@ -409,6 +447,7 @@ const Reward = styled.div`
       padding: 5rem 3rem;
       gap: 1rem;
       position: relative;
+      margin-top: -4rem;
       .loyalText {
         font-size: 13.5px;
         font-weight: 500;
@@ -446,6 +485,7 @@ const Reward = styled.div`
           }
         }
         .redeemPoint {
+          cursor: pointer;
           p {
             background-color: ${({ theme }) => theme.colors.green};
             display: flex;
