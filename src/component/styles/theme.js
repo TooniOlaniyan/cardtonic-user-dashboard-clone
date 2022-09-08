@@ -10,8 +10,9 @@ export const theme = {
     darkblue: '#002444',
     red: '#ff2e2e',
     inputColor: '#37658E',
-    green: '#00d987',
-    lightgray: '#eaedf2'
+    green: ' #00D9A7',
+
+    lightgray: '#eaedf2',
   },
 }
 

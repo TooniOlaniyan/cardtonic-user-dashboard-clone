@@ -7,6 +7,7 @@ import {NavLink} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import { BiStar } from 'react-icons/bi'
 import { FaArrowRight } from 'react-icons/fa'
+import { GrFormClose } from 'react-icons/gr'
 
 function SideBar() {
   const [openReward , setOpenReward] = useState(false)
@@ -25,16 +26,25 @@ function SideBar() {
           {openReward && (
             <div className='RewardContainer'>
               <div className='rewardContent'>
-                <p>
+                <Button onClick={() => setOpenReward(false)}>
+                  <GrFormClose/>
+                </Button>
+                <p className='loyalText'>
                   Our customer loyalty system gives you points as you carry out
                   transaction. You can redeem your points for cash
                 </p>
                 <div className='line'></div>
                 <div className='pointContainer'>
                   <div className='points'>
-                    <span>Points Earned: 0</span>
-                    <span>Points Redeemed: 0</span>
-                    <span>Points Available: 0</span>
+                    <span>
+                      Points Earned: <span className='blue'>0</span>{' '}
+                    </span>
+                    <span>
+                      Points Redeemed: <span className='green'>0</span>{' '}
+                    </span>
+                    <span>
+                      Points Available: <span className='blue1'>0</span>{' '}
+                    </span>
                   </div>
                   <div className='pointQuestion'>
                     <p>How many points do you want to redeem?</p>
@@ -46,11 +56,31 @@ function SideBar() {
                       <span>0</span> <p>User Level</p>
                     </div>
                     <div className='star'>
-                      <BiStar size={23} fill={'#aabdcf8f'}  className='starIcon'/>
-                      <BiStar size={23} fill={'#aabdcf8f'} className='starIcon' />
-                      <BiStar size={23} fill={'#aabdcf8f'} className='starIcon' />
-                      <BiStar size={23} fill={'#aabdcf8f'} className='starIcon' />
-                      <BiStar size={23} fill={'#aabdcf8f'} className='starIcon' />
+                      <BiStar
+                        size={23}
+                        fill={'#aabdcf8f'}
+                        className='starIcon'
+                      />
+                      <BiStar
+                        size={23}
+                        fill={'#aabdcf8f'}
+                        className='starIcon'
+                      />
+                      <BiStar
+                        size={23}
+                        fill={'#aabdcf8f'}
+                        className='starIcon'
+                      />
+                      <BiStar
+                        size={23}
+                        fill={'#aabdcf8f'}
+                        className='starIcon'
+                      />
+                      <BiStar
+                        size={23}
+                        fill={'#aabdcf8f'}
+                        className='starIcon'
+                      />
                     </div>
                   </div>
                 </div>
@@ -333,6 +363,18 @@ const RewardText = styled.div`
     font-weight: 900;
   }
 `
+const Button = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+  border: 3px solid ${({ theme }) => theme.colors.textcolor};
+  padding: 0.25rem;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`
 
 const Reward = styled.div`
   display: flex;
@@ -356,6 +398,7 @@ const Reward = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
     .rewardContent {
       display: flex;
       justify-content: center;
@@ -363,23 +406,28 @@ const Reward = styled.div`
       flex-direction: column;
       background-color: ${({ theme }) => theme.colors.white};
       border-radius: 1.6rem;
-      padding: 2rem;
-      gap: 3rem;
-      p {
+      padding: 5rem 3rem;
+      gap: 1rem;
+      position: relative;
+      .loyalText {
+        font-size: 13.5px;
+        font-weight: 500;
         color: ${({ theme }) => theme.colors.textcolor};
+        margin-bottom: 0.3rem;
       }
       .redeem {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 100%;
+        margin-top: 1rem;
         .pointFraction {
           display: flex;
           justify-content: center;
           align-items: center;
           gap: 0.5rem;
           background-color: ${({ theme }) => theme.colors.lightgray};
-          padding: 1.3rem 4rem;
+          padding: 1rem 3rem;
           border-radius: 1rem;
           p {
             font-size: 13px;
@@ -404,23 +452,24 @@ const Reward = styled.div`
             justify-content: center;
             align-items: center;
             gap: 2rem;
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 1rem;
             border-radius: 1rem;
+            color: ${({ theme }) => theme.colors.textcolor};
           }
         }
       }
       .line {
-        width: 80%;
+        width: 98%;
         height: 0.1rem;
         background-color: ${({ theme }) => theme.colors.lightblue1};
         opacity: 0.3;
       }
       .pointContainer {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        background-color: green;
         width: 100%;
+        padding: 0 0.5rem;
 
         .points {
           display: flex;
@@ -428,46 +477,66 @@ const Reward = styled.div`
           align-items: flex-start;
           gap: 0.2rem;
           flex-direction: column;
-          background-color: purple;
-          flex: 1;
+          span {
+            color: ${({ theme }) => theme.colors.darkblue};
+          }
+          .blue {
+            color: ${({ theme }) => theme.colors.textcolor};
+            font-weight: 700;
+          }
+          .green {
+            color: ${({ theme }) => theme.colors.green};
+            font-weight: 700;
+          }
+          .blue1 {
+            color: ${({ theme }) => theme.colors.lightblue1};
+            font-weight: 700;
+          }
         }
         .pointQuestion {
           display: flex;
-          padding: 2rem;
+          padding: 1.3rem 6rem;
           justify-content: center;
-          background-color: red;
-          flex: 4;
+          border: 1px solid ${({ theme }) => theme.colors.green};
+          border-radius: 20px;
+          p {
+            color: ${({ theme }) => theme.colors.textcolor};
+            font-weight: 700;
+            font-size: 14px;
+          }
         }
       }
       .starContainer {
         display: flex;
         /* width: 100%; */
-        background-color:#aabdcf80 ;
-        padding: 0.5rem;
+        background-color: #eef6fe;
+        padding: 0.4rem 0.5rem;
         border-radius: 2rem;
         justify-content: space-between;
         align-items: center;
         align-self: flex-end;
-        
+        margin-top: -0.6rem;
+
         .userStar {
           display: flex;
           justify-content: center;
           align-items: center;
           justify-self: flex-end;
           gap: 2rem;
-          .levelContainer{
+          .levelContainer {
             justify-content: center;
             align-items: center;
             display: flex;
             gap: 0.8rem;
-            p{
+            p {
               font-weight: 700;
+              font-size: 15px;
             }
           }
-          span{
-            background-color: #aabdcf;
-            width: 3.5rem;
-            height: 3.5rem;
+          span {
+            background-color: #e1f2ff;
+            width: 3rem;
+            height: 3rem;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -479,8 +548,6 @@ const Reward = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
-            
-           
           }
         }
       }
