@@ -5,7 +5,7 @@ import reward from '../asset/images/reward.svg'
 import star from '../asset/images/star.svg'
 import {NavLink} from 'react-router-dom'
 import {motion} from 'framer-motion'
-import { AiTwotoneStar } from 'react-icons/ai'
+import { BiStar } from 'react-icons/bi'
 import { FaArrowRight } from 'react-icons/fa'
 
 function SideBar() {
@@ -42,19 +42,23 @@ function SideBar() {
                 </div>
                 <div className='starContainer'>
                   <div className='userStar'>
-                    <span>0</span> <p>User Level</p>
+                    <div className='levelContainer'>
+                      <span>0</span> <p>User Level</p>
+                    </div>
                     <div className='star'>
-                      <img src={AiTwotoneStar} alt='' />
-                      <img src={AiTwotoneStar} alt='' />
-                      <img src={AiTwotoneStar} alt='' />
-                      <img src={AiTwotoneStar} alt='' />
-                      <img src={AiTwotoneStar} alt='' />
+                      <BiStar size={23} fill={'#aabdcf8f'}  className='starIcon'/>
+                      <BiStar size={23} fill={'#aabdcf8f'} className='starIcon' />
+                      <BiStar size={23} fill={'#aabdcf8f'} className='starIcon' />
+                      <BiStar size={23} fill={'#aabdcf8f'} className='starIcon' />
+                      <BiStar size={23} fill={'#aabdcf8f'} className='starIcon' />
                     </div>
                   </div>
                 </div>
                 <div className='redeem'>
                   <div className='redeemPoint'>
-                    <p>Redeem Available Points <FaArrowRight/> </p>
+                    <p>
+                      Redeem Available Points <FaArrowRight />{' '}
+                    </p>
                   </div>
                   <div className='pointFraction'>
                     <span>i</span>
@@ -437,17 +441,46 @@ const Reward = styled.div`
       }
       .starContainer {
         display: flex;
-        width: 100%;
-        justify-content: center;
+        /* width: 100%; */
+        background-color:#aabdcf80 ;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        justify-content: space-between;
         align-items: center;
+        align-self: flex-end;
+        
         .userStar {
           display: flex;
           justify-content: center;
           align-items: center;
           justify-self: flex-end;
+          gap: 2rem;
+          .levelContainer{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            gap: 0.8rem;
+            p{
+              font-weight: 700;
+            }
+          }
+          span{
+            background-color: #aabdcf;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: 900;
+          }
           .star {
-            fill: gray;
-            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+           
           }
         }
       }
