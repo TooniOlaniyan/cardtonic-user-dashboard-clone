@@ -100,12 +100,12 @@ function SideBar() {
             </div>
           )}
           {openStar && (
-            <div className='RewardContainer'>
-              <div className='rewardContent'>
+            <div className='starModalContainer'>
+              <div className='starContent'>
                 <Button onClick={() => setOpenStar(false)}>
                   <GrFormClose />
                 </Button>
-                <p style={{ color: '#cecece' }}>You are a</p>
+                <p style={{ color: '#cecece', fontWeight: '700' , fontSize:'15px' }}>You are a</p>
                 <p
                   style={{
                     color: '#1b507e',
@@ -115,7 +115,7 @@ function SideBar() {
                 >
                   Level 0 User
                 </p>
-                <p style={{ color: '#cecece' }}>
+                <p style={{ color: '#cecece', fontWeight: '700' }}>
                   Trade up to 200k to become a{' '}
                 </p>
                 <p
@@ -127,11 +127,18 @@ function SideBar() {
                 >
                   Level 1 User{' '}
                 </p>
-                <p style={{ color: '#cecece' }}>and start earning rewards </p>
-                <div className='redeemPoint'>
-                  <p>
-                    Learn More <FaArrowRight />
-                  </p>
+                <p style={{ color: '#cecece', fontWeight: '700' }}>
+                  and start earning rewards{' '}
+                </p>
+                <div className='starLink'>
+                  <a
+                    target='_blank'
+                    href='https://help.cardtonic.com/en/collections/3409028-user-levels-reward-points'
+                  >
+                    <p>
+                      Learn More <FaArrowRight />
+                    </p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -425,6 +432,48 @@ const Reward = styled.div`
     align-items: center;
     gap: 0.3rem;
   }
+
+  .starModalContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .starContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: ${({ theme }) => theme.colors.white};
+      border-radius: 1.6rem;
+      padding: 5rem 3rem;
+      gap: 1rem;
+      position: relative;
+      margin-top: -10rem;
+      width: 50vw;
+      .starLink {
+        a{
+          text-decoration: none;
+        }
+        cursor: pointer;
+        p {
+          background-color: ${({ theme }) => theme.colors.black};
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+          padding: 1rem 3rem;
+          border-radius: 1rem;
+          color: ${({ theme }) => theme.colors.lightblue1};
+        }
+      }
+    }
+  }
   .RewardContainer {
     position: fixed;
     width: 100vw;
@@ -436,6 +485,7 @@ const Reward = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
     .rewardContent {
       display: flex;

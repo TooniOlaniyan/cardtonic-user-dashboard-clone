@@ -8,6 +8,7 @@ import {useNavigate} from 'react-router-dom'
  
 function NavBar() {
   const [isOpen , setIsOpen] = useState(false)
+  const [isNotification , setIsNotification] = useState(false)
   const navigate = useNavigate()
   const handleClick = () => {
     setIsOpen(true)
