@@ -408,7 +408,7 @@ const RewardText = styled.div`
     font-weight: 900;
   }
 `
-const Button = styled.div`
+ const Button = styled.div`
   position: absolute;
   top: 1rem;
   right: 1rem;

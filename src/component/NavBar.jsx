@@ -5,6 +5,8 @@ import Yes from '../asset/images/Yes.svg'
 import No from '../asset/images/No.svg'
 import notification from '../asset/images/notification.svg'
 import {useNavigate} from 'react-router-dom'
+import { GrFormClose } from 'react-icons/gr'
+
  
 function NavBar() {
   const [isOpen , setIsOpen] = useState(false)
@@ -24,7 +26,11 @@ function NavBar() {
       <div>
         <div className='logOut'>
           <img onClick={handleClick} src={logOut} alt='' />
-          <img src={notification} alt='' />
+          <img
+            onClick={() => setIsNotification(true)}
+            src={notification}
+            alt=''
+          />
         </div>
       </div>
       {isOpen && (
@@ -46,6 +52,16 @@ function NavBar() {
           </div>
         </div>
       )}
+      {isNotification && (
+        <div className='notificationModal'>
+          <div className='notificationContainer'>
+            <Button onClick={() => setIsNotification(false)}>
+              <GrFormClose />
+            </Button>
+            <p>😊 !!You have no new notifications </p>
+          </div>
+        </div>
+      )}
     </Navigation>
   )
 }
@@ -56,6 +72,32 @@ const Navigation = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .notificationModal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    .notificationContainer {
+      background-color: ${({ theme }) => theme.colors.white};
+      margin-top: 6rem;
+      height: fit-content;
+      padding: 3rem 3rem;
+      border-radius: 1.5rem;
+      width: 60vw;
+      position: relative;
+      p {
+        text-align: start;
+        font-size: 18px;
+        font-weight: 900;
+        color: ${({ theme }) => theme.colors.lightblue1};
+      }
+    }
+  }
   .logOutModal {
     height: 100vh;
     width: 100vw;
@@ -137,5 +179,17 @@ const Navigation = styled.div`
     cursor: pointer;
   }
 `
+ const Button = styled.div`
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   border: 3px solid ${({ theme }) => theme.colors.textcolor};
+   padding: 0.25rem;
+   border-radius: 0.8rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+ `
 
 export default NavBar
