@@ -4,8 +4,16 @@ import desktopLogo from '../asset/images/desktopLogo.svg'
 import reward from '../asset/images/reward.svg'
 import star from '../asset/images/star.svg'
 import {NavLink} from 'react-router-dom'
+import {motion} from 'framer-motion'
+import { AiTwotoneStar } from 'react-icons/ai'
+import { FaArrowRight } from 'react-icons/fa'
 
 function SideBar() {
+  const [openReward , setOpenReward] = useState(false)
+  const handleClick = () => {
+    setOpenReward(true)
+
+  }
   return (
     <Main>
       <div>
@@ -14,8 +22,50 @@ function SideBar() {
 
       <Middle>
         <Reward>
+          {openReward && (
+            <div className='RewardContainer'>
+              <div className='rewardContent'>
+                <p>
+                  Our customer loyalty system gives you points as you carry out
+                  transaction. You can redeem your points for cash
+                </p>
+                <div className='line'></div>
+                <div className='pointContainer'>
+                  <div className='points'>
+                    <span>Points Earned: 0</span>
+                    <span>Points Redeemed: 0</span>
+                    <span>Points Available: 0</span>
+                  </div>
+                  <div className='pointQuestion'>
+                    <p>How many points do you want to redeem?</p>
+                  </div>
+                </div>
+                <div className='starContainer'>
+                  <div className='userStar'>
+                    <span>0</span> <p>User Level</p>
+                    <div className='star'>
+                      <img src={AiTwotoneStar} alt='' />
+                      <img src={AiTwotoneStar} alt='' />
+                      <img src={AiTwotoneStar} alt='' />
+                      <img src={AiTwotoneStar} alt='' />
+                      <img src={AiTwotoneStar} alt='' />
+                    </div>
+                  </div>
+                </div>
+                <div className='redeem'>
+                  <div className='redeemPoint'>
+                    <p>Redeem Available Points <FaArrowRight/> </p>
+                  </div>
+                  <div className='pointFraction'>
+                    <span>i</span>
+                    <p>You can redeem a fraction of your points or all</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
           <div className='images'>
-            <img src={reward} alt='' />
+            <img onClick={handleClick} src={reward} alt='' />
             <img src={star} alt='' />
           </div>
         </Reward>
@@ -31,7 +81,7 @@ function SideBar() {
         <NavLink to='/dashboard'>
           <div className={'links'}>
             <div className='imageContainer'>
-              <div className='image'>
+              <motion.div transition={{ duration: 1 }} className='image'>
                 <svg
                   // xmlnsXlink='http://www.w3.org/1999/xlink'
                   width='26'
@@ -47,7 +97,7 @@ function SideBar() {
                     fill='currentcolor'
                   ></path>
                 </svg>
-              </div>
+              </motion.div>
             </div>
             <p>Dashboard</p>
           </div>
@@ -57,7 +107,6 @@ function SideBar() {
             <div className='imageContainer'>
               <div className='image'>
                 <svg
-                  
                   width='30'
                   height='24'
                   viewBox='0 0 30 24'
@@ -81,7 +130,6 @@ function SideBar() {
             <div className='imageContainer'>
               <div className='image'>
                 <svg
-                  
                   width='24'
                   height='30'
                   viewBox='0 0 24 30'
@@ -95,8 +143,6 @@ function SideBar() {
                     fill='currentcolor'
                   ></path>
                 </svg>
-
-                
               </div>
             </div>
             <p>Transactions</p>
@@ -107,7 +153,6 @@ function SideBar() {
             <div className='imageContainer'>
               <div className='image'>
                 <svg
-                 
                   width='32'
                   height='30'
                   viewBox='0 0 32 30'
@@ -119,7 +164,6 @@ function SideBar() {
                     fill='currentcolor'
                   ></path>
                 </svg>
-                
               </div>
             </div>
             <p>Wallet</p>
@@ -130,7 +174,6 @@ function SideBar() {
             <div className='imageContainer'>
               <div className='image'>
                 <svg
-                  
                   width='27'
                   height='30'
                   viewBox='0 0 27 30'
@@ -142,7 +185,6 @@ function SideBar() {
                     fill='currentcolor'
                   ></path>
                 </svg>
-                
               </div>
             </div>
             <p>Calculator</p>
@@ -153,7 +195,6 @@ function SideBar() {
             <div className='imageContainer'>
               <div className='image'>
                 <svg
-                  
                   width='30'
                   height='30'
                   viewBox='0 0 30 30'
@@ -167,7 +208,6 @@ function SideBar() {
                     fill='currentcolor'
                   ></path>
                 </svg>
-                
               </div>
             </div>
             <p>Settings</p>
@@ -181,7 +221,7 @@ function SideBar() {
 const Main = styled.div`
 background-color: ${({theme}) => theme.colors.white};
 height: 100vh;
-gap: 2.7rem;
+gap: 2rem;
 padding: 3rem 0;
 display: flex;
 flex-direction: column;
@@ -205,8 +245,8 @@ const Links = styled.div`
       height: 4rem;
 
       .image {
-        width: 35%;
-        height: 80%;
+        width: 45%;
+        height: 105%;
         border-radius: 50%;
         background-color: ${({ theme }) => theme.colors.lightblue1};
 
@@ -224,7 +264,7 @@ const Links = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
-    height: 4rem;
+    height: 4.5rem;
     width: 100%;
 
     .imageContainer {
@@ -261,6 +301,9 @@ const Middle = styled.div`
     padding: 0.8rem;
     gap: 1rem;
     background-color: ${({theme})=> theme.colors.lightblue2};
+    img{
+      cursor: pointer;
+    }
 
    
     
@@ -297,6 +340,118 @@ const Reward = styled.div`
     justify-content: center;
     align-items: center;
     gap: 0.3rem;
+  }
+  .RewardContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .rewardContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: ${({ theme }) => theme.colors.white};
+      border-radius: 1.6rem;
+      padding: 2rem;
+      gap: 3rem;
+      p {
+        color: ${({ theme }) => theme.colors.textcolor};
+      }
+      .redeem {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        .pointFraction {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          background-color: ${({ theme }) => theme.colors.lightgray};
+          padding: 1.3rem 4rem;
+          border-radius: 1rem;
+          p {
+            font-size: 13px;
+            color: ${({ theme }) => theme.colors.textcolor};
+          }
+          span {
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.1rem;
+            font-size: 10px;
+            background-color: #aabdcf;
+          }
+        }
+        .redeemPoint {
+          p {
+            background-color: ${({ theme }) => theme.colors.green};
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem 2rem;
+            border-radius: 1rem;
+          }
+        }
+      }
+      .line {
+        width: 80%;
+        height: 0.1rem;
+        background-color: ${({ theme }) => theme.colors.lightblue1};
+        opacity: 0.3;
+      }
+      .pointContainer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: green;
+        width: 100%;
+
+        .points {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 0.2rem;
+          flex-direction: column;
+          background-color: purple;
+          flex: 1;
+        }
+        .pointQuestion {
+          display: flex;
+          padding: 2rem;
+          justify-content: center;
+          background-color: red;
+          flex: 4;
+        }
+      }
+      .starContainer {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        .userStar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          justify-self: flex-end;
+          .star {
+            fill: gray;
+            color: red;
+          }
+        }
+      }
+    }
   }
 `
 

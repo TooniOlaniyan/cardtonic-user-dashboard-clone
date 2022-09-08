@@ -1,12 +1,17 @@
-import React from 'react'
+import React , {useState} from 'react'
 import SideBar from '../component/SideBar'
 import styled from 'styled-components'
 import NavBar from '../component/NavBar'
 import eye from '../asset/images/eye.svg'
 import walletLink from '../asset/images/walletLink.svg'
 import startTradeLink from '../asset/images/startTradeLink.svg'
+import {Link} from 'react-router-dom'
 
 function DashboardHome() {
+  const [show , setShow] = useState(false)
+  const handleClick = () => {
+    setShow(!show)
+  }
   return (
     <Main>
       <SideBar />
@@ -16,12 +21,19 @@ function DashboardHome() {
           <div className='top'>
             <div className='cardOne'>
               <div className='deposit'>
-                <img src={eye} alt='' />
-                <p className='money'>**********</p>
+                <img
+                  onClick={handleClick}
+                  style={{ cursor: 'pointer' }}
+                  src={eye}
+                  alt=''
+                />
+                {show ? <p className='assets'> &#8358; 0.<span>00</span> </p> : <p className='money'>**********</p>}
                 <p>Your Wallet Funds</p>
               </div>
               <div>
-                <img src={walletLink} alt='' />
+                <Link to='/wallet'>
+                  <img style={{ cursor: 'pointer' }} src={walletLink} alt='' />
+                </Link>
               </div>
             </div>
             <div className='cardTwo'>
@@ -29,7 +41,13 @@ function DashboardHome() {
                 <p>Start Trade</p>
               </div>
               <div>
-                <img src={startTradeLink} alt='' />
+                <Link to='/start-trade'>
+                  <img
+                    style={{ cursor: 'pointer' }}
+                    src={startTradeLink}
+                    alt=''
+                  />
+                </Link>
               </div>
             </div>
             <div className='dashboard'>
@@ -37,7 +55,11 @@ function DashboardHome() {
             </div>
           </div>
 
-          <div className='bottomTabel'></div>
+          <ButtomTable>
+
+
+            
+          </ButtomTable>
         </Content>
       </MainContainer>
     </Main>
@@ -80,7 +102,19 @@ const Content = styled.div`
           font-size: 30px;
           font-weight: 900;
           color: ${({ theme }) => theme.colors.textcolor};
+          
     };
+    .assets{
+            font-size: 30px;
+            font-weight: 900;
+            color:${({ theme }) => theme.colors.textcolor} ;
+            span{
+                font-size: 27px;
+            font-weight: 900;
+            color:${({ theme }) => theme.colors.gray} ;
+
+            }
+          }
         }
         
       }
@@ -93,6 +127,7 @@ const Content = styled.div`
       padding: 1.3rem 0rem;
       border-radius: 1.5rem;
       flex: 1.4;
+      
 
       background-color: ${({ theme }) => theme.colors.darkblue};
       p{
@@ -107,12 +142,17 @@ const Content = styled.div`
       flex: 1;
       flex-direction: row-reverse;
       padding: 1.3rem 0rem;
+      cursor: pointer;
 
       font-size: 30px;
       font-weight: 900;
       color: ${({ theme }) => theme.colors.darkblue};
     }
-  }
+  
+`
+
+const ButtomTable = styled.div`
+  
 `
 
 export default DashboardHome
