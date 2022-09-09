@@ -108,11 +108,11 @@ const ExternalLinks = styled.div`
   padding: 1rem;
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.gray};
+    color: ${({ theme }) => theme.colors.graytext};
     margin-right: 0.3rem;
   }
   p {
-    color: ${({ theme }) => theme.colors.gray};
+    color: ${({ theme }) => theme.colors.graytext};
     font-weight: 900;
     font-size: 13px;
   }
