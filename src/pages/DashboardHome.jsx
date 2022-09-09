@@ -77,6 +77,7 @@ const Main = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 
   padding: 0.1rem 6rem;
   height: 83vh;
