@@ -6,6 +6,7 @@ import eye from '../asset/images/eye.svg'
 import walletLink from '../asset/images/walletLink.svg'
 import startTradeLink from '../asset/images/startTradeLink.svg'
 import {Link} from 'react-router-dom'
+import Table from '../shared/Table'
 
 function DashboardHome() {
   const [show , setShow] = useState(false)
@@ -56,9 +57,7 @@ function DashboardHome() {
           </div>
 
           <ButtomTable>
-
-
-            
+            <Table/>
           </ButtomTable>
         </Content>
       </MainContainer>
