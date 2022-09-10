@@ -1,11 +1,18 @@
-import React from 'react'
+import React , {useState} from 'react'
 import styled from 'styled-components'
 import SideBar from '../component/SideBar'
 import NavBar from '../component/NavBar'
 import { FaArrowRight } from 'react-icons/fa'
 import upload from '../asset/images/upload.gif'
 function StartTrade() {
-  // const [select , setSelect] = useState()
+  const [select , setSelect] = useState('')
+  const handleChange = (e) => {
+    setSelect(e.target.files)
+    console.log(select)
+    
+    
+
+  }
   return (
     <Main>
       <SideBar />
@@ -72,11 +79,13 @@ function StartTrade() {
             </div>
             <div className='CashAmount'>
               <input type='text' placeholder='Enter Trade Amount' />
-              <div>
-                <p>&#8358;0.00 000</p>
+              <div className='amount'>
+                <p>
+                  &#8358;0.00 <span>000</span>{' '}
+                </p>
               </div>
             </div>
-            <div>
+            <div className='comments'>
               <textarea
                 name=''
                 id=''
@@ -86,11 +95,18 @@ function StartTrade() {
               ></textarea>
             </div>
             <div className='upload'>
-              <label htmlFor='file'>Upload Card + </label>
+              {select ? (<label htmlFor='file'> {select.length} files(s) chosen </label>) : (<label htmlFor='file'>Upload Card + </label>)}
               <label htmlFor='file'>
                 <img ht src={upload} alt='' />
               </label>
-              <input style={{display:'none'}} type="file" accept='image/*' id='file' />
+              <input
+              multiple
+                onChange={handleChange}
+                style={{ display: 'none' }}
+                type='file'
+                accept='image/*'
+                id='file'
+              />
             </div>
             <div className='start-trade'>
               <p>
@@ -136,8 +152,73 @@ const Trade = styled.div`
   border-radius: 1rem;
   display: flex;
   align-items: flex-start;
-  gap: 1.4rem;
+  gap: 0.8rem;
   flex-direction: column;
+  .comments {
+    width: 100%;
+    textarea {
+      width: 100%;
+      border: 1px solid ${({ theme }) => theme.colors.lightblue};
+      border-radius: 1.2rem;
+      padding: 1.5rem 0.5rem 0.2rem 0.5rem;
+      display: flex;
+      align-items: center;
+      resize: none;
+      font-size: 18px;
+      font-family: 'Lato', sans-serif;
+      color: ${({ theme }) => theme.colors.textcolor};
+      ::-webkit-input-placeholder {
+        color: ${({ theme }) => theme.colors.textcolor};
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .CashAmount {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    input {
+      flex: 4;
+      padding: 1.1rem;
+      border-radius: 1.2rem;
+      font-weight: 500;
+      color: ${({ theme }) => theme.colors.textcolor};
+      font-size: 17px;
+      font-family: 'Lato', sans-serif;
+      border: 1px solid ${({ theme }) => theme.colors.lightblue};
+      ::-webkit-input-placeholder {
+        color: ${({ theme }) => theme.colors.textcolor};
+      }
+      ::-moz-placeholder {
+        color: ${({ theme }) => theme.colors.textcolor};
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .amount {
+      padding: 0.8rem;
+      flex: 1;
+      background-color: ${({ theme }) => theme.colors.lightblue3};
+      border-radius: 1.5rem;
+
+      p {
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+        font-size: 28px;
+        color: ${({ theme }) => theme.colors.lightgreen};
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
   .start-trade {
     p {
       background-color: ${({ theme }) => theme.colors.black};
@@ -150,8 +231,45 @@ const Trade = styled.div`
       color: ${({ theme }) => theme.colors.lightblue1};
     }
   }
-  .upload{
-  
+  .cards,
+  .CardSubCategory {
+    width: 100%;
+    select {
+      padding: 1.5rem;
+      width: 75%;
+      border-radius: 1.2rem;
+      border: 1px solid ${({ theme }) => theme.colors.lightblue};
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      font-size: 18px !important;
+      font-weight: 700;
+      color: ${({ theme }) => theme.colors.textcolor};
+      font-family: 'Lato', sans-serif;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      optgroup[label] {
+        font-weight: 400;
+        font-size: 17px;
+      }
+    }
+  }
+
+  .upload {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+    gap: 16rem;
+    label {
+      font-weight: 900;
+      font-size: 18px;
+      cursor: pointer;
+      color: ${({ theme }) => theme.colors.textcolor};
+    }
+
+    display: flex;
+    border: 1px solid ${({ theme }) => theme.colors.lightblue};
   }
 `
 export default StartTrade
