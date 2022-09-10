@@ -6,8 +6,15 @@ import { FaArrowRight } from 'react-icons/fa'
 import upload from '../asset/images/upload.gif'
 function StartTrade() {
   const [select , setSelect] = useState('')
+  const [amount , setAmount] = useState('')
   const handleChange = (e) => {
     setSelect(e.target.files)
+  }
+
+  const handleAmount = (e) => {
+    setAmount(e.target.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','))
+    
+
   }
   return (
     <Main>
@@ -74,10 +81,10 @@ function StartTrade() {
               </select>
             </div>
             <div className='CashAmount'>
-              <input type='text' placeholder='Enter Trade Amount' />
+              <input id='amount' onChange={handleAmount} type='number' placeholder='Enter Trade Amount' />
               <div className='amount'>
                 <p>
-                  &#8358;0.00 <span>000</span>{' '}
+                  &#8358;{amount ? amount : 0.00 }
                 </p>
               </div>
             </div>
@@ -173,8 +180,8 @@ const Trade = styled.div`
     }
   }
   .CashAmount {
-    width: 100%;
     display: flex;
+    width: 100%;
     align-items: center;
     gap: 1rem;
     input {
@@ -199,6 +206,7 @@ const Trade = styled.div`
     .amount {
       padding: 0.8rem;
       flex: 1;
+      width: fit-content;
       background-color: ${({ theme }) => theme.colors.lightblue3};
       border-radius: 1.5rem;
 
@@ -207,15 +215,17 @@ const Trade = styled.div`
         display: flex;
         align-items: center;
         font-weight: 900;
-        font-size: 28px;
+        font-size: clamp(0.5rem, 1.5vw, 1.4rem);
         color: ${({ theme }) => theme.colors.lightgreen};
+        text-f
         span {
-          font-size: 18px;
+          font-size: 1.4vw;
         }
       }
     }
   }
   .start-trade {
+    cursor: pointer;
     p {
       background-color: ${({ theme }) => theme.colors.black};
       display: flex;
