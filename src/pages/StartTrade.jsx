@@ -81,11 +81,14 @@ function StartTrade() {
               </select>
             </div>
             <div className='CashAmount'>
-              <input id='amount' onChange={handleAmount} type='number' placeholder='Enter Trade Amount' />
+              <input
+                id='amount'
+                onChange={handleAmount}
+                type='number'
+                placeholder='Enter Trade Amount'
+              />
               <div className='amount'>
-                <p>
-                  &#8358;{amount ? amount : 0.00 }
-                </p>
+                <p>&#8358;{amount ? amount : 0.0}</p>
               </div>
             </div>
             <div className='comments'>
@@ -98,12 +101,16 @@ function StartTrade() {
               ></textarea>
             </div>
             <div className='upload'>
-              {select ? (<label htmlFor='file'> {select.length} files(s) chosen </label>) : (<label htmlFor='file'>Upload Card + </label>)}
+              {select ? (
+                <label htmlFor='file'> {select.length} files(s) chosen </label>
+              ) : (
+                <label htmlFor='file'>Upload Card + </label>
+              )}
               <label htmlFor='file'>
                 <img ht src={upload} alt='' />
               </label>
               <input
-              multiple
+                multiple
                 onChange={handleChange}
                 style={{ display: 'none' }}
                 type='file'
@@ -117,6 +124,17 @@ function StartTrade() {
               </p>
             </div>
           </Trade>
+          <ExternalLinks>
+            <p>
+              <a href='https://cardtonic.com/rate-calculator' target='_blank'>
+                Rate Calculator
+              </a>
+              |{' '}
+              <a href='https://cardtonic.com/contact-us' target='_blank'>
+                Contact Us
+              </a>
+            </p>
+          </ExternalLinks>
         </Content>
       </MainContainer>
     </Main>
@@ -208,7 +226,7 @@ const Trade = styled.div`
       flex: 1;
       width: fit-content;
       background-color: ${({ theme }) => theme.colors.lightblue3};
-      border-radius: 1.5rem;
+      border-radius: 1rem;
 
       p {
         justify-content: space-between;
@@ -226,13 +244,14 @@ const Trade = styled.div`
   }
   .start-trade {
     cursor: pointer;
+    margin-top: 1rem;
     p {
       background-color: ${({ theme }) => theme.colors.black};
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 2rem;
-      padding: 1rem 2rem;
+      padding: 1.2rem 2rem;
       border-radius: 1rem;
       color: ${({ theme }) => theme.colors.lightblue1};
     }
@@ -276,6 +295,21 @@ const Trade = styled.div`
 
     display: flex;
     border: 1px solid ${({ theme }) => theme.colors.lightblue};
+  }
+`
+const ExternalLinks = styled.div`
+  text-align: right;
+  margin-top: 1rem;
+  padding: 1rem;
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.graytext};
+    margin-right: 0.3rem;
+  }
+  p {
+    color: ${({ theme }) => theme.colors.graytext};
+    font-weight: 900;
+    font-size: 13px;
   }
 `
 export default StartTrade
