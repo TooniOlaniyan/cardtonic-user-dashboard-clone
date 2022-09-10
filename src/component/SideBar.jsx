@@ -444,6 +444,7 @@ const Reward = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 3;
     .starContent {
       display: flex;
       justify-content: center;
@@ -485,6 +486,7 @@ const Reward = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 3;
     
 
     .rewardContent {

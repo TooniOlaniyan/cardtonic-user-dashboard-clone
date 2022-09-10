@@ -82,6 +82,7 @@ const Navigation = styled.div`
     backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
+    z-index: 3;
     .notificationContainer {
       background-color: ${({ theme }) => theme.colors.white};
       margin-top: 6rem;
@@ -108,6 +109,7 @@ const Navigation = styled.div`
     backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
+    z-index: 3;
     .modalContainer {
       background-color: ${({ theme }) => theme.colors.white};
       width: 45rem;
