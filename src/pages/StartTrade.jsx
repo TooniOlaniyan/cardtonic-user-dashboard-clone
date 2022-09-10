@@ -8,10 +8,6 @@ function StartTrade() {
   const [select , setSelect] = useState('')
   const handleChange = (e) => {
     setSelect(e.target.files)
-    console.log(select)
-    
-    
-
   }
   return (
     <Main>
