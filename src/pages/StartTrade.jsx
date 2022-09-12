@@ -88,7 +88,7 @@ function StartTrade() {
                 placeholder='Enter Trade Amount'
               />
               <div className='amount'>
-                <p>&#8358;{amount ? amount : 0.0}</p>
+                <p>&#8358;{amount ? parseInt(amount * 180) : 0.0}</p>
               </div>
             </div>
             <div className='comments'>
