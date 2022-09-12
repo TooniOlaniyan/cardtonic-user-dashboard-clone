@@ -10,11 +10,19 @@ import successful from '../asset/images/successful.svg'
 import failed from '../asset/images/failed.svg'
 import pending from '../asset/images/pending.svg'
 import Table from '../shared/Table'
-import {ReactComponent as arrowRight} from '../asset/images/arrowRight.svg'
+import {MdKeyboardArrowRight} from 'react-icons/md'
+import { GrFormClose } from 'react-icons/gr'
+import { FaArrowRight } from 'react-icons/fa'
 function Wallet() {
     const [show, setShow] = useState(false)
+    const [showAccount , setShowAccount] = useState(false)
     const handleClick = () => {
       setShow(!show)
+    }
+
+    const handleVisible = () => {
+      setShowAccount(true)
+
     }
   return (
     <Main>
@@ -22,6 +30,46 @@ function Wallet() {
       <MainContainer>
         <NavBar />
         <Content>
+          {showAccount && (
+            <div className='AccountContainer'>
+              <div className='AccountContent'>
+                <Button onClick={() => setShowAccount(false)}>
+                  <GrFormClose />
+                </Button>
+                <select name='banks' id='banks'>
+                  <option value=''>Select Bank</option>
+                  <option value='access'>Access Bank</option>
+                  <option value='citibank'>Citibank</option>
+                  <option value='diamond'>Diamond Bank</option>
+                  <option value='ecobank'>Ecobank</option>
+                  <option value='fidelity'>Fidelity Bank</option>
+                  <option value='fcmb'>First City Monument Bank (FCMB)</option>
+                  <option value='fsdh'>FSDH Merchant Bank</option>
+                  <option value='gtb'>Guarantee Trust Bank (GTB)</option>
+                  <option value='heritage'>Heritage Bank</option>
+                  <option value='Keystone'>Keystone Bank</option>
+                  <option value='rand'>Rand Merchant Bank</option>
+                  <option value='skye'>Skye Bank</option>
+                  <option value='stanbic'>Stanbic IBTC Bank</option>
+                  <option value='standard'>Standard Chartered Bank</option>
+                  <option value='sterling'>Sterling Bank</option>
+                  <option value='suntrust'>Suntrust Bank</option>
+                  <option value='union'>Union Bank</option>
+                  <option value='uba'>United Bank for Africa (UBA)</option>
+                  <option value='unity'>Unity Bank</option>
+                  <option value='wema'>Wema Bank</option>
+                  <option value='zenith'>Zenith Bank</option>
+                </select>
+                <input type='text' placeholder='Account Number' />
+                <input type='text' placeholder='Account Name' />
+                <div className='save'>
+                  <p>
+                    Save <FaArrowRight />
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
           <div className='top'>
             <div className='cardOne'>
               <div className='deposit'>
@@ -93,8 +141,9 @@ function Wallet() {
             <Table />
           </ButtomTable>
           <Account>
-            <div>
-              <p>Account Number <arrowRight/>  </p>
+            <div onClick={handleVisible} className='details'>
+              <p>Account Details </p>
+              <MdKeyboardArrowRight className='icon' />
             </div>
           </Account>
         </Content>
@@ -119,10 +168,83 @@ const Content = styled.div`
   padding: 0.1rem 6rem 3rem 6rem;
   height: 83vh;
   overflow-y: scroll;
+  .AccountContainer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    .AccountContent {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      background-color: ${({ theme }) => theme.colors.white};
+      width: 60%;
+      height: 40%;
+      border-radius: 1.6rem;
+      padding: 13rem 3rem;
+      gap: 1rem;
+      position: relative;
+      margin-top: -8rem;
+      select {
+        padding: 1.5rem;
+        width: 80%;
+        border-radius: 1.2rem;
+        border: 1px solid ${({ theme }) => theme.colors.lightblue};
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 18px !important;
+        font-weight: 700;
+        color: ${({ theme }) => theme.colors.textcolor};
+        font-family: 'Lato', sans-serif;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+      input {
+        width: 80%;
+        padding: 1.1rem;
+        border-radius: 1.2rem;
+        font-weight: 500;
+        color: ${({ theme }) => theme.colors.textcolor};
+        font-size: 17px;
+        font-family: 'Lato', sans-serif;
+        border: 1px solid ${({ theme }) => theme.colors.lightblue};
+        ::-webkit-input-placeholder {
+          color: ${({ theme }) => theme.colors.textcolor};
+        }
+        ::-moz-placeholder {
+          color: ${({ theme }) => theme.colors.textcolor};
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .save {
+        p {
+          background-color: ${({ theme }) => theme.colors.black};
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+          padding: 1rem 3rem;
+          border-radius: 1rem;
+          color: ${({ theme }) => theme.colors.lightblue1};
+        }
+      }
+    }
+  }
   .top {
     display: flex;
     gap: 0.7rem;
-   
 
     .cardOne {
       display: flex;
@@ -132,7 +254,7 @@ const Content = styled.div`
       gap: 6rem;
       padding: 1.3rem;
       border-radius: 1.8rem;
-      
+
       .deposit {
         .money {
           font-size: 30px;
@@ -159,7 +281,6 @@ const Content = styled.div`
     gap: 4rem;
     padding: 1.3rem;
     border-radius: 1.8rem;
-    
 
     background-color: ${({ theme }) => theme.colors.darkblue};
     p {
@@ -225,12 +346,40 @@ const Content = styled.div`
 `
 const ButtomTable = styled.div``
 const Account = styled.div`
-/* background-color: red; */
-
-
-
-
+  .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: ${({ theme }) => theme.colors.white};
+    width: 60%;
+    padding: 1.3rem 2rem;
+    border-radius: 1.1rem;
+    cursor: pointer;
+    p {
+      color: ${({ theme }) => theme.colors.textcolor};
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .icon {
+      color: ${({ theme }) => theme.colors.lightblue1};
+      font-size: 20px;
+      border: 2px solid ${({ theme }) => theme.colors.lightblue1};
+      border-radius: 0.5rem;
+    }
+  }
 `
+ const Button = styled.div`
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   border: 3px solid ${({ theme }) => theme.colors.textcolor};
+   padding: 0.25rem;
+   border-radius: 0.8rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+ `
 
 
 export default Wallet
