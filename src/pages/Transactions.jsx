@@ -77,7 +77,7 @@ const Content = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-around;
-      width: 23%;
+      width: 24%;
       background-color: ${({ theme }) => theme.colors.white};
       padding: 1.7rem 0rem;
       border-radius: 1.5rem;
@@ -91,8 +91,9 @@ const Content = styled.div`
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
-        gap: 0.2rem;
+        gap: 0.6rem;
         p {
+          font-weight: 500;
           font-size: 15px;
           color: ${({ theme }) => theme.colors.gray};
         }

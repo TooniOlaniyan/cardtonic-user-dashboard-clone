@@ -22,6 +22,7 @@ function Table() {
         <Transaction>
           <div className='TransactionStatus'>
             <img src={noTransaction} alt='' />
+            <p>You have no transaction with us yet. Why?</p>
           </div>
         </Transaction>
         <div className='getMore'>
@@ -93,14 +94,22 @@ const TableHead = styled.div`
   }
 `
 const Transaction = styled.div`
-display: flex;
-justify-content: center;
-align-items: flex-start;
-width: 100%;
-border-radius: 1rem;
-margin-top: 0.5rem;
-height: 80vh;
-  
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+  height: 80vh;
+  .TransactionStatus {
+    p {
+      color: ${({ theme }) => theme.colors.gray};
+      font-weight: 700;
+      font-size: 14px;
+      width: 80%;
+      text-align: center;
+    }
+  }
 `
 const ExternalLinks = styled.div`
   text-align: right;
