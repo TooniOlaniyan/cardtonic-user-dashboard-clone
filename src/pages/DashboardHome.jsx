@@ -82,11 +82,16 @@ const Content = styled.div`
   padding: 0.1rem 6rem 3rem 6rem;
   height: 83vh;
   overflow-y: scroll;
+
   .top {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     gap: 0.7rem;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     .cardOne {
       display: flex;
@@ -98,57 +103,52 @@ const Content = styled.div`
       border-radius: 1.5rem;
       flex: 1.6;
       .deposit {
-        .money{
+        .money {
           font-size: 30px;
           font-weight: 900;
           color: ${({ theme }) => theme.colors.textcolor};
-          
-    };
-    .assets{
-            font-size: 30px;
+        }
+        .assets {
+          font-size: 30px;
+          font-weight: 900;
+          color: ${({ theme }) => theme.colors.textcolor};
+          span {
+            font-size: 27px;
             font-weight: 900;
-            color:${({ theme }) => theme.colors.textcolor} ;
-            span{
-                font-size: 27px;
-            font-weight: 900;
-            color:${({ theme }) => theme.colors.gray} ;
-
-            }
+            color: ${({ theme }) => theme.colors.gray};
           }
         }
-        
       }
     }
-    .cardTwo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6rem;
-      padding: 1.3rem 0rem;
-      border-radius: 1.5rem;
-      flex: 1.4;
-      
+  }
+  .cardTwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    padding: 1.3rem 0rem;
+    border-radius: 1.5rem;
+    flex: 1.4;
 
-      background-color: ${({ theme }) => theme.colors.darkblue};
-      p{
-        color: ${({ theme }) => theme.colors.white};
-        font-weight: 700;
-        font-size: 21px;
-      }
+    background-color: ${({ theme }) => theme.colors.darkblue};
+    p {
+      color: ${({ theme }) => theme.colors.white};
+      font-weight: 700;
+      font-size: 21px;
     }
-    .dashboard {
-      display: flex;
-      align-items: flex-end;
-      flex: 1;
-      flex-direction: row-reverse;
-      padding: 1.3rem 0rem;
-      cursor: pointer;
+  }
+  .dashboard {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    flex-direction: row-reverse;
+    padding: 1.3rem 0rem;
+    cursor: pointer;
 
-      font-size: 30px;
-      font-weight: 900;
-      color: ${({ theme }) => theme.colors.darkblue};
-    }
-  
+    font-size: 30px;
+    font-weight: 900;
+    color: ${({ theme }) => theme.colors.darkblue};
+  }
 `
 
 const ButtomTable = styled.div`

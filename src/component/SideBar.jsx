@@ -306,6 +306,10 @@ display: flex;
 flex-direction: column;
 align-items: center;
 flex: 1.13;
+@media screen and (max-width:640px) {
+  display: none;
+  
+}
     
 `
 const Links = styled.div`
@@ -314,7 +318,6 @@ const Links = styled.div`
   a.active {
     p {
       color: ${({ theme }) => theme.colors.textcolor};
-      
     }
 
     .imageContainer {

@@ -193,6 +193,11 @@ const Content = styled.div`
       gap: 1rem;
       position: relative;
       margin-top: -8rem;
+      .icons{
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
       select {
         padding: 1.5rem;
         width: 80%;
@@ -205,6 +210,7 @@ const Content = styled.div`
         color: ${({ theme }) => theme.colors.textcolor};
         font-family: 'Lato', sans-serif;
         cursor: pointer;
+        position: relative !important;
         &:focus {
           outline: none;
         }
@@ -229,6 +235,7 @@ const Content = styled.div`
         }
       }
       .save {
+        cursor: pointer;
         p {
           background-color: ${({ theme }) => theme.colors.black};
           display: flex;
