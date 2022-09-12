@@ -43,11 +43,14 @@ function Wallet() {
                   <option value='diamond'>Diamond Bank</option>
                   <option value='ecobank'>Ecobank</option>
                   <option value='fidelity'>Fidelity Bank</option>
+                  <option value='firstbank'>First Bank Of Nigeria</option>
                   <option value='fcmb'>First City Monument Bank (FCMB)</option>
                   <option value='fsdh'>FSDH Merchant Bank</option>
                   <option value='gtb'>Guarantee Trust Bank (GTB)</option>
                   <option value='heritage'>Heritage Bank</option>
                   <option value='Keystone'>Keystone Bank</option>
+                  <option value='polaris'>Polaris Bank</option>
+                  <option value='providus'>Providus Bank</option>
                   <option value='rand'>Rand Merchant Bank</option>
                   <option value='skye'>Skye Bank</option>
                   <option value='stanbic'>Stanbic IBTC Bank</option>
