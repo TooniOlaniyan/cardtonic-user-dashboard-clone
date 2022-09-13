@@ -29,8 +29,9 @@ function Wallet() {
     const fetchData = async () => {
      try {
       const response = await axios.get('https://api.paystack.co/bank')
-      const data = response.data.data
-      setBankData([data])
+      const data = response.data
+      setBankData(data)
+      console.log(bankData)
       
       
       
