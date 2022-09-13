@@ -8,7 +8,9 @@ function Settings() {
       <SideBar />
       <MainContainer>
         <NavBar />
-        Content
+        <Content>
+
+        </Content>
       </MainContainer>
     </Main>
   )
@@ -22,5 +24,17 @@ const MainContainer = styled.div`
 const Main = styled.div`
   display: flex;
 `
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  padding: 0.1rem 6rem 3rem 6rem;
+  height: 83vh;
+  overflow-y: scroll;
+  
+  
+  
+  `
 
 export default Settings

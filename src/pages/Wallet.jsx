@@ -13,8 +13,10 @@ import Table from '../shared/Table'
 import {MdKeyboardArrowRight} from 'react-icons/md'
 import { GrFormClose } from 'react-icons/gr'
 import { FaArrowRight } from 'react-icons/fa'
+import axios from 'axios'
 function Wallet() {
     const [show, setShow] = useState(false)
+    const [bankData , setBankData] = useState([])
     const [showAccount , setShowAccount] = useState(false)
     const handleClick = () => {
       setShow(!show)
@@ -23,6 +25,21 @@ function Wallet() {
     const handleVisible = () => {
       setShowAccount(true)
 
+    }
+    const fetchData = async () => {
+     try {
+      const response = await axios.get('https://api.paystack.co/bank')
+      const data = response.data.data
+      setBankData([data])
+      
+      
+      
+    
+      
+     } catch (error) {
+      console.log('cant connect')
+      
+     }
     }
   return (
     <Main>
@@ -38,34 +55,34 @@ function Wallet() {
                 </Button>
                 <select name='banks' id='banks'>
                   <option value=''>Select Bank</option>
-                  <option value='access'>Access Bank</option>
-                  <option value='citibank'>Citibank</option>
-                  <option value='diamond'>Diamond Bank</option>
-                  <option value='ecobank'>Ecobank</option>
-                  <option value='fidelity'>Fidelity Bank</option>
-                  <option value='firstbank'>First Bank Of Nigeria</option>
-                  <option value='fcmb'>First City Monument Bank (FCMB)</option>
-                  <option value='fsdh'>FSDH Merchant Bank</option>
-                  <option value='gtb'>Guarantee Trust Bank (GTB)</option>
-                  <option value='heritage'>Heritage Bank</option>
-                  <option value='Keystone'>Keystone Bank</option>
-                  <option value='polaris'>Polaris Bank</option>
-                  <option value='providus'>Providus Bank</option>
-                  <option value='rand'>Rand Merchant Bank</option>
-                  <option value='skye'>Skye Bank</option>
-                  <option value='stanbic'>Stanbic IBTC Bank</option>
-                  <option value='standard'>Standard Chartered Bank</option>
-                  <option value='sterling'>Sterling Bank</option>
-                  <option value='suntrust'>Suntrust Bank</option>
-                  <option value='union'>Union Bank</option>
-                  <option value='uba'>United Bank for Africa (UBA)</option>
-                  <option value='unity'>Unity Bank</option>
-                  <option value='wema'>Wema Bank</option>
-                  <option value='zenith'>Zenith Bank</option>
+                  <option value='access' id='access' >Access Bank</option>
+                  <option value='citibank' id='citibank'>Citibank</option>
+                  <option value='diamond' id='diamond'>Diamond Bank</option>
+                  <option value='ecobank' id='ecobank'>Ecobank</option>
+                  <option value='fidelity' id='fidelity'>Fidelity Bank</option>
+                  <option value='firstbank' id='firstbank'>First Bank Of Nigeria</option>
+                  <option value='fcmb' id='fcmb'>First City Monument Bank (FCMB)</option>
+                  <option value='fsdh' id='fsdh'>FSDH Merchant Bank</option>
+                  <option value='gtb' id='gtb'>Guarantee Trust Bank (GTB)</option>
+                  <option value='heritage' id='heritage'>Heritage Bank</option>
+                  <option value='Keystone' id='keystone'>Keystone Bank</option>
+                  <option value='polaris' id='polaris'>Polaris Bank</option>
+                  <option value='providus' id='providus'>Providus Bank</option>
+                  <option value='rand' id='rand'>Rand Merchant Bank</option>
+                  <option value='skye' id='skye'>Skye Bank</option>
+                  <option value='stanbic' id='stanbic'>Stanbic IBTC Bank</option>
+                  <option value='standard' id='standard'>Standard Chartered Bank</option>
+                  <option value='sterling' id='sterling'>Sterling Bank</option>
+                  <option value='suntrust' id='suntrust'>Suntrust Bank</option>
+                  <option value='union' id='union'>Union Bank</option>
+                  <option value='uba' id='uba'>United Bank for Africa (UBA)</option>
+                  <option value='unity' id='unity'>Unity Bank</option>
+                  <option value='wema' id='wema'>Wema Bank</option>
+                  <option value='zenith' id='zenith'>Zenith Bank</option>
                 </select>
-                <input type='text' placeholder='Account Number' />
-                <input type='text' placeholder='Account Name' />
-                <div className='save'>
+                <input type='text'  id='account' placeholder='Account Number' />
+                <input type='text'  className='noselect' placeholder='Account Name' disabled />
+                <div onClick={fetchData} className='save'>
                   <p>
                     Save <FaArrowRight />
                   </p>
@@ -196,7 +213,16 @@ const Content = styled.div`
       gap: 1rem;
       position: relative;
       margin-top: -8rem;
-      .icons{
+      .noselect {
+        background-color: transparent;
+        ::-webkit-input-placeholder {
+          color: ${({ theme }) => theme.colors.gray};
+        }
+        ::-moz-placeholder {
+          color: ${({ theme }) => theme.colors.gray};
+        }
+      }
+      .icons {
         position: absolute;
         top: 0;
         right: 0;
