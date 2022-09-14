@@ -9,6 +9,38 @@ function Support({setSupport}) {
         <Button onClick={() => setSupport(false)}>
           <GrFormClose />
         </Button>
+        <a
+          target='_blank'
+          href='https://www.facebook.com/Cardtonic-112020283621022'
+        >
+          <div className='facebook'>
+            <p>Facebook</p>
+          </div>
+        </a>
+        <a target='_blank' href='https://www.instagram.com/cardtonic/'>
+          <div className='insta'>
+            <p>Instagram</p>
+          </div>
+        </a>
+        <a target='_blank' href='https://twitter.com/cardtonic'>
+          <div className='tweet'>
+            <p>Twitter</p>
+          </div>
+        </a>
+        <div className='line'></div>
+        <a
+          target='_blank'
+          href='https://api.whatsapp.com/send?phone=2347060502770'
+        >
+          <div className='watsapp'>
+            <p>Watsapp</p>
+          </div>
+        </a>
+        <a target='_blank' href=''>
+          <div  className='phone'>
+            <p>Mobile | Phone</p>
+          </div>
+        </a>
       </SupportLinks>
     </Container>
   )
@@ -29,7 +61,7 @@ const Container = styled.div`
 const SupportLinks = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.white};
   width: 56%;
@@ -39,6 +71,39 @@ const SupportLinks = styled.div`
   gap: 1rem;
   position: relative;
   margin-top: -1rem;
+  a {
+    text-decoration: none;
+  }
+  .facebook {
+    background-color: ${({ theme }) => theme.colors.textcolor};
+    color: ${({ theme }) => theme.colors.white};
+    padding: 1rem 4rem;
+    border-radius: 1rem 2rem;
+  }
+  .insta {
+    background-color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.white};
+    padding: 1rem 4rem;
+    border-radius: 1rem 2rem;
+  }
+  .tweet {
+    background-color: ${({ theme }) => theme.colors.lightblue1};
+    color: ${({ theme }) => theme.colors.white};
+    padding: 1rem 4rem;
+    border-radius: 1rem 2rem;
+  }
+  .watsapp {
+    background-color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme }) => theme.colors.white};
+    padding: 1rem 4rem;
+    border-radius: 1rem 2rem;
+  }
+  .phone {
+    background-color: ${({ theme }) => theme.colors.darkblue};
+    color: ${({ theme }) => theme.colors.white};
+    padding: 1rem 4rem;
+    border-radius: 1rem 2rem;
+  }
 `
  const Button = styled.div`
    position: absolute;

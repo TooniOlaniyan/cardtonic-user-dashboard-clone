@@ -55,7 +55,7 @@ function Settings() {
               <p>Support</p>
               <MdKeyboardArrowRight className='icons' />
             </div>
-            <div className='settingOptions'>
+            <div onClick={() => {navigator.clipboard.writeText('https://cardtonic.com/')}} className='settingOptions'>
               <p>Share With Friends</p>
               <MdKeyboardArrowRight className='icons' />
             </div>
@@ -117,9 +117,9 @@ const Content = styled.div`
       align-items: center;
       border: 1px solid ${({ theme }) => theme.colors.lightgray};
       width: 70%;
-      padding: 1.1rem 2rem;
+      padding: 1.2rem 2rem;
       justify-content: space-between;
-      border-radius: 1rem;
+      border-radius: 1.2rem;
       cursor: pointer;
       p {
         font-weight: 900;
