@@ -309,7 +309,7 @@ const ExternalLinks = styled.div`
   p {
     color: ${({ theme }) => theme.colors.graytext};
     font-weight: 900;
-    font-size: 13px;
+    font-size: 12px;
   }
 `
 export default StartTrade

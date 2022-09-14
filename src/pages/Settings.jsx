@@ -3,7 +3,10 @@ import styled from 'styled-components'
 import SideBar from '../component/SideBar'
 import NavBar from '../component/NavBar'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import { useState } from 'react'
 function Settings() {
+  const [changeProfile , setChangeProfile] = useState(false)
+  const [editPhone , setEditPhoneNumber] = useState(false)
   return (
     <Main>
       <SideBar />
@@ -121,7 +124,7 @@ const Content = styled.div`
     p {
       color: ${({ theme }) => theme.colors.graytext};
       font-weight: 900;
-      font-size: 13px;
+      font-size: 12px;
     }
   `
 
