@@ -4,6 +4,7 @@ import SideBar from '../component/SideBar'
 import NavBar from '../component/NavBar'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { useState } from 'react'
+import ProfileModal from '../settingsModals/ProfileModal'
 function Settings() {
   const [changeProfile , setChangeProfile] = useState(false)
   const [editPhone , setEditPhoneNumber] = useState(false)
@@ -13,11 +14,14 @@ function Settings() {
       <MainContainer>
         <NavBar />
         <Content>
+          {changeProfile && (
+            <ProfileModal setChangeProfile={setChangeProfile}/>
+          )}
           <header>
             <p>Settings</p>
           </header>
           <Setting>
-            <div className='settingOptions'>
+            <div onClick={() => setChangeProfile(true)} className='settingOptions'>
               <p>Profile</p>
               <MdKeyboardArrowRight className='icons' />
             </div>
@@ -102,7 +106,7 @@ const Content = styled.div`
       p {
         font-weight: 900;
         color: ${({ theme }) => theme.colors.textcolor};
-        font-size: 17px;
+        font-size: 18px;
       }
       .icons {
         color: ${({ theme }) => theme.colors.lightblue1};
