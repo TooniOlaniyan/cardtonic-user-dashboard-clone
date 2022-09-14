@@ -8,12 +8,20 @@ import ProfileModal from '../settingsModals/ProfileModal'
 import Security from '../settingsModals/Security'
 import Suggestion from '../settingsModals/Suggestion'
 import Support from '../settingsModals/Support'
+import { toast } from 'react-toastify'
 function Settings() {
   const [changeProfile , setChangeProfile] = useState(false)
   const [security , setSecurity] = useState(false)
   const [suggestion , setSuggestion] = useState(false)
   const [support , setSupport] = useState(false)
   const [editPhone , setEditPhoneNumber] = useState(false)
+
+  const handleClick = () => {
+     const data =  navigator.clipboard.writeText('https://cardtonic.com/')
+     if(data){
+      toast.success('Link copied, Share with friends')
+     }
+  }
   return (
     <Main>
       <SideBar />
@@ -55,7 +63,7 @@ function Settings() {
               <p>Support</p>
               <MdKeyboardArrowRight className='icons' />
             </div>
-            <div onClick={() => {navigator.clipboard.writeText('https://cardtonic.com/')}} className='settingOptions'>
+            <div onClick={handleClick} className='settingOptions'>
               <p>Share With Friends</p>
               <MdKeyboardArrowRight className='icons' />
             </div>

@@ -11,30 +11,32 @@ import Settings from './pages/Settings'
 import DashboardHome from './pages/DashboardHome';
 import Globalstyles from './component/styles/globalStyles';
 import {BrowserRouter as Router , Routes , Route} from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 
 function App() {
   return (
-    <div className="App">
-      <Globalstyles/>
+    <div className='App'>
+      <Globalstyles />
+      <ToastContainer />
       <ThemeProvider theme={theme}>
         <Router>
           <Routes>
-            <Route path='/' element={<SignIn/>}/>
-            <Route path='/register' element={<Register/>}/>
-            <Route path='/dashboard' element={<DashboardHome/>}/>
-            <Route path='/start-trade' element={<StartTrade/>}/>
-            <Route path='/transactions' element={<Transactions/>}/>
-            <Route path='/wallet' element={<Wallet/>}/>
-            <Route path='/calculator' element={<Calculator/>}/>
-            <Route path='/settings' element={<Settings/>}/>
+            <Route path='/' element={<SignIn />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/dashboard' element={<DashboardHome />} />
+            <Route path='/start-trade' element={<StartTrade />} />
+            <Route path='/transactions' element={<Transactions />} />
+            <Route path='/wallet' element={<Wallet />} />
+            <Route path='/calculator' element={<Calculator />} />
+            <Route path='/settings' element={<Settings />} />
           </Routes>
         </Router>
       </ThemeProvider>
-    
     </div>
-  );
+  )
 }
 
 export default App;
