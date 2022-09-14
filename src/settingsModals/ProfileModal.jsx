@@ -133,8 +133,8 @@ const ChangeProfile = styled.div`
 `
  const Button = styled.div`
    position: absolute;
-   top: 1rem;
-   right: 1rem;
+   top: 1.4rem;
+   right: 2rem;
    border: 3px solid ${({ theme }) => theme.colors.textcolor};
    padding: 0.25rem;
    border-radius: 0.8rem;

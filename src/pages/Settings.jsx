@@ -5,8 +5,14 @@ import NavBar from '../component/NavBar'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { useState } from 'react'
 import ProfileModal from '../settingsModals/ProfileModal'
+import Security from '../settingsModals/Security'
+import Suggestion from '../settingsModals/Suggestion'
+import Support from '../settingsModals/Support'
 function Settings() {
   const [changeProfile , setChangeProfile] = useState(false)
+  const [security , setSecurity] = useState(false)
+  const [suggestion , setSuggestion] = useState(false)
+  const [support , setSupport] = useState(false)
   const [editPhone , setEditPhoneNumber] = useState(false)
   return (
     <Main>
@@ -15,25 +21,37 @@ function Settings() {
         <NavBar />
         <Content>
           {changeProfile && (
-            <ProfileModal setChangeProfile={setChangeProfile}/>
+            <ProfileModal setChangeProfile={setChangeProfile} />
           )}
+
+
+          {security && <Security setSecurity={setSecurity} />}
+
+
+          {suggestion && <Suggestion setSuggestion={setSuggestion} />}
+
+          
+          {support && <Support setSupport={setSupport} />}
           <header>
             <p>Settings</p>
           </header>
           <Setting>
-            <div onClick={() => setChangeProfile(true)} className='settingOptions'>
+            <div
+              onClick={() => setChangeProfile(true)}
+              className='settingOptions'
+            >
               <p>Profile</p>
               <MdKeyboardArrowRight className='icons' />
             </div>
-            <div className='settingOptions'>
+            <div onClick={() => setSecurity(true)} className='settingOptions'>
               <p>Security</p>
               <MdKeyboardArrowRight className='icons' />
             </div>
-            <div className='settingOptions'>
+            <div onClick={() => setSuggestion(true)} className='settingOptions'>
               <p>Suggestion Box</p>
               <MdKeyboardArrowRight className='icons' />
             </div>
-            <div className='settingOptions'>
+            <div onClick={() => setSupport(true)} className='settingOptions'>
               <p>Support</p>
               <MdKeyboardArrowRight className='icons' />
             </div>
@@ -99,9 +117,9 @@ const Content = styled.div`
       align-items: center;
       border: 1px solid ${({ theme }) => theme.colors.lightgray};
       width: 70%;
-      padding: 1.2rem 2.5rem;
+      padding: 1.1rem 2rem;
       justify-content: space-between;
-      border-radius: 1.5rem;
+      border-radius: 1rem;
       cursor: pointer;
       p {
         font-weight: 900;
