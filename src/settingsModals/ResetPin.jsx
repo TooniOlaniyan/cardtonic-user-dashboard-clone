@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { BsArrowLeftCircle } from 'react-icons/bs'
 
-function ChangePin({setChangePin}) {
+function ResetPin({setResetPin}) {
   return (
     <Container>
-      <PinChange>
-        <Button onClick={() => setChangePin(false)}>
+      <PinReset>
+        <Button onClick={() => setResetPin(false)}>
           <BsArrowLeftCircle />
         </Button>
-      </PinChange>
+      </PinReset>
     </Container>
   )
 }
@@ -24,7 +24,7 @@ const Container = styled.div`
   align-items: center;
   z-index: 3;
 `
-const PinChange = styled.div`
+const PinReset = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -51,4 +51,4 @@ const PinChange = styled.div`
    font-size: 30px;
  `
 
-export default ChangePin
+export default ResetPin

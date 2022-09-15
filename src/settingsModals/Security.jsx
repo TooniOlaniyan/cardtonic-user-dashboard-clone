@@ -5,15 +5,18 @@ import { MdKeyboardArrowRight } from 'react-icons/md'
 import { useState } from 'react'
 import ChangePassword from './ChangePassword'
 import ChangePin from './ChangePin'
+import ResetPin from './ResetPin'
 
 function Security({setSecurity}) {
   const [changePassword , setChangePassword] = useState(false)
   const [changePin , setChangePin] = useState(false)
+  const [resetPin , setResetPin] = useState(false)
   return (
     <Container>
       <ChangeSecurity>
         {changePassword && <ChangePassword setChangePassword={setChangePassword}/>}
         {changePin && <ChangePin setChangePin={setChangePin}/>}
+        {resetPin && <ResetPin setResetPin={setResetPin}/>}
         <Button onClick={() => setSecurity(false)}>
           <GrFormClose />
         </Button>
@@ -25,7 +28,7 @@ function Security({setSecurity}) {
           <p>Change Pin</p>
           <MdKeyboardArrowRight className='icons' />
         </div>
-        <div className='settingOptions'>
+        <div onClick={() => setResetPin(true)} className='settingOptions'>
           <p>Reset Pin</p>
           <MdKeyboardArrowRight className='icons' />
         </div>
