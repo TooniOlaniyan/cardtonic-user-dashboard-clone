@@ -2,19 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 import { GrFormClose } from 'react-icons/gr'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import { useState } from 'react'
+import ChangePassword from './ChangePassword'
+import ChangePin from './ChangePin'
 
 function Security({setSecurity}) {
+  const [changePassword , setChangePassword] = useState(false)
+  const [changePin , setChangePin] = useState(false)
   return (
     <Container>
       <ChangeSecurity>
+        {changePassword && <ChangePassword setChangePassword={setChangePassword}/>}
+        {changePin && <ChangePin setChangePin={setChangePin}/>}
         <Button onClick={() => setSecurity(false)}>
           <GrFormClose />
         </Button>
-        <div className='settingOptions'>
+        <div onClick={() => setChangePassword(true)} className='settingOptions'>
           <p>Change Password</p>
           <MdKeyboardArrowRight className='icons' />
         </div>
-        <div className='settingOptions'>
+        <div onClick={() => setChangePin(true)} className='settingOptions'>
           <p>Change Pin</p>
           <MdKeyboardArrowRight className='icons' />
         </div>
@@ -68,7 +75,7 @@ const ChangeSecurity = styled.div`
     p {
       font-weight: 900;
       color: ${({ theme }) => theme.colors.textcolor};
-      font-size: 18px;
+      font-size: 17px;
     }
     .icons {
       color: ${({ theme }) => theme.colors.lightblue1};

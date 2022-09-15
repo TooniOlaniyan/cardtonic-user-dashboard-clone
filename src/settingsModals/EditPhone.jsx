@@ -1,14 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GrFormClose } from 'react-icons/gr'
+import { BsArrowLeftCircle } from 'react-icons/bs'
+import { FaArrowRight } from 'react-icons/fa'
 
 function EditPhone({setEditPhoneNumber}) {
   return (
     <Container>
       <PhoneEdit>
         <Button onClick={() => setEditPhoneNumber(false)}>
-          <GrFormClose />
+          <BsArrowLeftCircle />
         </Button>
+        <div className='personData'>
+          <div>
+            <p>2348113037120</p>
+          </div>
+        </div>
+        <div className='newNumber'>
+         <input type="text" placeholder='New Phone Number' id='newNumber' />
+        </div>
+        <Save>
+          <div className='save'>
+            <p>
+              Save <FaArrowRight />
+            </p>
+          </div>
+          <p className='profile'>Edit Phone</p>
+        </Save>
       </PhoneEdit>
     </Container>
   )
@@ -39,17 +56,86 @@ const PhoneEdit = styled.div`
   gap: 1rem;
   position: relative;
   margin-top: -1rem;
+  .personData {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid ${({ theme }) => theme.colors.lightgray};
+    width: 80%;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 1rem;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      p {
+        color: ${({ theme }) => theme.colors.gray};
+        font-size: 17px;
+      }
+    }
+  }
+  .newNumber {
+    width: 100%;
+    input {
+      width: 80%;
+      padding: 1.1rem;
+      border-radius: 1.2rem;
+      font-weight: 500;
+      color: ${({ theme }) => theme.colors.textcolor};
+      font-size: 17px;
+      font-family: 'Lato', sans-serif;
+      border: 1px solid ${({ theme }) => theme.colors.lightblue};
+      ::-webkit-input-placeholder {
+        color: ${({ theme }) => theme.colors.textcolor};
+      }
+      ::-moz-placeholder {
+        color: ${({ theme }) => theme.colors.textcolor};
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
 `
  const Button = styled.div`
    position: absolute;
-   top: 1.4rem;
-   right: 2rem;
-   border: 3px solid ${({ theme }) => theme.colors.textcolor};
+   top: 1.2rem;
+   right: 1.8rem;
    padding: 0.25rem;
-   border-radius: 0.8rem;
+   color: ${({ theme }) => theme.colors.textcolor};
    display: flex;
    justify-content: center;
    align-items: center;
    cursor: pointer;
+   font-size: 30px;
  `
+
+  const Save = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+    .profile {
+      font-weight: 900;
+      font-size: 30px;
+      color: ${({ theme }) => theme.colors.textcolor};
+    }
+
+    .save {
+      cursor: pointer;
+      p {
+        background-color: ${({ theme }) => theme.colors.black};
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.2rem 3rem;
+        border-radius: 1.3rem;
+        color: ${({ theme }) => theme.colors.lightblue1};
+      }
+    }
+  `
 export default EditPhone
