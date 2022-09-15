@@ -14,7 +14,7 @@ function Settings() {
   const [security , setSecurity] = useState(false)
   const [suggestion , setSuggestion] = useState(false)
   const [support , setSupport] = useState(false)
-  const [editPhone , setEditPhoneNumber] = useState(false)
+  
 
   const handleClick = () => {
      const data =  navigator.clipboard.writeText('https://cardtonic.com/')

@@ -1,19 +1,22 @@
-import React from 'react'
+import React , {useState} from 'react'
 import styled from 'styled-components'
 import { GrFormClose } from 'react-icons/gr'
 import { FaPhoneAlt, FaArrowRight } from 'react-icons/fa'
 import { HiOutlineCake } from 'react-icons/hi'
 import {BiEnvelope} from 'react-icons/bi'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import EditPhone from './EditPhone'
 
 function ProfileModal({setChangeProfile}) {
+  const [editPhone, setEditPhoneNumber] = useState(false)
   return (
     <Container>
       <ChangeProfile>
+      {editPhone && <EditPhone setEditPhoneNumber={setEditPhoneNumber}/>}
         <Button onClick={() => setChangeProfile(false)}>
           <GrFormClose />
         </Button>
-        <div className='changePhone'>
+        <div onClick={() => setEditPhoneNumber(true) } className='changePhone'>
           <div>
             <FaPhoneAlt className='phone' />
             <p>Edit Phone Number</p>
