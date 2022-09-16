@@ -90,15 +90,30 @@ function Calculator() {
             </div>
           </Trade>
           <CardList>
-            <div>
+            <div className='cardInfo'>
               <p>
                 Listed below are the top 10 best gift cards to sell in Nigeria
                 at the moment, ranked according to the best rates in descending
                 order. It is updated automatically.
               </p>
             </div>
-            <CardTable></CardTable>
-            <div>
+            <CardTable>
+              <div className='tableHead'>
+                <p>Categotry</p>
+                <p>Sub-Categotry</p>
+                <span>Rate</span>
+              </div>
+              <div className='line'></div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src="" alt="" />
+                  <p>Staem</p>
+                </div>
+                <p>Uk steam physical </p>
+                <span>555</span>
+              </div>
+            </CardTable>
+            <div className='cardInfo'>
               <p>
                 Rates specified on this page are accurate as at the time it’s
                 checked. However, rates change continually, and what the rate is
@@ -192,7 +207,6 @@ const Trade = styled.div`
     }
   }
   .CashAmount {
-    /* background-color: green; */
     width: 70%;
     display: flex;
     justify-content: center;
@@ -270,16 +284,81 @@ const Trade = styled.div`
 `
 const CardList = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
-  padding: 3rem;
+  padding: 6rem 5rem;
   border-radius: 1rem;
   display: flex;
   align-items: center;
   /* justify-content: center; */
   gap: 0.8rem;
   flex-direction: column;
+  .cardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    p {
+      color: ${({ theme }) => theme.colors.textcolor};
+      /* background-color: red; */
+      font-size: 16.5px;
+    }
+  }
 `
 const CardTable = styled.div`
-  
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+  height: 100vh;
+  .tableHead {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    p {
+      font-weight: 900;
+      color: ${({ theme }) => theme.colors.darkblue};
+      font-size: 15px;
+    }
+    span {
+      font-weight: 900;
+      color: ${({ theme }) => theme.colors.lightblue1};
+      font-size: 15px;
+    }
+  }
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: ${({ theme }) => theme.colors.lightgray};
+  }
+  .tableData {
+    display: flex;
+    align-items: center;
+    /* background-color: yellow; */
+    width: 100%;
+    justify-content: space-between;
+    p {
+      font-weight: 900;
+      color: ${({ theme }) => theme.colors.darkblue};
+      font-size: 13px;
+    }
+    span {
+      font-weight: 900;
+      color: ${({ theme }) => theme.colors.lightblue1};
+      font-size: 13px;
+    }
+    .cardIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-weight: 900;
+        color: ${({ theme }) => theme.colors.darkblue};
+        font-size: 13px;
+      }
+    }
+  }
 `
 const ExternalLinks = styled.div`
   text-align: right;
