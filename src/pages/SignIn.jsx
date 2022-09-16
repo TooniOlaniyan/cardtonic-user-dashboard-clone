@@ -148,7 +148,7 @@ const MainContent = styled.div`
 const Form = styled.div`
   display: flex;
   width: 45rem;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.white};
   border-radius: 2rem;
   @media screen and (max-width: 640px) {
     width: 95vw;
@@ -182,6 +182,7 @@ const Form = styled.div`
         padding: 1.3rem 2rem;
         font-size: 18px;
         width: 100%;
+        background-color: transparent;
         @media screen and (max-width: 640px) {
           padding: 1.3rem;
         }

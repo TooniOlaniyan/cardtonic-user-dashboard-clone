@@ -30,7 +30,7 @@ const Main = styled.div`
   align-items: center;
   padding: 6rem 0;
   z-index: 3;
-  background-color: #f9f9f9;
+  background-color: ${({ theme }) => theme.colors.body};
   margin-bottom: 3rem;
   @media screen and (max-width: 640px) {
     gap: 8rem;

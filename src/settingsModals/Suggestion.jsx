@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FaArrowRight } from 'react-icons/fa'
-import { GrFormClose } from 'react-icons/gr'
+import { AiOutlineClose } from 'react-icons/ai'
 
 function Suggestion({setSuggestion}) {
   return (
     <Container>
       <SendSuggestion>
         <Button onClick={() => setSuggestion(false)}>
-          <GrFormClose />
+          <AiOutlineClose className='icon' />
         </Button>
         <div className='dropNote'>
           <p>Drop a note to tell us how we can make your experience better.</p>
@@ -116,12 +116,16 @@ const Container = styled.div`
      top: 1.4rem;
      right: 2rem;
      border: 3px solid ${({ theme }) => theme.colors.textcolor};
-     padding: 0.25rem;
+     padding: 0.4rem;
      border-radius: 0.8rem;
      display: flex;
      justify-content: center;
      align-items: center;
      cursor: pointer;
+     .icon {
+       color: ${({ theme }) => theme.colors.button};
+       font-size: 15px;
+     }
    `
 
 export default Suggestion

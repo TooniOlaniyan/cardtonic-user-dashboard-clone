@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GrFormClose } from 'react-icons/gr'
+import { AiOutlineClose } from 'react-icons/ai'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { useState } from 'react'
 import ChangePassword from './ChangePassword'
@@ -14,11 +14,13 @@ function Security({setSecurity}) {
   return (
     <Container>
       <ChangeSecurity>
-        {changePassword && <ChangePassword setChangePassword={setChangePassword}/>}
-        {changePin && <ChangePin setChangePin={setChangePin}/>}
-        {resetPin && <ResetPin setResetPin={setResetPin}/>}
+        {changePassword && (
+          <ChangePassword setChangePassword={setChangePassword} />
+        )}
+        {changePin && <ChangePin setChangePin={setChangePin} />}
+        {resetPin && <ResetPin setResetPin={setResetPin} />}
         <Button onClick={() => setSecurity(false)}>
-          <GrFormClose />
+          <AiOutlineClose className='icon' />
         </Button>
         <div onClick={() => setChangePassword(true)} className='settingOptions'>
           <p>Change Password</p>
@@ -102,12 +104,16 @@ const ChangeSecurity = styled.div`
    top: 1.4rem;
    right: 2rem;
    border: 3px solid ${({ theme }) => theme.colors.textcolor};
-   padding: 0.25rem;
+   padding: 0.4rem;
    border-radius: 0.8rem;
    display: flex;
    justify-content: center;
    align-items: center;
    cursor: pointer;
+   .icon {
+     color: ${({ theme }) => theme.colors.button};
+     font-size: 15px;
+   }
  `
 
 export default Security

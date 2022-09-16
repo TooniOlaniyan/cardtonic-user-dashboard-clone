@@ -157,7 +157,7 @@ const PinChange = styled.div`
    justify-content: center;
    align-items: center;
    cursor: pointer;
-   font-size: 30px;
+   font-size: 35px;
  `
    const Save = styled.div`
      display: flex;

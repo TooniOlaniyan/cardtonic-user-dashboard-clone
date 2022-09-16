@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GrFormClose } from 'react-icons/gr'
+import { AiOutlineClose } from 'react-icons/ai'
 
 function Support({setSupport}) {
   return (
     <Container>
       <SupportLinks>
         <Button onClick={() => setSupport(false)}>
-          <GrFormClose />
+          <AiOutlineClose className='icon' />
         </Button>
         <a
           target='_blank'
@@ -37,7 +37,7 @@ function Support({setSupport}) {
           </div>
         </a>
         <a target='_blank' href=''>
-          <div  className='phone'>
+          <div className='phone'>
             <p>Mobile | Phone</p>
           </div>
         </a>
@@ -135,12 +135,16 @@ const SupportLinks = styled.div`
    top: 1.4rem;
    right: 2rem;
    border: 3px solid ${({ theme }) => theme.colors.textcolor};
-   padding: 0.25rem;
+   padding: 0.4rem;
    border-radius: 0.8rem;
    display: flex;
    justify-content: center;
    align-items: center;
    cursor: pointer;
+   .icon {
+     color: ${({ theme }) => theme.colors.button};
+     font-size: 15px;
+   }
  `
 
 export default Support
