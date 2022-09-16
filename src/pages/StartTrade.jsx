@@ -217,6 +217,11 @@ const Trade = styled.div`
       ::-moz-placeholder {
         color: ${({ theme }) => theme.colors.textcolor};
       }
+      ::-webkit-outer-spin-button,
+      ::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
       &:focus {
         outline: none;
       }
@@ -235,8 +240,7 @@ const Trade = styled.div`
         font-weight: 900;
         font-size: clamp(0.5rem, 1.5vw, 1.4rem);
         color: ${({ theme }) => theme.colors.lightgreen};
-        text-f
-        span {
+        text-f span {
           font-size: 1.4vw;
         }
       }

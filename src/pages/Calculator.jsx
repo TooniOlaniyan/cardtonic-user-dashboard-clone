@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import SideBar from '../component/SideBar'
+import { FaArrowRight } from 'react-icons/fa'
 import NavBar from '../component/NavBar'
 
 function Calculator() {
@@ -75,6 +76,16 @@ function Calculator() {
                 placeholder='Enter Trade Amount'
               />
             </div>
+            <div className='start'>
+              <div className='amount'>
+                <p>&#8358;0.00  <span>000</span> </p>
+              </div>
+              <div className='start-trade'>
+                <p>
+                  Start Trade <FaArrowRight />
+                </p>
+              </div>
+            </div>
           </Trade>
         </Content>
       </MainContainer>
@@ -108,8 +119,7 @@ const Content = styled.div`
 `
 const Trade = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
-  padding: 3rem 2.8rem 2rem 2.8rem;
-  height: 100vh;
+  padding: 3rem;
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -123,8 +133,8 @@ const Trade = styled.div`
     display: flex;
     justify-content: center;
     select {
-      width: 80%;
-      padding: 1.5rem;
+      width: 70%;
+      padding: 1rem;
       border-radius: 1.2rem;
       border: 1px solid ${({ theme }) => theme.colors.lightblue};
       -webkit-appearance: none;
@@ -145,13 +155,13 @@ const Trade = styled.div`
   }
   .CashAmount {
     /* background-color: green; */
-    width: 80%;
+    width: 70%;
     display: flex;
     justify-content: center;
 
     input {
       flex: 4;
-      padding: 1.1rem;
+      padding: 1rem;
       border-radius: 1.2rem;
       font-weight: 500;
       color: ${({ theme }) => theme.colors.textcolor};
@@ -174,6 +184,47 @@ const Trade = styled.div`
       }
       input[type='number'] {
         -moz-appearance: textfield;
+      }
+    }
+  }
+  .start {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* background-color: red; */
+    width: 70%;
+    gap: 3rem;
+    .amount {
+      padding: 1rem;
+      flex: 1;
+      width: fit-content;
+      background-color: ${({ theme }) => theme.colors.lightblue3};
+      border-radius: 1rem;
+
+      p {
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+        font-size: clamp(0.5rem, 1.5vw, 1.4rem);
+        color: ${({ theme }) => theme.colors.lightgreen};
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+    .start-trade {
+      cursor: pointer;
+      margin-top: 1rem;
+      p {
+        background-color: ${({ theme }) => theme.colors.black};
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.2rem 2rem;
+        border-radius: 1rem;
+        color: ${({ theme }) => theme.colors.lightblue1};
       }
     }
   }
