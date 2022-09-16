@@ -78,7 +78,9 @@ function Calculator() {
             </div>
             <div className='start'>
               <div className='amount'>
-                <p>&#8358;0.00  <span>000</span> </p>
+                <p>
+                  &#8358;0.00 <span>000</span>{' '}
+                </p>
               </div>
               <div className='start-trade'>
                 <p>
@@ -87,6 +89,42 @@ function Calculator() {
               </div>
             </div>
           </Trade>
+          <CardList>
+            <div>
+              <p>
+                Listed below are the top 10 best gift cards to sell in Nigeria
+                at the moment, ranked according to the best rates in descending
+                order. It is updated automatically.
+              </p>
+            </div>
+            <CardTable></CardTable>
+            <div>
+              <p>
+                Rates specified on this page are accurate as at the time it’s
+                checked. However, rates change continually, and what the rate is
+                at the moment may change in the next minute. If you leave the
+                tab open, always reload the page before checking current rates.
+              </p>
+              <p>
+                Cardtonic gift card rates are mostly above market average in
+                Nigeria, which is because we have the interest of customers at
+                heart. So, you can be rest assured that the rate you see here is
+                among the best possible rates you can sell your gift card in
+                Nigeria.
+              </p>
+            </div>
+          </CardList>
+          <ExternalLinks>
+            <p>
+              <a href='https://cardtonic.com/rate-calculator' target='_blank'>
+                Rate Calculator
+              </a>
+              |{' '}
+              <a href='https://cardtonic.com/contact-us' target='_blank'>
+                Contact Us
+              </a>
+            </p>
+          </ExternalLinks>
         </Content>
       </MainContainer>
     </Main>
@@ -227,6 +265,35 @@ const Trade = styled.div`
         color: ${({ theme }) => theme.colors.lightblue1};
       }
     }
+  }
+  
+`
+const CardList = styled.div`
+  background-color: ${({ theme }) => theme.colors.white};
+  padding: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 0.8rem;
+  flex-direction: column;
+`
+const CardTable = styled.div`
+  
+`
+const ExternalLinks = styled.div`
+  text-align: right;
+  margin-top: 1rem;
+  padding: 1rem;
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.graytext};
+    margin-right: 0.3rem;
+  }
+  p {
+    color: ${({ theme }) => theme.colors.graytext};
+    font-weight: 900;
+    font-size: 12px;
   }
 `
 
