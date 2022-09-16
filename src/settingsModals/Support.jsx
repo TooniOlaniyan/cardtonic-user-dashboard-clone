@@ -27,7 +27,7 @@ function Support({setSupport}) {
             <p>Twitter</p>
           </div>
         </a>
-        <span className='horizontalLine'></span>
+        <span></span>
         <a
           target='_blank'
           href='https://api.whatsapp.com/send?phone=2347060502770'
@@ -74,6 +74,14 @@ const SupportLinks = styled.div`
   a {
     text-decoration: none;
   }
+  span {
+    width: 30%;
+    /* background-color: ${({ theme }) => theme.colors.lightgray}; */
+    height: 1px !important;
+    background-color: red;
+    display: block;
+    opacity: 1 !important;
+  }
 
   .facebook {
     background-color: ${({ theme }) => theme.colors.textcolor};
@@ -87,11 +95,7 @@ const SupportLinks = styled.div`
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
   }
-  .horizontalLine {
-    width: 160px;
-    background-color: ${({ theme }) => theme.colors.lightgray};
-    height: 1px;
-  }
+ 
   .tweet {
     background-color: ${({ theme }) => theme.colors.lightblue1};
     color: ${({ theme }) => theme.colors.white};
