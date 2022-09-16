@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import SideBar from '../component/SideBar'
 import { FaArrowRight } from 'react-icons/fa'
 import NavBar from '../component/NavBar'
+import AppleImg from '../asset/images/AppleImg.png'
+import RazerImg from '../asset/images/RazerImg.png'
+import staemImg from '../asset/images/staemImg.png'
+import Walmart from '../asset/images/Walmart.png'
 
 function Calculator() {
   return (
@@ -90,7 +94,7 @@ function Calculator() {
             </div>
           </Trade>
           <CardList>
-            <div className='cardInfo'>
+            <div className='cardInfo topInfo'>
               <p>
                 Listed below are the top 10 best gift cards to sell in Nigeria
                 at the moment, ranked according to the best rates in descending
@@ -104,16 +108,89 @@ function Calculator() {
                 <span>Rate</span>
               </div>
               <div className='line'></div>
+
               <div className='tableData'>
                 <div className='cardIcon'>
-                  <img src="" alt="" />
-                  <p>Staem</p>
+                  <img src={staemImg} alt='' />
+                  <p className='cardName'>Staem</p>
                 </div>
                 <p>Uk steam physical </p>
                 <span>555</span>
               </div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src={RazerImg} alt='' />
+                  <p className='cardName'>Razer</p>
+                </div>
+                <p>USA Razer Gold Gift Card (50 and above) </p>
+                <span>555</span>
+              </div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src={staemImg} alt='' />
+                  <p className='cardName'>Staem</p>
+                </div>
+                <p>UK Steam Ecode £ </p>
+                <span>555</span>
+              </div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src={RazerImg} alt='' />
+                  <p className='cardName'>Razer</p>
+                </div>
+                <p>CHF Steam Physical </p>
+                <span>555</span>
+              </div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src={AppleImg} alt='' />
+                  <p className='cardName'>Apple/iTunes</p>
+                </div>
+                <p>USA Steam Physical $ </p>
+                <span>555</span>
+              </div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src={AppleImg} alt='' />
+                  <p className='cardName'>Apple/iTunes</p>
+                </div>
+                <p>USA Razer Gold Gift Card (5-49) </p>
+                <span>555</span>
+              </div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src={AppleImg} alt='' />
+                  <p className='cardName'>Apple/iTunes</p>
+                </div>
+                <p>Greece Apple/iTunes Physical </p>
+                <span>555</span>
+              </div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src={RazerImg} alt='' />
+                  <p className='cardName'>Staem</p>
+                </div>
+                <p>Luxembourg Apple/iTunes Physical </p>
+                <span>555</span>
+              </div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src={staemImg} alt='' />
+                  <p className='cardName'>Staem</p>
+                </div>
+                <p>Portugal Apple/iTunes Physical</p>
+                <span>555</span>
+              </div>
+              <div className='tableData'>
+                <div className='cardIcon'>
+                  <img src={Walmart} alt='' />
+                  <p className='cardName'>Staem</p>
+                </div>
+                <p>Walmart VISA 4786/4852(200 Above) </p>
+                <span>555</span>
+              </div>
             </CardTable>
-            <div className='cardInfo'>
+            <div className='cardInfo buttomInfo'>
               <p>
                 Rates specified on this page are accurate as at the time it’s
                 checked. However, rates change continually, and what the rate is
@@ -290,6 +367,7 @@ const CardList = styled.div`
   align-items: center;
   /* justify-content: center; */
   gap: 0.8rem;
+  margin-top: 4.5rem;
   flex-direction: column;
   .cardInfo {
     display: flex;
@@ -300,6 +378,12 @@ const CardList = styled.div`
       /* background-color: red; */
       font-size: 16.5px;
     }
+  }
+  .buttomInfo{
+    margin-top: 7rem;
+  }
+  .topInfo{
+    margin-bottom: 2rem;
   }
 `
 const CardTable = styled.div`
@@ -331,6 +415,7 @@ const CardTable = styled.div`
     width: 100%;
     height: 1px;
     background-color: ${({ theme }) => theme.colors.lightgray};
+    margin-bottom: 2rem;
   }
   .tableData {
     display: flex;
@@ -338,24 +423,46 @@ const CardTable = styled.div`
     /* background-color: yellow; */
     width: 100%;
     justify-content: space-between;
-    p {
-      font-weight: 900;
+    
+    .cardName {
+      font-weight: 700;
       color: ${({ theme }) => theme.colors.darkblue};
       font-size: 13px;
+      flex: 1;
+      text-align: start;
+    }
+
+    p {
+      font-weight: 700;
+      color: ${({ theme }) => theme.colors.darkblue};
+      font-size: 13px;
+      flex: 1;
+      text-align: center;
     }
     span {
-      font-weight: 900;
+      font-weight: 700;
       color: ${({ theme }) => theme.colors.lightblue1};
       font-size: 13px;
+      flex: 1;
+      /* background-color: green; */
+      text-align: end;
     }
     .cardIcon {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex: 1;
+      gap: 0.5rem;
       p {
-        font-weight: 900;
+        font-weight: 700;
         color: ${({ theme }) => theme.colors.darkblue};
         font-size: 13px;
+      }
+      img{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+
       }
     }
   }
