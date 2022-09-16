@@ -77,6 +77,7 @@ const Container = styled.div`
         resize: none;
         font-size: 16px;
         font-family: 'Lato', sans-serif;
+        background-color: transparent;
         color: ${({ theme }) => theme.colors.textcolor};
         ::-webkit-input-placeholder {
           color: ${({ theme }) => theme.colors.textcolor};

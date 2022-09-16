@@ -1,5 +1,5 @@
 import React from 'react';
-import {theme} from './component/styles/theme'
+import {theme , darkTheme} from './component/styles/theme'
 import {ThemeProvider} from 'styled-components'
 import SignIn from './pages/SignIn';
 import Register from './pages/Register';
@@ -21,7 +21,7 @@ function App() {
     <div className='App'>
       <Globalstyles />
       <ToastContainer />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={darkTheme}>
         <Router>
           <Routes>
             <Route path='/' element={<SignIn />} />

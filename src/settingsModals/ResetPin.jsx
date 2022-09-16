@@ -112,6 +112,7 @@ const PinReset = styled.div`
       padding: 1.2rem 2rem;
       font-size: 17px;
       width: 100%;
+      background-color: transparent;
       @media screen and (max-width: 640px) {
         padding: 1.3rem;
       }

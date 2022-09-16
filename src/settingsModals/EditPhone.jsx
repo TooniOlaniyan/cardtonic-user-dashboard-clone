@@ -87,6 +87,7 @@ const PhoneEdit = styled.div`
       font-size: 17px;
       font-family: 'Lato', sans-serif;
       border: 1px solid ${({ theme }) => theme.colors.lightblue};
+      background-color: transparent;
       ::-webkit-input-placeholder {
         color: ${({ theme }) => theme.colors.textcolor};
       }
@@ -105,11 +106,12 @@ const PhoneEdit = styled.div`
    right: 1.8rem;
    padding: 0.25rem;
    color: ${({ theme }) => theme.colors.textcolor};
+   fill: #fff;
    display: flex;
    justify-content: center;
    align-items: center;
    cursor: pointer;
-   font-size: 30px;
+   font-size: 35px;
  `
 
   const Save = styled.div`

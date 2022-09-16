@@ -88,12 +88,18 @@ const SupportLinks = styled.div`
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
+    p{
+      color:${({theme}) => theme.colors.support}
+    }
   }
   .insta {
     background-color: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
+    p{
+      color:${({theme}) => theme.colors.support}
+    }
   }
  
   .tweet {
@@ -101,18 +107,27 @@ const SupportLinks = styled.div`
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
+    p{
+      color:${({theme}) => theme.colors.support}
+    }
   }
   .watsapp {
     background-color: ${({ theme }) => theme.colors.green};
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
+    p{
+      color:${({theme}) => theme.colors.support}
+    }
   }
   .phone {
     background-color: ${({ theme }) => theme.colors.darkblue};
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
+    p{
+      color:${({theme}) => theme.colors.support}
+    }
   }
 `
  const Button = styled.div`

@@ -1,6 +1,6 @@
 import React , {useState} from 'react'
 import styled from 'styled-components'
-import { GrFormClose } from 'react-icons/gr'
+import { AiOutlineClose } from 'react-icons/ai'
 import { FaPhoneAlt, FaArrowRight } from 'react-icons/fa'
 import { HiOutlineCake } from 'react-icons/hi'
 import {BiEnvelope} from 'react-icons/bi'
@@ -12,11 +12,11 @@ function ProfileModal({setChangeProfile}) {
   return (
     <Container>
       <ChangeProfile>
-      {editPhone && <EditPhone setEditPhoneNumber={setEditPhoneNumber}/>}
+        {editPhone && <EditPhone setEditPhoneNumber={setEditPhoneNumber} />}
         <Button onClick={() => setChangeProfile(false)}>
-          <GrFormClose />
+          <AiOutlineClose className='icon' />
         </Button>
-        <div onClick={() => setEditPhoneNumber(true) } className='changePhone'>
+        <div onClick={() => setEditPhoneNumber(true)} className='changePhone'>
           <div>
             <FaPhoneAlt className='phone' />
             <p>Edit Phone Number</p>
@@ -42,7 +42,7 @@ function ProfileModal({setChangeProfile}) {
               Save <FaArrowRight />
             </p>
           </div>
-          <p  className='profile'>Profile</p>
+          <p className='profile'>Profile</p>
         </Save>
       </ChangeProfile>
     </Container>
@@ -139,12 +139,16 @@ const ChangeProfile = styled.div`
    top: 1.4rem;
    right: 2rem;
    border: 3px solid ${({ theme }) => theme.colors.textcolor};
-   padding: 0.25rem;
+   padding: 0.4rem;
    border-radius: 0.8rem;
    display: flex;
    justify-content: center;
    align-items: center;
    cursor: pointer;
+   .icon {
+     color: ${({ theme }) => theme.colors.button};
+     font-size: 15px;
+   }
  `
 
  const Save = styled.div`

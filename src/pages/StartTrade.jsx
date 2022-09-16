@@ -187,6 +187,7 @@ const Trade = styled.div`
       resize: none;
       font-size: 18px;
       font-family: 'Lato', sans-serif;
+      background-color: transparent;
       color: ${({ theme }) => theme.colors.textcolor};
       ::-webkit-input-placeholder {
         color: ${({ theme }) => theme.colors.textcolor};
@@ -208,6 +209,7 @@ const Trade = styled.div`
       border-radius: 1.2rem;
       font-weight: 500;
       color: ${({ theme }) => theme.colors.textcolor};
+      background-color: transparent;
       font-size: 17px;
       font-family: 'Lato', sans-serif;
       border: 1px solid ${({ theme }) => theme.colors.lightblue};
@@ -273,14 +275,19 @@ const Trade = styled.div`
       font-size: 18px !important;
       font-weight: 700;
       color: ${({ theme }) => theme.colors.textcolor};
+      background-color: transparent;
       font-family: 'Lato', sans-serif;
       cursor: pointer;
+      option {
+        background-color: ${({ theme }) => theme.colors.white};
+      }
       &:focus {
         outline: none;
       }
       optgroup[label] {
         font-weight: 400;
         font-size: 17px;
+        background-color: ${({ theme }) => theme.colors.white};
       }
     }
   }

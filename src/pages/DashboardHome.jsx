@@ -29,6 +29,7 @@ function DashboardHome() {
                   alt=''
                 />
                 {show ? <p className='assets'> &#8358; 0.<span>00</span> </p> : <p className='money'>**********</p>}
+
                 <p>Your Wallet Funds</p>
               </div>
               <div>
@@ -106,6 +107,9 @@ const Content = styled.div`
       border-radius: 1.5rem;
       flex: 1.6;
       .deposit {
+        p {
+          color: ${({ theme }) => theme.colors.darkblue};
+        }
         .money {
           font-size: 30px;
           font-weight: 900;

@@ -132,6 +132,7 @@ const PinChange = styled.div`
       padding: 1.2rem 2rem;
       font-size: 17px;
       width: 100%;
+      background-color: transparent;
       @media screen and (max-width: 640px) {
         padding: 1.3rem;
       }
@@ -151,6 +152,7 @@ const PinChange = styled.div`
    right: 1.8rem;
    padding: 0.25rem;
    color: ${({ theme }) => theme.colors.textcolor};
+   fill: ${({ theme }) => theme.colors.textcolor};
    display: flex;
    justify-content: center;
    align-items: center;

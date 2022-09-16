@@ -7,7 +7,7 @@ import {NavLink} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import { BiStar } from 'react-icons/bi'
 import { FaArrowRight } from 'react-icons/fa'
-import { GrFormClose } from 'react-icons/gr'
+import {AiOutlineClose} from 'react-icons/ai'
 
 function SideBar() {
   const [openReward , setOpenReward] = useState(false)
@@ -28,7 +28,7 @@ function SideBar() {
             <div className='RewardContainer'>
               <div className='rewardContent'>
                 <Button onClick={() => setOpenReward(false)}>
-                  <GrFormClose />
+                  <AiOutlineClose className='icon' />
                 </Button>
                 <p className='loyalText'>
                   Our customer loyalty system gives you points as you carry out
@@ -103,9 +103,17 @@ function SideBar() {
             <div className='starModalContainer'>
               <div className='starContent'>
                 <Button onClick={() => setOpenStar(false)}>
-                  <GrFormClose />
+                  <AiOutlineClose className='icon' />
                 </Button>
-                <p style={{ color: '#cecece', fontWeight: '700' , fontSize:'15px' }}>You are a</p>
+                <p
+                  style={{
+                    color: '#cecece',
+                    fontWeight: '700',
+                    fontSize: '15px',
+                  }}
+                >
+                  You are a
+                </p>
                 <p
                   style={{
                     color: '#1b507e',
@@ -412,17 +420,22 @@ const RewardText = styled.div`
   }
 `
  const Button = styled.div`
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border: 3px solid ${({ theme }) => theme.colors.textcolor};
-  padding: 0.25rem;
-  border-radius: 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-`
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   border: 3px solid ${({ theme }) => theme.colors.textcolor};
+   fill: red;
+   padding: 0.4rem;
+   border-radius: 0.8rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   .icon {
+     color: ${({ theme }) => theme.colors.button};
+     font-size: 15px;
+   }
+ `
 
 const Reward = styled.div`
   display: flex;

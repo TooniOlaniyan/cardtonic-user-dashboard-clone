@@ -273,13 +273,18 @@ const Trade = styled.div`
       font-weight: 700;
       color: ${({ theme }) => theme.colors.textcolor};
       font-family: 'Lato', sans-serif;
+      background-color: transparent;
       cursor: pointer;
+      option {
+        background-color: ${({ theme }) => theme.colors.white};
+      }
       &:focus {
         outline: none;
       }
       optgroup[label] {
         font-weight: 400;
         font-size: 17px;
+        background-color: ${({ theme }) => theme.colors.white};
       }
     }
   }
@@ -297,6 +302,7 @@ const Trade = styled.div`
       font-size: 17px;
       font-family: 'Lato', sans-serif;
       border: 1px solid ${({ theme }) => theme.colors.lightblue};
+      background-color: transparent;
       ::-webkit-input-placeholder {
         color: ${({ theme }) => theme.colors.textcolor};
       }
@@ -357,7 +363,6 @@ const Trade = styled.div`
       }
     }
   }
-  
 `
 const CardList = styled.div`
   background-color: ${({ theme }) => theme.colors.white};

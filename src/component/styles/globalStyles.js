@@ -1,5 +1,6 @@
 import {createGlobalStyle} from 'styled-components'
 
+
 const Globalstyles = createGlobalStyle`
 
 *{
@@ -9,7 +10,7 @@ const Globalstyles = createGlobalStyle`
 }
 body{
     font-family: 'Lato', sans-serif;
-    background-color: #F9F9F9;
+    background-color: #1e1e1e;
     /* background-color: #040303; */
     
 }
