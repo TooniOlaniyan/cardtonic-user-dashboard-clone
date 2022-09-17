@@ -17,13 +17,14 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
-  // const [isLight , setIsLight] = useState(darkTheme)
+  const [isLight , setIsLight] = useState('dark')
+  const isDark = isLight=== 'dark'
   
   return (
     <div className='App'>
       <Globalstyles />
       <ToastContainer />
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={isDark ? darkTheme : theme}>
         <Router>
           <Routes>
             <Route path='/' element={<SignIn />} />
