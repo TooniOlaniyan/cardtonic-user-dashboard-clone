@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {theme , darkTheme} from './component/styles/theme'
 import {ThemeProvider} from 'styled-components'
 import SignIn from './pages/SignIn';
@@ -17,6 +17,8 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
+  // const [isLight , setIsLight] = useState(darkTheme)
+  
   return (
     <div className='App'>
       <Globalstyles />

@@ -26,7 +26,7 @@ function SignIn() {
          navigate('/dashboard')
        }
   return (
-    <div>
+    <Container>
       <RegisterNav />
       <MainContent>
         <div className='middleContent'>
@@ -77,7 +77,7 @@ function SignIn() {
                   Get me in <BsArrowRightShort className='icon' />
                 </button>
 
-                <p>Forgot your password?</p>
+                <p className='forgot'>Forgot your password?</p>
               </div>
             </form>
           </Form>
@@ -92,9 +92,13 @@ function SignIn() {
           </Link>
         </p>
       </Redirect>
-    </div>
+    </Container>
   )
 }
+const Container = styled.div`
+  background-color: ${({ theme }) => theme.colors.body};
+  height: 100vh;
+`
 const MainContent = styled.div`
   display: flex;
   justify-content: space-between;
@@ -200,8 +204,12 @@ const Form = styled.div`
       justify-content: space-between;
       align-items: center;
       margin-top: 1rem;
+      .forgot {
+        color: ${({ theme }) => theme.colors.button};
+      }
 
       width: 100%;
+
       @media screen and (max-width: 640px) {
         flex-direction: column-reverse;
         gap: 5rem;

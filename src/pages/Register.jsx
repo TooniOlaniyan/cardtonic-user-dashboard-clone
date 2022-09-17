@@ -32,7 +32,7 @@ function Register() {
 
   }
   return (
-    <div>
+    <Container>
       <RegisterNav />
       <MainContent>
         <div className='middleContent'>
@@ -138,10 +138,12 @@ function Register() {
           </Form>
         </div>
       </MainContent>
-    </div>
+    </Container>
   )
 }
-
+const Container = styled.div`
+background-color: ${({ theme }) => theme.colors.body};
+`
 const MainContent = styled.div`
   display: flex;
   justify-content: space-between;
@@ -185,6 +187,7 @@ const Form = styled.div`
   width: 45rem;
   background-color: white;
   border-radius: 2rem;
+  background-color: ${({ theme }) => theme.colors.white};
   @media screen and (max-width: 640px) {
     width: 90vw;
   }
@@ -220,6 +223,7 @@ const Form = styled.div`
         padding: 1.3rem 2rem;
         font-size: 18px;
         width: 100%;
+        background-color: transparent;
         @media screen and (max-width: 640px) {
           padding: 1.2rem;
         }

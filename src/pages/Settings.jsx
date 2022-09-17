@@ -89,6 +89,7 @@ const MainContainer = styled.div`
   flex: 4.5;
   flex-direction: column;
   gap: 1rem;
+  background-color: ${({ theme }) => theme.colors.body};
 `
 const Main = styled.div`
   display: flex;

@@ -10,8 +10,6 @@ const Globalstyles = createGlobalStyle`
 }
 body{
     font-family: 'Lato', sans-serif;
-    background-color: #1e1e1e;
-    /* background-color: #040303; */
     
 }
 html{

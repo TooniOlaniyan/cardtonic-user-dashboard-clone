@@ -25,7 +25,7 @@ export const theme = {
 
 export const darkTheme = {
   colors: {
-    body: '1e1e1e',
+    body: '#1e1e1e',
     gray: '#cecece',
     button: '#fff',
     support: '#fff',

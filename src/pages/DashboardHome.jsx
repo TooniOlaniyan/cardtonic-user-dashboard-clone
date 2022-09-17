@@ -71,6 +71,7 @@ const MainContainer = styled.div`
   flex: 4.5;
   flex-direction: column;
   gap: 1rem;
+  background-color: ${({ theme }) => theme.colors.body};
   @media screen and (max-width: 640px) {
     /* background-color: red; */
     overflow: hidden;
