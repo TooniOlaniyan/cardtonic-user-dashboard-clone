@@ -7,6 +7,7 @@ import notification from '../asset/images/notification.svg'
 import {useNavigate} from 'react-router-dom'
 
 import { AiOutlineClose } from 'react-icons/ai'
+import Switch from './Switch'
 
  
 function NavBar() {
@@ -24,8 +25,10 @@ function NavBar() {
           Good Afternoon, <span>The_ot</span>
         </p>
       </div>
+
       <div>
         <div className='logOut'>
+          <Switch />
           {/* <img onClick={handleClick} src={logOut} alt='' /> */}
           <svg
             // xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -50,6 +53,7 @@ function NavBar() {
               fill='currentcolor'
             ></path>
           </svg>
+
           {/* <img
             onClick={() => setIsNotification(true)}
             src={notification}
@@ -219,7 +223,7 @@ const Navigation = styled.div`
   .logOut {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: 1rem;
     cursor: pointer;
     svg {
