@@ -307,6 +307,7 @@ function SideBar() {
 
 const Main = styled.div`
 background-color: ${({theme}) => theme.colors.white};
+transition: all 0.5s;
 height: 100vh;
 gap: 2rem;
 padding: 3rem 0;
@@ -384,19 +385,17 @@ const Links = styled.div`
 `
 
 const Middle = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1rem;
-    padding: 0.8rem;
-    gap: 1rem;
-    background-color: ${({theme})=> theme.colors.lightblue2};
-    img{
-      cursor: pointer;
-    }
-
-   
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: 0.8rem;
+  gap: 1rem;
+  background-color: ${({ theme }) => theme.colors.lightblue2};
+  transition: all 0.5s;
+  img {
+    cursor: pointer;
+  }
 `
 const RewardText = styled.div`
   display: flex;

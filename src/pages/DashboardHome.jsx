@@ -72,6 +72,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: ${({ theme }) => theme.colors.body};
+  transition: all 0.5s;
   @media screen and (max-width: 640px) {
     /* background-color: red; */
     overflow: hidden;
@@ -106,6 +107,7 @@ const Content = styled.div`
       gap: 6rem;
       padding: 1.3rem 0rem;
       border-radius: 1.5rem;
+      transition: all 0.5s;
       flex: 1.6;
       .deposit {
         p {
@@ -137,6 +139,7 @@ const Content = styled.div`
     padding: 1.3rem 0rem;
     border-radius: 1.5rem;
     flex: 1.4;
+    transition: all 0.5s;
 
     background-color: ${({ theme }) => theme.colors.darkblue};
     p {

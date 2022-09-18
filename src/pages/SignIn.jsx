@@ -98,6 +98,7 @@ function SignIn() {
 const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.body};
   height: 100vh;
+  transition: all 0.5s;
 `
 const MainContent = styled.div`
   display: flex;

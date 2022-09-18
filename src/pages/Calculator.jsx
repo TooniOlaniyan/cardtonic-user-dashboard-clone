@@ -228,6 +228,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: ${({ theme }) => theme.colors.body};
+  transition: all 0.5s;
 `
 const Main = styled.div`
   display: flex;
@@ -257,6 +258,7 @@ const Trade = styled.div`
   /* justify-content: center; */
   gap: 0.8rem;
   flex-direction: column;
+  transition: all 0.5s;
   .cards,
   .CardSubCategory {
     /* background-color: red; */
@@ -375,6 +377,7 @@ const CardList = styled.div`
   gap: 0.8rem;
   margin-top: 4.5rem;
   flex-direction: column;
+  transition: all 0.5s;
   .cardInfo {
     display: flex;
     flex-direction: column;
@@ -385,10 +388,10 @@ const CardList = styled.div`
       font-size: 16.5px;
     }
   }
-  .buttomInfo{
+  .buttomInfo {
     margin-top: 7rem;
   }
-  .topInfo{
+  .topInfo {
     margin-bottom: 2rem;
   }
 `

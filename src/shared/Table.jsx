@@ -54,6 +54,7 @@ const TableCOntainer = styled.div`
   align-items: center;
   gap: 1.4rem;
   flex-direction: column;
+  transition: all 0.5s;
   .line {
     width: 100%;
     height: 0.1rem;
@@ -68,7 +69,6 @@ const TableCOntainer = styled.div`
     align-self: flex-end;
     a {
       text-decoration: none;
-      
     }
     p {
       display: flex;
@@ -76,10 +76,8 @@ const TableCOntainer = styled.div`
       align-items: center;
       gap: 0.5rem;
       color: ${({ theme }) => theme.colors.gray};
-      
     }
   }
- 
 `
 const TableHead = styled.div`
   display: flex;

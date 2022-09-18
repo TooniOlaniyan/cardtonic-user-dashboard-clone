@@ -232,6 +232,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: ${({ theme }) => theme.colors.body};
+  transition: all 0.5s;
 `
 const Main = styled.div`
   display: flex;
@@ -352,6 +353,7 @@ const Content = styled.div`
       gap: 6rem;
       padding: 1.3rem;
       border-radius: 1.8rem;
+      transition: all 0.5s;
 
       .deposit {
         p {
@@ -382,6 +384,7 @@ const Content = styled.div`
     gap: 4rem;
     padding: 1.3rem;
     border-radius: 1.8rem;
+    transition: all 0.5s;
 
     background-color: ${({ theme }) => theme.colors.darkblue};
     p {
@@ -406,6 +409,7 @@ const Content = styled.div`
       background-color: ${({ theme }) => theme.colors.white};
       padding: 1.7rem 0rem;
       border-radius: 1.5rem;
+      transition: all 0.5s;
       p {
         font-weight: 900;
         color: ${({ theme }) => theme.colors.textcolor};
@@ -452,6 +456,7 @@ const Account = styled.div`
     align-items: center;
     justify-content: space-between;
     background-color: ${({ theme }) => theme.colors.white};
+    transition: all 0.5s;
     width: 60%;
     padding: 1.3rem 2rem;
     border-radius: 1.1rem;

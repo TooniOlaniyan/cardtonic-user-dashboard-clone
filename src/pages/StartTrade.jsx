@@ -146,6 +146,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: ${({ theme }) => theme.colors.body};
+  transition: all 0.5s;
 `
 const Main = styled.div`
   display: flex;
@@ -176,6 +177,7 @@ const Trade = styled.div`
   align-items: flex-start;
   gap: 0.8rem;
   flex-direction: column;
+  transition: all 0.5s;
   .comments {
     width: 100%;
     textarea {

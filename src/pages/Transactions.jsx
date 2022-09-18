@@ -55,6 +55,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: ${({ theme }) => theme.colors.body};
+  transition: all 0.5s;
 `
 const Main = styled.div`
   display: flex;
@@ -82,6 +83,7 @@ const Content = styled.div`
       background-color: ${({ theme }) => theme.colors.white};
       padding: 1.7rem 0rem;
       border-radius: 1.5rem;
+      transition: all 0.5s;
       p {
         font-weight: 900;
         color: ${({ theme }) => theme.colors.textcolor};

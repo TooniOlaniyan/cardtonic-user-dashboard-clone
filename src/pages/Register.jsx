@@ -142,12 +142,14 @@ function Register() {
   )
 }
 const Container = styled.div`
-background-color: ${({ theme }) => theme.colors.body};
+  background-color: ${({ theme }) => theme.colors.body};
+  transition: all 0.5s;
 `
 const MainContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.5s;
 
   .middleContent {
     padding: 1rem 5rem;

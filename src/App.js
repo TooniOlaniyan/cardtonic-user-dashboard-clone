@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {theme , darkTheme} from './component/styles/theme'
-import {ThemeProvider} from 'styled-components'
+import {ThemeContext, ThemeProvider} from 'styled-components'
 import SignIn from './pages/SignIn';
 import Register from './pages/Register';
 import StartTrade from './pages/StartTrade';
@@ -17,27 +17,29 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
-  const [isLight , setIsLight] = useState('light')
-  const isDark = isLight=== 'dark'
+  const [defaultTheme , setDefaultTheme] = useState('light')
+  const isDark = defaultTheme=== 'dark'
   
   return (
     <div className='App'>
       <Globalstyles />
       <ToastContainer />
+      <ThemeContext.Provider value={{defaultTheme , setDefaultTheme}}>
       <ThemeProvider theme={isDark ? darkTheme : theme}>
-        <Router>
-          <Routes>
-            <Route path='/' element={<SignIn />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/dashboard' element={<DashboardHome/>} />
-            <Route path='/start-trade' element={<StartTrade />} />
-            <Route path='/transactions' element={<Transactions />} />
-            <Route path='/wallet' element={<Wallet />} />
-            <Route path='/calculator' element={<Calculator />} />
-            <Route path='/settings' element={<Settings />} />
-          </Routes>
-        </Router>
+          <Router>
+            <Routes>
+              <Route path='/' element={<SignIn />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/dashboard' element={<DashboardHome />} />
+              <Route path='/start-trade' element={<StartTrade />} />
+              <Route path='/transactions' element={<Transactions />} />
+              <Route path='/wallet' element={<Wallet />} />
+              <Route path='/calculator' element={<Calculator />} />
+              <Route path='/settings' element={<Settings />} />
+            </Routes>
+          </Router>
       </ThemeProvider>
+        </ThemeContext.Provider>
     </div>
   )
 }

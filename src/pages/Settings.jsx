@@ -90,6 +90,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   background-color: ${({ theme }) => theme.colors.body};
+  transition: all 0.5s;
 `
 const Main = styled.div`
   display: flex;
@@ -102,6 +103,7 @@ const Content = styled.div`
   padding: 0.1rem 6rem 3rem 6rem;
   height: 83vh;
   overflow-y: scroll;
+  
   header {
     text-align: end;
     p {
@@ -120,6 +122,7 @@ const Content = styled.div`
     align-items: flex-start;
     gap: 1.5rem;
     flex-direction: column;
+    transition: all 0.5s;
 
     .settingOptions {
       display: flex;

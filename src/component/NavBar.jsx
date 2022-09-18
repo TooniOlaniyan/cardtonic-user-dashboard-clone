@@ -114,6 +114,7 @@ const Navigation = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.5;
   @media screen and (max-width: 640px) {
     display: none;
   }
