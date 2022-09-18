@@ -4,8 +4,7 @@ import { ThemeContext } from 'styled-components'
 
 function Switch() {
     const themeContext = useContext(ThemeContext)
-    console.log('Current theme: ', themeContext)
-    const [isDarkMode, setIsDarkMode] = useState(() => false)
+    const [isDarkMode, setIsDarkMode] = useState(false)
     return (
     <DarkModeToggle onChange={setIsDarkMode} checked={isDarkMode} size={70} />
     )
