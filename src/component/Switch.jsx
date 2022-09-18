@@ -1,12 +1,17 @@
 import React , {useState , useContext} from 'react'
 import DarkModeToggle from "react-dark-mode-toggle";
-import { ThemeContext } from 'styled-components'
+import { useTheme } from 'styled-components';
 
-function Switch() {
-    const themeContext = useContext(ThemeContext)
+function Switch({ToggleTheme}) {
+    const handleChange = () => {
+        setIsDarkMode(!isDarkMode)
+        
+        
+
+    }
     const [isDarkMode, setIsDarkMode] = useState(false)
     return (
-    <DarkModeToggle onChange={setIsDarkMode} checked={isDarkMode} size={70} />
+    <DarkModeToggle onChange={handleChange} checked={isDarkMode} size={70} />
     )
     }
 

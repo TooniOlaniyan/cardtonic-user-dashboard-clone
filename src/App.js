@@ -29,7 +29,7 @@ function App() {
           <Routes>
             <Route path='/' element={<SignIn />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/dashboard' element={<DashboardHome />} />
+            <Route path='/dashboard' element={<DashboardHome/>} />
             <Route path='/start-trade' element={<StartTrade />} />
             <Route path='/transactions' element={<Transactions />} />
             <Route path='/wallet' element={<Wallet />} />

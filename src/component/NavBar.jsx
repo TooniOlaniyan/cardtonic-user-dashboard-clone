@@ -26,7 +26,7 @@ function NavBar() {
 
       <div>
         <div className='logOut'>
-          <Switch />
+          <Switch/>
           {/* <img onClick={handleClick} src={logOut} alt='' /> */}
           <svg
             // xmlns:xlink='http://www.w3.org/1999/xlink'

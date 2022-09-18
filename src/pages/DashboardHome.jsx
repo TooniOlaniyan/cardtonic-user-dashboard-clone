@@ -15,9 +15,9 @@ function DashboardHome() {
   }
   return (
     <Main>
-      <SideBar />
+      <SideBar/>
       <MainContainer>
-        <NavBar />
+        <NavBar/>
         <Content>
           <div className='top'>
             <div className='cardOne'>
