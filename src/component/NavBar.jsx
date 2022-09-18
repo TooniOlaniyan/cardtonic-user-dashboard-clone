@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import styled from 'styled-components'
-import logOut from '../asset/images/logOut.svg'
 import Yes from '../asset/images/Yes.svg'
 import No from '../asset/images/No.svg'
-import notification from '../asset/images/notification.svg'
 import {useNavigate} from 'react-router-dom'
 
 import { AiOutlineClose } from 'react-icons/ai'

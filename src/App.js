@@ -17,7 +17,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
-  const [isLight , setIsLight] = useState('dark')
+  const [isLight , setIsLight] = useState('light')
   const isDark = isLight=== 'dark'
   
   return (
