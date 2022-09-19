@@ -24,7 +24,7 @@ function App() {
     <div className='App'>
       <Globalstyles />
       <ToastContainer />
-      <ThemeContext.Provider value={{defaultTheme , setDefaultTheme}}>
+      <ThemeContext.Provider value={{defaultTheme , setDefaultTheme , isDark}}>
       <ThemeProvider theme={isDark ? darkTheme : theme}>
           <Router>
             <Routes>
