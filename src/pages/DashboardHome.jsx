@@ -88,6 +88,10 @@ const Content = styled.div`
   padding: 0.1rem 6rem 3rem 6rem;
   height: 83vh;
   overflow-y: scroll;
+  @media screen and (max-width: 640px) {
+    height: 100vh;
+    overflow: hidden;
+  }
 
   .top {
     display: flex;
@@ -95,7 +99,7 @@ const Content = styled.div`
     align-items: flex-end;
     gap: 0.7rem;
     @media screen and (max-width: 640px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: center;
     }
 
@@ -108,6 +112,9 @@ const Content = styled.div`
       padding: 1.3rem 0rem;
       border-radius: 1.5rem;
       transition: all 0.5s;
+      @media screen and (max-width: 640px) {
+        width: 90vw;
+      }
       flex: 1.6;
       .deposit {
         p {
@@ -142,6 +149,9 @@ const Content = styled.div`
     transition: all 0.5s;
 
     background-color: ${({ theme }) => theme.colors.darkblue};
+    @media screen and (max-width: 640px) {
+      width: 90vw;
+    }
     p {
       color: ${({ theme }) => theme.colors.white};
       font-weight: 700;
@@ -159,11 +169,22 @@ const Content = styled.div`
     font-size: 30px;
     font-weight: 900;
     color: ${({ theme }) => theme.colors.darkblue};
+    @media screen and (max-width: 640px) {
+      width: 90vw;
+      font-size: 25px;
+    }
   }
 `
 
 const ButtomTable = styled.div`
-  
+  @media screen and (max-width: 640px) {
+    background-color: red;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
 `
 
 export default DashboardHome

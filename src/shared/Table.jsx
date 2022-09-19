@@ -7,7 +7,7 @@ import { FaArrowRight } from 'react-icons/fa'
 function Table() {
   return (
     <>
-      <TableCOntainer>
+      <TableContainer>
         <TableHead>
           <p>Gift Card</p>
           <p>Date | Time</p>
@@ -32,7 +32,7 @@ function Table() {
             </p>
           </Link>
         </div>
-      </TableCOntainer>
+      </TableContainer>
       <ExternalLinks>
         <p>
           <a href='https://cardtonic.com/rate-calculator' target='_blank'>
@@ -45,7 +45,7 @@ function Table() {
   )
 }
 
-const TableCOntainer = styled.div`
+const TableContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   padding: 3rem 2.8rem 2rem 2.8rem;
   height: 80vh;
@@ -55,6 +55,12 @@ const TableCOntainer = styled.div`
   gap: 1.4rem;
   flex-direction: column;
   transition: all 0.5s;
+  @media screen and (max-width: 640px) {
+    width: 90vw;
+    height: 40vh;
+    justify-content: center;
+  }
+
   .line {
     width: 100%;
     height: 0.1rem;
@@ -87,6 +93,9 @@ const TableHead = styled.div`
   color: ${({ theme }) => theme.colors.darkblue};
   font-weight: 600;
   font-size: 14px;
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
   span {
     color: ${({ theme }) => theme.colors.lightblue1};
   }
