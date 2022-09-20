@@ -99,13 +99,21 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
   padding: 0.1rem 6rem 3rem 6rem;
   height: 83vh;
   overflow-y: scroll;
-  
+  @media screen and (max-width: 640px) {
+    height: 100vh;
+    padding: 0;
+    align-items: center;
+  }
+
   header {
     text-align: end;
+    @media screen and (max-width: 640px) {
+      text-align: right;
+      width: 90%;
+    }
     p {
       font-weight: 900;
       font-size: 30px;
@@ -123,6 +131,16 @@ const Content = styled.div`
     gap: 1.5rem;
     flex-direction: column;
     transition: all 0.5s;
+    @media screen and (max-width: 640px) {
+      height: 60vh;
+      padding: 4rem;
+      align-items: center;
+      justify-content: flex-start;
+      /* height: fit-content; */
+      overflow: hidden;
+      width: 90vw;
+      gap: 0.8rem;
+    }
 
     .settingOptions {
       display: flex;
@@ -133,10 +151,17 @@ const Content = styled.div`
       justify-content: space-between;
       border-radius: 1.2rem;
       cursor: pointer;
+      @media screen and (max-width: 640px) {
+        width: 80vw;
+      }
       p {
         font-weight: 900;
         color: ${({ theme }) => theme.colors.textcolor};
         font-size: 18px;
+        @media screen and (max-width: 640px) {
+          font-weight: 900;
+          font-size: 17px;
+        }
       }
       .icons {
         color: ${({ theme }) => theme.colors.lightblue1};

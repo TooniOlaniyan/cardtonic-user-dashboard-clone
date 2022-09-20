@@ -240,8 +240,17 @@ const Content = styled.div`
   padding: 0.1rem 6rem 3rem 6rem;
   height: 83vh;
   overflow-y: scroll;
+  @media screen and (max-width: 640px) {
+    height: 100vh;
+    padding: 0.5rem;
+    align-items: center;
+  }
   header {
     text-align: end;
+    @media screen and (max-width: 640px) {
+      text-align: right;
+      width: 90%;
+    }
     p {
       font-weight: 900;
       font-size: 30px;
@@ -259,6 +268,12 @@ const Trade = styled.div`
   gap: 0.8rem;
   flex-direction: column;
   transition: all 0.5s;
+  @media screen and (max-width: 640px) {
+    width: 90vw;
+    justify-content: center;
+    padding: 3rem 1rem;
+    justify-content: flex-start;
+  }
   .cards,
   .CardSubCategory {
     /* background-color: red; */
@@ -278,6 +293,12 @@ const Trade = styled.div`
       font-family: 'Lato', sans-serif;
       background-color: transparent;
       cursor: pointer;
+      @media screen and (max-width: 640px) {
+        font-size: 15px;
+        font-weight: 600;
+        width: 100%;
+        padding: 1rem;
+      }
       option {
         background-color: ${({ theme }) => theme.colors.white};
       }
@@ -295,6 +316,9 @@ const Trade = styled.div`
     width: 70%;
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
 
     input {
       flex: 4;
@@ -306,6 +330,11 @@ const Trade = styled.div`
       font-family: 'Lato', sans-serif;
       border: 1px solid ${({ theme }) => theme.colors.lightblue};
       background-color: transparent;
+      @media screen and (max-width: 640px) {
+        font-size: 15px;
+        padding: 1rem;
+        width: 100%;
+      }
       ::-webkit-input-placeholder {
         color: ${({ theme }) => theme.colors.textcolor};
       }
@@ -329,15 +358,22 @@ const Trade = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    /* background-color: red; */
     width: 70%;
     gap: 3rem;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-start;
+    }
     .amount {
       padding: 1rem;
       flex: 1;
       width: fit-content;
       background-color: ${({ theme }) => theme.colors.lightblue3};
       border-radius: 1rem;
+      @media screen and (max-width: 640px) {
+        width: 100%;
+      }
 
       p {
         justify-content: space-between;
@@ -346,6 +382,9 @@ const Trade = styled.div`
         font-weight: 900;
         font-size: clamp(0.5rem, 1.5vw, 1.4rem);
         color: ${({ theme }) => theme.colors.lightgreen};
+        @media screen and (max-width: 640px) {
+          font-size: 20px;
+        }
         span {
           font-size: 16px;
         }
@@ -354,6 +393,9 @@ const Trade = styled.div`
     .start-trade {
       cursor: pointer;
       margin-top: 1rem;
+      @media screen and (max-width: 640px) {
+        margin-top: 0;
+      }
       p {
         background-color: ${({ theme }) => theme.colors.black};
         display: flex;
@@ -373,11 +415,16 @@ const CardList = styled.div`
   border-radius: 1rem;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   gap: 0.8rem;
   margin-top: 4.5rem;
   flex-direction: column;
   transition: all 0.5s;
+  @media screen and (max-width: 640px) {
+    width: 90vw;
+    justify-content: center;
+    padding: 3rem 1rem;
+    justify-content: flex-start;
+  }
   .cardInfo {
     display: flex;
     flex-direction: column;
@@ -386,17 +433,26 @@ const CardList = styled.div`
       color: ${({ theme }) => theme.colors.textcolor};
       /* background-color: red; */
       font-size: 16.5px;
+      @media screen and (max-width: 640px) {
+        font-size: 16px;
+      }
     }
   }
   .buttomInfo {
     margin-top: 7rem;
+    @media screen and (max-width: 640px) {
+      margin-top: 0;
+    }
   }
   .topInfo {
     margin-bottom: 2rem;
+    @media screen and (max-width: 640px) {
+      margin-bottom: 0;
+      
+    }
   }
 `
 const CardTable = styled.div`
-  /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -404,6 +460,9 @@ const CardTable = styled.div`
   width: 100%;
   gap: 2rem;
   height: 100vh;
+  @media screen and (max-width: 640px) {
+    height: 90vh;
+  }
   .tableHead {
     display: flex;
     align-items: center;
@@ -413,6 +472,9 @@ const CardTable = styled.div`
       font-weight: 900;
       color: ${({ theme }) => theme.colors.darkblue};
       font-size: 15px;
+      @media screen and (max-width: 640px) {
+        font-size: 14px;
+      }
     }
     span {
       font-weight: 900;
@@ -429,16 +491,18 @@ const CardTable = styled.div`
   .tableData {
     display: flex;
     align-items: center;
-    /* background-color: yellow; */
     width: 100%;
     justify-content: space-between;
-    
+
     .cardName {
       font-weight: 700;
       color: ${({ theme }) => theme.colors.darkblue};
       font-size: 13px;
       flex: 1;
       text-align: start;
+      @media screen and (max-width: 640px) {
+        font-size: 10px;
+      }
     }
 
     p {
@@ -447,6 +511,9 @@ const CardTable = styled.div`
       font-size: 13px;
       flex: 1;
       text-align: center;
+      @media screen and (max-width: 640px) {
+        font-size: 11px;
+      }
     }
     span {
       font-weight: 700;
@@ -455,6 +522,9 @@ const CardTable = styled.div`
       flex: 1;
       /* background-color: green; */
       text-align: end;
+      @media screen and (max-width: 640px) {
+        font-size: 12px;
+      }
     }
     .cardIcon {
       display: flex;
@@ -466,12 +536,17 @@ const CardTable = styled.div`
         font-weight: 700;
         color: ${({ theme }) => theme.colors.darkblue};
         font-size: 13px;
+        @media screen and (max-width: 640px) {
+          font-size: 12px;
+        }
       }
-      img{
+      img {
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
-
+        @media screen and (max-width: 640px) {
+          display: none;
+        }
       }
     }
   }
