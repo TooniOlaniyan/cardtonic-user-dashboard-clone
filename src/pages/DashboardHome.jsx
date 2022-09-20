@@ -57,9 +57,9 @@ function DashboardHome() {
             </div>
           </div>
 
-          {/* <ButtomTable>
+          <ButtomTable>
             <Table/>
-          </ButtomTable> */}
+          </ButtomTable>
         </Content>
       </MainContainer>
     </Main>
@@ -80,6 +80,7 @@ const MainContainer = styled.div`
 `
 const Main = styled.div`
   display: flex;
+
 `
 const Content = styled.div`
   display: flex;

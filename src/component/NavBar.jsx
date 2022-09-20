@@ -8,6 +8,7 @@ import { Turn as Hamburger } from 'hamburger-react'
 
 import { AiOutlineClose } from 'react-icons/ai'
 import Switch from './Switch'
+import MobileNav from './MobileNav'
 
  
 function NavBar() {
@@ -111,6 +112,7 @@ function NavBar() {
           </div>
         </div>
       )}
+      {isOpened && <MobileNav isOpened={isOpened}/>}
     </Navigation>
   )
 }
