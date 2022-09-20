@@ -158,13 +158,27 @@ const Content = styled.div`
   padding: 0.1rem 6rem 3rem 6rem;
   height: 83vh;
   overflow-y: scroll;
+  @media screen and (max-width: 640px) {
+    height: 100vh;
+    padding: 0;
+    /* overflow: hidden; */
+    align-items: center;
+    overflow-y: scroll;
+  }
 
   header {
     text-align: end;
+    @media screen and (max-width: 640px) {
+      text-align: right;
+      width: 90%;
+    }
     p {
       font-weight: 900;
       font-size: 30px;
       color: ${({ theme }) => theme.colors.darkblue};
+      @media screen and (max-width: 640px) {
+        font-size: 30px;
+      }
     }
   }
 `
@@ -178,6 +192,12 @@ const Trade = styled.div`
   gap: 0.8rem;
   flex-direction: column;
   transition: all 0.5s;
+  @media screen and (max-width: 640px) {
+    width: 90vw;
+    justify-content: center;
+    padding: 3rem 1rem;
+    justify-content: flex-start;
+  }
   .comments {
     width: 100%;
     textarea {
@@ -199,6 +219,10 @@ const Trade = styled.div`
       &:focus {
         outline: none;
       }
+      @media screen and (max-width: 640px) {
+        font-size: 15px;
+        padding: 1rem;
+      }
     }
   }
   .CashAmount {
@@ -206,6 +230,9 @@ const Trade = styled.div`
     width: 100%;
     align-items: center;
     gap: 1rem;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+    }
     input {
       flex: 4;
       padding: 1.1rem;
@@ -230,6 +257,11 @@ const Trade = styled.div`
       &:focus {
         outline: none;
       }
+      @media screen and (max-width: 640px) {
+        font-size: 15px;
+        padding: 1rem;
+        width: 100%;
+      }
     }
     .amount {
       padding: 0.8rem;
@@ -237,6 +269,10 @@ const Trade = styled.div`
       width: fit-content;
       background-color: ${({ theme }) => theme.colors.lightblue3};
       border-radius: 1rem;
+      @media screen and (max-width: 640px) {
+        width: 100%;
+        padding: 1rem;
+      }
 
       p {
         justify-content: space-between;
@@ -245,6 +281,9 @@ const Trade = styled.div`
         font-weight: 900;
         font-size: clamp(0.5rem, 1.5vw, 1.4rem);
         color: ${({ theme }) => theme.colors.lightgreen};
+        @media screen and (max-width: 640px) {
+          font-size: 25px;
+        }
         text-f span {
           font-size: 1.4vw;
         }
@@ -281,6 +320,12 @@ const Trade = styled.div`
       background-color: transparent;
       font-family: 'Lato', sans-serif;
       cursor: pointer;
+      @media screen and (max-width: 640px) {
+        font-size: 15px;
+        font-weight: 600;
+        width: 100%;
+        padding: 1rem;
+      }
       option {
         background-color: ${({ theme }) => theme.colors.white};
       }
@@ -305,6 +350,10 @@ const Trade = styled.div`
       font-size: 18px;
       cursor: pointer;
       color: ${({ theme }) => theme.colors.textcolor};
+      @media screen and (max-width: 640px) {
+        font-size: 15px;
+        display: none;
+      }
     }
 
     display: flex;

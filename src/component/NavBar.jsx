@@ -3,12 +3,15 @@ import styled from 'styled-components'
 import Yes from '../asset/images/Yes.svg'
 import No from '../asset/images/No.svg'
 import {useNavigate} from 'react-router-dom'
+import cardtonicLogo from '../asset/images/cardtonicLogo.svg'
+import { Turn as Hamburger } from 'hamburger-react'
 
 import { AiOutlineClose } from 'react-icons/ai'
 import Switch from './Switch'
 
  
 function NavBar() {
+  const [isOpened, setIsOpened] = useState(false)
   const [isOpen , setIsOpen] = useState(false)
   const [isNotification , setIsNotification] = useState(false)
   const navigate = useNavigate()
@@ -18,6 +21,9 @@ function NavBar() {
   }
   return (
     <Navigation>
+      <div className='logo'>
+        <img src={cardtonicLogo} alt='' />
+      </div>
       <div className='greetings'>
         <p>
           Good Afternoon, <span>The_ot</span>
@@ -26,10 +32,9 @@ function NavBar() {
 
       <div>
         <div className='logOut'>
-          <Switch/>
-          {/* <img onClick={handleClick} src={logOut} alt='' /> */}
+          <Switch />
           <svg
-            // xmlns:xlink='http://www.w3.org/1999/xlink'
+            className='logOutBtn'
             width='134'
             height='56'
             viewBox='0 0 134 56'
@@ -52,11 +57,6 @@ function NavBar() {
             ></path>
           </svg>
 
-          {/* <img
-            onClick={() => setIsNotification(true)}
-            src={notification}
-            alt=''
-          /> */}
           <svg
             onClick={() => setIsNotification(true)}
             width='56'
@@ -73,6 +73,13 @@ function NavBar() {
               fill='currentcolor'
             ></path>
           </svg>
+          <Hamburger
+            toggled={isOpened}
+            toggle={setIsOpened}
+            easing='ease-in'
+            size={20}
+            direction='left'  
+          />
         </div>
       </div>
       {isOpen && (
@@ -116,7 +123,24 @@ const Navigation = styled.div`
   justify-content: space-between;
   transition: all 0.5;
   @media screen and (max-width: 640px) {
+    width: 100vw;
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 55;
+    background-color: ${({ theme }) => theme.colors.body};
+    /* background-color: red; */
+
+    gap: 4rem;
+  }
+  .logo {
     display: none;
+    @media screen and (max-width: 640px) {
+      display: block;
+      img {
+        width: 120px;
+      }
+    }
   }
   .notificationModal {
     height: 100vh;
@@ -212,11 +236,17 @@ const Navigation = styled.div`
       font-weight: 600;
       font-size: 17px;
       color: ${({ theme }) => theme.colors.darkblue};
+      @media screen and (max-width: 640px) {
+        display: none;
+      }
     }
     span {
       font-weight: 600;
       font-size: 17px;
       color: ${({ theme }) => theme.colors.lightblue1};
+      @media screen and (max-width: 640px) {
+        display: none;
+      }
     }
   }
   .logOut {
@@ -225,9 +255,26 @@ const Navigation = styled.div`
     align-items: flex-end;
     gap: 1rem;
     cursor: pointer;
+    .logOutBtn {
+      @media screen and (max-width: 640px) {
+        display: none;
+      }
+    }
     svg {
-      /* background-color: ${({ theme }) => theme.colors.svg}; */
       fill: ${({ theme }) => theme.colors.white};
+    }
+    .hamburger-react {
+      display: none;
+      @media screen and (max-width: 640px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: #cffcff;
+        border-radius: 50%;
+        z-index: 2;
+      }
     }
   }
 `

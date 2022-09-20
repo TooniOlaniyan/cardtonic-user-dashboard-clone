@@ -57,9 +57,9 @@ function DashboardHome() {
             </div>
           </div>
 
-          <ButtomTable>
+          {/* <ButtomTable>
             <Table/>
-          </ButtomTable>
+          </ButtomTable> */}
         </Content>
       </MainContainer>
     </Main>
@@ -178,7 +178,7 @@ const Content = styled.div`
 
 const ButtomTable = styled.div`
   @media screen and (max-width: 640px) {
-    background-color: red;
+    /* background-color: red; */
     width: 100vw;
     display: flex;
     justify-content: center;
