@@ -35,10 +35,21 @@ function Table() {
       </TableContainer>
       <ExternalLinks>
         <p>
-          <a href='https://cardtonic.com/rate-calculator' target='_blank'>
+          <a
+            href='https://cardtonic.com/rate-calculator'
+            target='_blank'
+            rel='noreferrer'
+          >
             Rate Calculator
           </a>
-          | <a href='https://cardtonic.com/contact-us' target='_blank'>Contact Us</a>
+          
+          <a
+            href='https://cardtonic.com/contact-us'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Contact Us
+          </a>
         </p>
       </ExternalLinks>
     </>
