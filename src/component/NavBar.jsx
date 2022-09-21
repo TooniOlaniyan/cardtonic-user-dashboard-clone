@@ -65,6 +65,7 @@ function NavBar() {
             viewBox='0 0 56 56'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
+            className='notification'
           >
             <rect width='56' height='56' rx='28' fill='#FFFFFF'></rect>
             <path
@@ -78,7 +79,7 @@ function NavBar() {
             toggled={isOpened}
             toggle={setIsOpened}
             easing='ease-in'
-            size={20}
+            size={17}
             direction='left'  
           />
         </div>
@@ -122,25 +123,23 @@ const Navigation = styled.div`
   height: 7rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   transition: all 0.5;
   @media screen and (max-width: 640px) {
     width: 100vw;
-    padding: 0.5rem;
+    padding: 0 0.2rem;
     position: sticky;
     top: 0;
     z-index: 55;
     background-color: ${({ theme }) => theme.colors.body};
-    /* background-color: red; */
-
-    gap: 4rem;
+    gap: 3rem;
   }
   .logo {
     display: none;
     @media screen and (max-width: 640px) {
       display: block;
       img {
-        width: 120px;
+        width: 100px;
       }
     }
   }
@@ -265,14 +264,17 @@ const Navigation = styled.div`
     svg {
       fill: ${({ theme }) => theme.colors.white};
     }
+    .notification{
+      width: 45px;
+    }
     .hamburger-react {
       display: none;
       @media screen and (max-width: 640px) {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         background-color: #cffcff;
         border-radius: 50%;
         z-index: 2;

@@ -132,7 +132,7 @@ const Content = styled.div`
     flex-direction: column;
     transition: all 0.5s;
     @media screen and (max-width: 640px) {
-      height: 60vh;
+      height: 100vh;
       padding: 4rem;
       align-items: center;
       justify-content: flex-start;

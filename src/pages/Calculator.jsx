@@ -441,13 +441,13 @@ const CardList = styled.div`
   .buttomInfo {
     margin-top: 7rem;
     @media screen and (max-width: 640px) {
-      margin-top: 0;
+      margin-top: 4rem;
     }
   }
   .topInfo {
     margin-bottom: 2rem;
     @media screen and (max-width: 640px) {
-      margin-bottom: 0;
+      margin-bottom: 2rem;
       
     }
   }
@@ -461,7 +461,7 @@ const CardTable = styled.div`
   gap: 2rem;
   height: 100vh;
   @media screen and (max-width: 640px) {
-    height: 90vh;
+    height: 100vh;
   }
   .tableHead {
     display: flex;
