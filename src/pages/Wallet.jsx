@@ -15,6 +15,7 @@ import {MdKeyboardArrowRight} from 'react-icons/md'
 
 import { FaArrowRight } from 'react-icons/fa'
 import axios from 'axios'
+import MobileTable from '../shared/MobileTable'
 function Wallet() {
     const [show, setShow] = useState(false)
     const [bankData , setBankData] = useState([])
@@ -214,6 +215,7 @@ function Wallet() {
           </div>
           <ButtomTable>
             <Table />
+            <MobileTable/>
           </ButtomTable>
           <Account>
             <div onClick={handleVisible} className='details'>
@@ -245,6 +247,10 @@ const Content = styled.div`
   padding: 0.1rem 6rem 3rem 6rem;
   height: 83vh;
   overflow-y: scroll;
+  @media screen and (max-width: 640px) {
+    height: 100vh;
+    padding: 1rem 0.5rem;
+  }
   .AccountContainer {
     position: fixed;
     width: 100vw;
@@ -344,6 +350,10 @@ const Content = styled.div`
   .top {
     display: flex;
     gap: 0.7rem;
+    @media screen and (max-width: 640px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
 
     .cardOne {
       display: flex;
@@ -354,6 +364,9 @@ const Content = styled.div`
       padding: 1.3rem;
       border-radius: 1.8rem;
       transition: all 0.5s;
+      @media screen and (max-width: 640px) {
+        width: 90vw;
+      }
 
       .deposit {
         p {
@@ -387,6 +400,9 @@ const Content = styled.div`
     transition: all 0.5s;
 
     background-color: ${({ theme }) => theme.colors.darkblue};
+    @media screen and (max-width: 640px) {
+      width: 90vw;
+    }
     p {
       color: ${({ theme }) => theme.colors.white};
       font-weight: 700;
@@ -399,6 +415,10 @@ const Content = styled.div`
     /* justify-content: space-between; */
     align-items: flex-end;
     gap: 0.7rem;
+    @media screen and (max-width: 640px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
     .successCard,
     .failedCard,
     .pendingCard {
@@ -410,6 +430,11 @@ const Content = styled.div`
       padding: 1.7rem 0rem;
       border-radius: 1.5rem;
       transition: all 0.5s;
+      @media screen and (max-width: 640px) {
+        padding: 1rem 0;
+        width: 90vw;
+      }
+
       p {
         font-weight: 900;
         color: ${({ theme }) => theme.colors.textcolor};
@@ -421,10 +446,23 @@ const Content = styled.div`
         align-items: flex-start;
         flex-direction: column;
         gap: 0.6rem;
+        @media screen and (max-width: 640px) {
+          flex-direction: row;
+          align-items: center;
+        }
+        img {
+          @media screen and (max-width: 640px) {
+            width: 30px;
+          }
+        }
+
         p {
           font-weight: 500;
           font-size: 15px;
           color: ${({ theme }) => theme.colors.gray};
+          @media screen and (max-width: 640px) {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -441,6 +479,12 @@ const Content = styled.div`
       justify-self: right;
       margin-left: 6rem;
       align-self: center;
+      @media screen and (max-width: 640px) {
+        font-size: 20px;
+        text-align: end;
+        margin-right: 1rem;
+        align-self: flex-end;
+      }
 
       span {
         font-size: 20px;
@@ -449,8 +493,16 @@ const Content = styled.div`
     }
   }
 `
-const ButtomTable = styled.div``
+const ButtomTable = styled.div`
+`
+
 const Account = styled.div`
+@media screen  and (max-width:640px){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
   .details {
     display: flex;
     align-items: center;
@@ -461,6 +513,10 @@ const Account = styled.div`
     padding: 1.3rem 2rem;
     border-radius: 1.1rem;
     cursor: pointer;
+    @media screen and (max-width: 640px) {
+      width: 100%;
+      padding: 1rem;
+    }
     p {
       color: ${({ theme }) => theme.colors.textcolor};
       font-weight: 900;
