@@ -71,6 +71,11 @@ const SupportLinks = styled.div`
   gap: 1rem;
   position: relative;
   margin-top: -1rem;
+  @media screen and (max-width: 640px) {
+    width: 90%;
+    height: 80%;
+    padding: 13rem 2rem;
+  }
   a {
     text-decoration: none;
   }
@@ -88,8 +93,8 @@ const SupportLinks = styled.div`
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
-    p{
-      color:${({theme}) => theme.colors.support}
+    p {
+      color: ${({ theme }) => theme.colors.support};
     }
   }
   .insta {
@@ -97,18 +102,18 @@ const SupportLinks = styled.div`
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
-    p{
-      color:${({theme}) => theme.colors.support}
+    p {
+      color: ${({ theme }) => theme.colors.support};
     }
   }
- 
+
   .tweet {
     background-color: ${({ theme }) => theme.colors.lightblue1};
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
-    p{
-      color:${({theme}) => theme.colors.support}
+    p {
+      color: ${({ theme }) => theme.colors.support};
     }
   }
   .watsapp {
@@ -116,8 +121,8 @@ const SupportLinks = styled.div`
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
-    p{
-      color:${({theme}) => theme.colors.support}
+    p {
+      color: ${({ theme }) => theme.colors.support};
     }
   }
   .phone {
@@ -125,8 +130,8 @@ const SupportLinks = styled.div`
     color: ${({ theme }) => theme.colors.white};
     padding: 1rem 4rem;
     border-radius: 1rem 2rem;
-    p{
-      color:${({theme}) => theme.colors.support}
+    p {
+      color: ${({ theme }) => theme.colors.support};
     }
   }
 `

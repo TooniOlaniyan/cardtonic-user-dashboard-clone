@@ -68,6 +68,11 @@ const ChangeSecurity = styled.div`
   gap: 1rem;
   position: relative;
   margin-top: -1rem;
+  @media screen and (max-width: 640px) {
+    width: 90%;
+    height: 80%;
+    padding: 13rem 2rem;
+  }
   .settingOptions {
     display: flex;
     align-items: center;
@@ -77,6 +82,9 @@ const ChangeSecurity = styled.div`
     justify-content: space-between;
     border-radius: 1.4rem;
     cursor: pointer;
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
     p {
       font-weight: 900;
       color: ${({ theme }) => theme.colors.textcolor};
@@ -96,6 +104,9 @@ const ChangeSecurity = styled.div`
       font-weight: 900;
       font-size: 30px;
       color: ${({ theme }) => theme.colors.textcolor};
+      @media screen and (max-width: 640px) {
+        margin-top: 4rem;
+      }
     }
   }
 `

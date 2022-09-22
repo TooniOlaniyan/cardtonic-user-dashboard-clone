@@ -56,6 +56,11 @@ const PhoneEdit = styled.div`
   gap: 1rem;
   position: relative;
   margin-top: -1rem;
+  @media screen and (max-width: 640px) {
+    width: 90%;
+    height: 90%;
+    padding: 13rem 2rem;
+  }
   .personData {
     display: flex;
     align-items: center;
@@ -65,6 +70,9 @@ const PhoneEdit = styled.div`
     cursor: pointer;
     padding: 1rem;
     border-radius: 1rem;
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
     div {
       display: flex;
       justify-content: center;
@@ -88,6 +96,10 @@ const PhoneEdit = styled.div`
       font-family: 'Lato', sans-serif;
       border: 1px solid ${({ theme }) => theme.colors.lightblue};
       background-color: transparent;
+      @media screen and (max-width: 640px) {
+        width: 100%;
+        padding: 1rem;
+      }
       ::-webkit-input-placeholder {
         color: ${({ theme }) => theme.colors.textcolor};
       }
@@ -120,10 +132,18 @@ const PhoneEdit = styled.div`
     justify-content: space-between;
     width: 100%;
     margin-top: 1rem;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6rem;
+    }
     .profile {
       font-weight: 900;
       font-size: 30px;
       color: ${({ theme }) => theme.colors.textcolor};
+      @media screen and (max-width: 640px) {
+        align-self: flex-end;
+      }
     }
 
     .save {
@@ -137,6 +157,9 @@ const PhoneEdit = styled.div`
         padding: 1.2rem 3rem;
         border-radius: 1.3rem;
         color: ${({ theme }) => theme.colors.lightblue1};
+        @media screen and (max-width: 640px) {
+          gap: 3rem;
+        }
       }
     }
   `

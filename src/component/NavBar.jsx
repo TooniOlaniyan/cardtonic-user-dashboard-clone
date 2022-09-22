@@ -133,7 +133,6 @@ const Navigation = styled.div`
     padding: 0 0.2rem;
     position: sticky;
     top: 0;
-    z-index: 55;
     background-color: ${({ theme }) => theme.colors.body};
     gap: 3rem;
   }

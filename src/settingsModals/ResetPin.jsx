@@ -91,11 +91,17 @@ const PinReset = styled.div`
   gap: 1rem;
   position: relative;
   margin-top: -1rem;
-    .formInputs {
+  @media screen and (max-width: 640px) {
+    width: 90%;
+    height: 80%;
+    padding: 13rem 2rem;
+  }
+  .formInputs {
     width: 80%;
     position: relative;
-    
-    
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
 
     .passwordEye {
       position: absolute;

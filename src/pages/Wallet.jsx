@@ -263,6 +263,7 @@ const Content = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 3;
+
     .AccountContent {
       display: flex;
       justify-content: center;
@@ -276,6 +277,11 @@ const Content = styled.div`
       gap: 1rem;
       position: relative;
       margin-top: -8rem;
+      @media screen and (max-width: 640px) {
+        width: 85%;
+        height: 35%;
+        padding: 13rem 2rem;
+      }
       .noselect {
         background-color: transparent;
         ::-webkit-input-placeholder {
@@ -305,6 +311,10 @@ const Content = styled.div`
         font-family: 'Lato', sans-serif;
         cursor: pointer;
         position: relative !important;
+        @media screen and (max-width: 640px) {
+          width: 100%;
+          padding: 1rem;
+        }
         option {
           background-color: ${({ theme }) => theme.colors.white};
         }
@@ -322,6 +332,10 @@ const Content = styled.div`
         font-family: 'Lato', sans-serif;
         background-color: transparent;
         border: 1px solid ${({ theme }) => theme.colors.lightblue};
+        @media screen and (max-width: 640px) {
+          width: 100%;
+          padding: 1rem;
+        }
         ::-webkit-input-placeholder {
           color: ${({ theme }) => theme.colors.textcolor};
         }
@@ -343,6 +357,9 @@ const Content = styled.div`
           padding: 1rem 3rem;
           border-radius: 1rem;
           color: ${({ theme }) => theme.colors.lightblue1};
+          @media screen and (max-width: 640px) {
+            padding: 1rem 2rem;
+          }
         }
       }
     }

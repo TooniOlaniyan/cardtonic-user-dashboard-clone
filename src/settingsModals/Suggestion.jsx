@@ -60,6 +60,11 @@ const Container = styled.div`
     gap: 2rem;
     position: relative;
     margin-top: -1rem;
+    @media screen and (max-width: 640px) {
+      width: 95%;
+      height: 75%;
+      padding: 13rem 1rem;
+    }
     .dropNote {
       font-weight: 900;
       font-size: 17px;
@@ -78,6 +83,9 @@ const Container = styled.div`
         font-size: 16px;
         font-family: 'Lato', sans-serif;
         background-color: transparent;
+        @media screen and (max-width: 640px) {
+          width: 100%;
+        }
         color: ${({ theme }) => theme.colors.textcolor};
         ::-webkit-input-placeholder {
           color: ${({ theme }) => theme.colors.textcolor};

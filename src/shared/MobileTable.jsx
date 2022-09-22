@@ -15,13 +15,13 @@ function MobileTable() {
           </div>
         </Transaction>
       </TableContainer>
-      <div className='getMore'>
+      {/* <div className='getMore'>
         <Link to='/transactions'>
           <p>
             Get More <FaArrowRight fill='#00cede' />
           </p>
         </Link>
-      </div>
+      </div> */}
       <ExternalLinks>
         <p>
           <a
