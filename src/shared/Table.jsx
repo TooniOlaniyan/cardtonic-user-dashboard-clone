@@ -67,9 +67,7 @@ const TableContainer = styled.div`
   flex-direction: column;
   transition: all 0.5s;
   @media screen and (max-width: 640px) {
-    width: 90vw;
-    height: 40vh;
-    justify-content: center;
+  display: none;
   }
 
   .line {

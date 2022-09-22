@@ -1,12 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import {Link , useNavigate} from 'react-router-dom'
 import reward from '../asset/images/reward.svg'
 import star from '../asset/images/star.svg'
 import logOut from '../asset/images/logOut.svg'
 import { motion, AnimatePresence } from 'framer-motion'
 
-function MobileNav({isOpened}) {
+function MobileNav({isOpened , setIsOpened}) {
+  const navigate = useNavigate()
+  const handleStartTrade = () => {
+    setIsOpened(false)
+    navigate('/start-trade')
+
+  }
+  const handleSetting = () => {
+    setIsOpened(false)
+    navigate('/start-trade')
+
+  }
+ 
         const menuVarient = {
         initial:{
             x: -400
@@ -58,13 +70,25 @@ function MobileNav({isOpened}) {
             exit={{ x: [0, -130, 1000] }}
             className='links'
           >
-            <Link to='/dashboard'>Dashboard</Link>
-            <Link to='/start-trade'>Start Trade</Link>
-            <Link to='/transactions'>Transaction</Link>
-            <Link to='/wallet'>Wallet</Link>
-            <Link to='/calculator'>Calculator</Link>
-            <Link to='/settings'>Settings</Link>
-            <Link to='/dashboard'>Support</Link>
+            <p onClick={() => setIsOpened(false) && navigate('/dashboard')}>
+              Dashboard
+            </p>
+            <p onClick={handleStartTrade}>
+              Start Trade
+            </p>
+            <p onClick={() => setIsOpened(false) && navigate('/transactions')}>
+              Transaction
+            </p>
+            <p onClick={() => setIsOpened(false) && navigate('/wallet')}>
+              Wallet
+            </p>
+            <p onClick={() => setIsOpened(false) && navigate('/calculator')}>
+              Calculator
+            </p>
+            <p onClick={handleSetting}>
+              Settings
+            </p>
+            <p>Support</p>
             <div className='clicks'>
               <div className='icon'>
                 <img src={star} alt='' />
@@ -95,11 +119,7 @@ const Container = styled.div`
     left: 0;
     gap: 2rem;
     transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    a {
-      text-decoration: none;
-      color: white;
-      font-size: 18px;
-    }
+
     .bgContainer {
       display: block;
       height: 30px;
@@ -123,6 +143,11 @@ const Container = styled.div`
       transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
       width: 100%;
+      p {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+      }
       .clicks {
         display: flex;
         align-items: center;
