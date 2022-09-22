@@ -319,6 +319,10 @@ flex: 1.13;
   display: none;
   
 }
+@media screen and (max-width:890px) {
+  display: none;
+  
+}
     
 `
 const Links = styled.div`

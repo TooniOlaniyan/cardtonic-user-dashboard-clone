@@ -94,7 +94,9 @@ const Content = styled.div`
   @media screen and (max-width: 640px) {
     height: 100vh;
     padding: 0;
+    
   }
+  
 
   .top {
     display: flex;
@@ -105,6 +107,7 @@ const Content = styled.div`
       flex-direction: column-reverse;
       align-items: center;
     }
+  
 
     .cardOne {
       display: flex;
@@ -118,6 +121,7 @@ const Content = styled.div`
       @media screen and (max-width: 640px) {
         width: 90vw;
       }
+    
       flex: 1.6;
       .deposit {
         p {
@@ -155,6 +159,7 @@ const Content = styled.div`
     @media screen and (max-width: 640px) {
       width: 90vw;
     }
+   
     p {
       color: ${({ theme }) => theme.colors.white};
       font-weight: 700;
@@ -176,6 +181,7 @@ const Content = styled.div`
       width: 90vw;
       font-size: 25px;
     }
+  
   }
 `
 
