@@ -47,6 +47,9 @@ function Switch() {
       @media screen and (max-width: 640px) {
         display: none;
       }
+      @media screen and (max-width: 890px) {
+        display: none;
+      }
     `
 
 export default Switch

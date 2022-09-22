@@ -136,12 +136,26 @@ const Navigation = styled.div`
     background-color: ${({ theme }) => theme.colors.body};
     gap: 3rem;
   }
+  @media screen and (max-width: 890px) {
+    width: 100vw;
+    padding: 0 0.2rem;
+    position: sticky;
+    top: 0;
+    background-color: ${({ theme }) => theme.colors.body};
+    gap: 3rem;
+  }
   .logo {
     display: none;
     @media screen and (max-width: 640px) {
       display: block;
       img {
         width: 100px;
+      }
+    }
+    @media screen and (max-width: 890px) {
+      display: block;
+      img {
+        width: 180px;
       }
     }
   }
@@ -242,12 +256,18 @@ const Navigation = styled.div`
       @media screen and (max-width: 640px) {
         display: none;
       }
+      @media screen and (max-width: 890px) {
+        display: none;
+      }
     }
     span {
       font-weight: 600;
       font-size: 17px;
       color: ${({ theme }) => theme.colors.lightblue1};
       @media screen and (max-width: 640px) {
+        display: none;
+      }
+      @media screen and (max-width: 890px) {
         display: none;
       }
     }
@@ -262,6 +282,9 @@ const Navigation = styled.div`
       @media screen and (max-width: 640px) {
         display: none;
       }
+      @media screen and (max-width: 890px) {
+        display: none;
+      }
     }
     svg {
       fill: ${({ theme }) => theme.colors.white};
@@ -272,6 +295,16 @@ const Navigation = styled.div`
     .hamburger-react {
       display: none;
       @media screen and (max-width: 640px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        background-color: #cffcff;
+        border-radius: 50%;
+        z-index: 2;
+      }
+      @media screen and (max-width: 890px) {
         display: flex;
         justify-content: center;
         align-items: center;
