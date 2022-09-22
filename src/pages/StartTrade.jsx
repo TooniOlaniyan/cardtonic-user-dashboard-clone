@@ -165,6 +165,9 @@ const Content = styled.div`
     align-items: center;
     overflow-y: scroll;
   }
+  @media screen and (max-width: 890px) {
+    height: 100vh;
+  }
 
   header {
     text-align: end;

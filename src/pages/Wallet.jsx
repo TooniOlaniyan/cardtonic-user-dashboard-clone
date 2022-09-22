@@ -251,6 +251,10 @@ const Content = styled.div`
     height: 100vh;
     padding: 1rem 0.5rem;
   }
+  @media screen and (max-width: 890px) {
+    height: 100vh;
+    padding: 1.5rem;
+  }
   .AccountContainer {
     position: fixed;
     width: 100vw;

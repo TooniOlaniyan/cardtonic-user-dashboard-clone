@@ -96,6 +96,11 @@ const Content = styled.div`
     padding: 0;
     
   }
+  @media screen and (max-width: 890px) {
+    height: 100vh;
+    padding: 0;
+    
+  }
   
 
   .top {

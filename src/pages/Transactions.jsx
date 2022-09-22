@@ -75,6 +75,10 @@ const Content = styled.div`
     height: 100vh;
     padding: 0;
   }
+  @media screen and (max-width: 890px) {
+    height: 100vh;
+    padding: 2rem;
+  }
   .top {
     display: flex;
     align-items: flex-end;

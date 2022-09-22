@@ -107,6 +107,9 @@ const Content = styled.div`
     padding: 0;
     align-items: center;
   }
+  @media screen and (max-width: 890px) {
+    height: 100vh;
+  }
 
   header {
     text-align: end;
