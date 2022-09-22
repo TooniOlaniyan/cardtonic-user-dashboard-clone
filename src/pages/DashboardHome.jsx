@@ -7,6 +7,7 @@ import walletLink from '../asset/images/walletLink.svg'
 import startTradeLink from '../asset/images/startTradeLink.svg'
 import {Link} from 'react-router-dom'
 import Table from '../shared/Table'
+import MobileTable from '../shared/MobileTable'
 
 function DashboardHome() {
   const [show , setShow] = useState(false)
@@ -59,6 +60,7 @@ function DashboardHome() {
 
           <ButtomTable>
             <Table/>
+            <MobileTable/>
           </ButtomTable>
         </Content>
       </MainContainer>
@@ -75,7 +77,7 @@ const MainContainer = styled.div`
   transition: all 0.5s;
   @media screen and (max-width: 640px) {
     /* background-color: red; */
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 `
 const Main = styled.div`
@@ -91,7 +93,7 @@ const Content = styled.div`
   overflow-y: scroll;
   @media screen and (max-width: 640px) {
     height: 100vh;
-    overflow: hidden;
+    padding: 0;
   }
 
   .top {

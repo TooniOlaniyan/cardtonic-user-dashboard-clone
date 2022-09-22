@@ -117,6 +117,9 @@ const Transaction = styled.div`
   border-radius: 1rem;
   margin-top: 0.5rem;
   height: 80vh;
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
   .TransactionStatus {
     p {
       color: ${({ theme }) => theme.colors.gray};
@@ -131,6 +134,9 @@ const ExternalLinks = styled.div`
   text-align: right;
   margin-top: 1rem;
   padding: 1rem;
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.graytext};
