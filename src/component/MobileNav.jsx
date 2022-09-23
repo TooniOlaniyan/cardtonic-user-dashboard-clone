@@ -10,12 +10,11 @@ function MobileNav({isOpened , setIsOpened}) {
   const navigate = useNavigate()
   const handleStartTrade = () => {
     setIsOpened(false)
-    navigate('/start-trade')
+    
 
   }
   const handleSetting = () => {
     setIsOpened(false)
-    navigate('/start-trade')
 
   }
  
@@ -70,24 +69,25 @@ function MobileNav({isOpened , setIsOpened}) {
             exit={{ x: [0, -130, 1000] }}
             className='links'
           >
-            <p onClick={() => setIsOpened(false) && navigate('/dashboard')}>
+            <Link
+              to='/dashboard'
+              onClick={() => setIsOpened(false)}
+            >
               Dashboard
-            </p>
-            <p onClick={handleStartTrade}>
-              Start Trade
-            </p>
-            <p onClick={() => setIsOpened(false) && navigate('/transactions')}>
+            </Link>
+            <Link to='/start-trade' onClick={handleStartTrade}>Start Trade</Link>
+            <Link to='/transactions'
+              onClick={() => setIsOpened(false) }
+            >
               Transaction
-            </p>
-            <p onClick={() => setIsOpened(false) && navigate('/wallet')}>
+            </Link>
+            <Link to='/wallet' onClick={() => setIsOpened(false) }>
               Wallet
-            </p>
-            <p onClick={() => setIsOpened(false) && navigate('/calculator')}>
+            </Link>
+            <Link to='/calculator' onClick={() => setIsOpened(false) }>
               Calculator
-            </p>
-            <p onClick={handleSetting}>
-              Settings
-            </p>
+            </Link>
+            <Link to='/settings' onClick={handleSetting}>Settings</Link>
             <p>Support</p>
             <div className='clicks'>
               <div className='icon'>
@@ -143,6 +143,11 @@ const Container = styled.div`
       transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
       width: 100%;
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+      }
       p {
         text-decoration: none;
         color: white;

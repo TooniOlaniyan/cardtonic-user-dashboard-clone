@@ -154,9 +154,6 @@ const Navigation = styled.div`
     }
     @media screen and (max-width: 890px) {
       display: block;
-      img {
-        width: 180px;
-      }
     }
   }
   .notificationModal {
