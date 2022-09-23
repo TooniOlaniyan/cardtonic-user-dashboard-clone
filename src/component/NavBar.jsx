@@ -24,7 +24,7 @@ function NavBar() {
   return (
     <AnimatePresence>
       <Navigation>
-        {isOpened ? <MobileNav isOpened={isOpened} setIsOpened={setIsOpened} /> : <MobileNav />}
+        {isOpened ? <MobileNav isOpened={isOpened} setIsOpened={setIsOpened} setIsOpen={setIsOpen} /> : <MobileNav />}
         <div className='logo'>
           <img src={cardtonicLogo} alt='' />
         </div>

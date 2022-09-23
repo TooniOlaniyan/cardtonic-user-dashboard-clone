@@ -6,7 +6,7 @@ import star from '../asset/images/star.svg'
 import logOut from '../asset/images/logOut.svg'
 import { motion, AnimatePresence } from 'framer-motion'
 
-function MobileNav({isOpened , setIsOpened}) {
+function MobileNav({isOpened , setIsOpened  , setIsOpen}) {
   const navigate = useNavigate()
   const handleStartTrade = () => {
     setIsOpened(false)
@@ -94,7 +94,7 @@ function MobileNav({isOpened , setIsOpened}) {
                 <img src={star} alt='' />
                 <img src={reward} alt='' />
               </div>
-              <img className='icons' src={logOut} alt='' />
+              <img onClick={() => setIsOpen(true)} className='icons' src={logOut} alt='' />
             </div>
           </motion.div>
         )}
