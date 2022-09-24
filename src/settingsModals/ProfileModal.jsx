@@ -75,7 +75,7 @@ const ChangeProfile = styled.div`
   position: relative;
   margin-top: -1rem;
   @media screen and (max-width: 640px) {
-    width: 80%;
+    width: 90%;
     height: 70%;
     padding: 13rem 2rem;
   }
