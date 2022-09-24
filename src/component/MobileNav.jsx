@@ -104,7 +104,7 @@ function MobileNav({ isOpened, setIsOpened, setIsOpen }) {
               Settings
             </Link>
             <p>Support</p>
-            <p onClick={handleSwitchTheme}>{!theme.isDark ? 'Dark Mode'  : 'Light Mode'}</p>
+            <p style={{cursor: 'pointer'}} onClick={handleSwitchTheme}>{!theme.isDark ? 'Dark Mode'  : 'Light Mode'}</p>
             <div className='clicks'>
               <div className='icon'>
                 <img src={star} alt='' />
@@ -131,14 +131,14 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* height: 100vh; */
+    height: 100vh;
     padding: 0 5.5rem;
     width: 100vw;
     z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
-    gap: 2rem;
+    gap: 1.5rem;
     transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     .bgContainer {
