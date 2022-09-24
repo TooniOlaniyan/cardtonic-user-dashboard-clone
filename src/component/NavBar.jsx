@@ -22,7 +22,7 @@ function NavBar() {
 
   }
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={true}>
       <Navigation>
         {isOpened ? <MobileNav isOpened={isOpened} setIsOpened={setIsOpened} setIsOpen={setIsOpen} /> : <MobileNav />}
         <div className='logo'>
