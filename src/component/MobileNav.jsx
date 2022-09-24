@@ -131,7 +131,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 0 5.5rem;
     width: 100vw;
     z-index: 1;
