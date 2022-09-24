@@ -61,8 +61,8 @@ const Container = styled.div`
     position: relative;
     margin-top: -1rem;
     @media screen and (max-width: 640px) {
-      width: 95%;
-      height: 75%;
+      width: 80%;
+      height: 70%;
       padding: 13rem 1rem;
     }
     .dropNote {
